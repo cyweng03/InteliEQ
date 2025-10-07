@@ -1,3 +1,18 @@
+### InteliEQ Website Redesign
+## Project Overview
+
+The goal of this project is to redesign InteliEQ’s marketing website to better reflect their vision as a cleantech company at the intersection of indoor air quality, human health, and energy intelligence.
+We aim to deliver a modern, multi-page, responsive website that communicates InteliEQ’s mission, showcases their technology (Symphony-iQ), and provides clear messaging tailored to different audiences, especially decision-makers in healthcare and commercial environments.
+
+## Key Objectives
+
+- Redesign website with a clean, engaging, and visual layout
+- Create multi-page, responsive React/Next.js site
+- Clarify and simplify messaging and storytelling
+- Develop visual elements (graphics, icons, simple animations)
+- Integrate AI chatbot for visitor interaction
+- Build scalable framework for future growth
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
