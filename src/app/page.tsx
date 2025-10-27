@@ -15,13 +15,14 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="container mx-auto px-4 py-8 bg-white">
+      <div className="container mx-auto px-4 py-16 bg-white">
         <div>
-          <div className="flex flex-row space-x-4">
+          <h1 className="text-4xl font-bold text-center mb-12">Our Solutions</h1>
+          <div className="flex justify-center gap-35 max-w-6xl mx-auto px-8">
             <div className="flex-1">
               <Solutions
                 title="Symphony-iQ"
-                image=""
+                image="https://www.shutterstock.com/image-vector/fill-image-preview-icon-simple-260nw-2338969281.jpg"
                 caption="Provides 24/7 surface decontamination & air purification in indoor spaces up to 2000 sq. ft. Effective in any environment."
                 learn_more="#"
               />
@@ -30,7 +31,7 @@ export default function Home() {
             <div className="flex-1">
               <Solutions
                 title="SensorPure"
-                image=""
+                image="https://www.shutterstock.com/image-vector/fill-image-preview-icon-simple-260nw-2338969281.jpg"
                 caption="Provides 24/7 surface decontamination & air purification without the use of ozone. It is a proactive & effective solution for any environment."
                 learn_more="#"
               />
@@ -39,7 +40,7 @@ export default function Home() {
             <div className="flex-1">
               <Solutions
                 title="i365+"
-                image=""
+                image="https://www.shutterstock.com/image-vector/fill-image-preview-icon-simple-260nw-2338969281.jpg"
                 caption="Provides real-time monitoring with proactive, predictive, preventative alerts with automated compliance reporting using energy optimization algorithms."
                 learn_more="#"
               />
