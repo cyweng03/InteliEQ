@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Button({content}: {content: String}) {
+function Button({ content }: { content: string }) {
 
 
   return (
