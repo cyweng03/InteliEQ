@@ -21,6 +21,7 @@
   --color-brand-green: #04D098;
 }
 
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -32,3 +33,34 @@ body {
   background: var(--background);
   color: var(--foreground);
 }
+
+/* Cycle/fade words animation
+   Implementation note: CSS cannot animate the `content` property reliably across
+   elements. Instead we render multiple stacked inline elements and animate their
+   opacity (and slight translate) with staggered delays so words fade in/out.
+*/
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(6px); }
+  8% { opacity: 1; transform: translateY(0); }
+  30% { opacity: 1; transform: translateY(0); }
+  38% { opacity: 0; transform: translateY(-6px); }
+  100% { opacity: 0; transform: translateY(-6px); }
+}
+.cycle-wrapper { position: relative; vertical-align: baseline; }
+.cycle-wrapper .cycle-word {
+  position: absolute;
+  left: 0;
+  right: 0;
+  opacity: 0;
+}
+
+.cycle-word.cycle-1 { animation: fadeInOut 9s ease-in-out infinite; animation-delay: 0s; }
+.cycle-word.cycle-2 { animation: fadeInOut 9s ease-in-out infinite; animation-delay: 3s; }
+.cycle-word.cycle-3 { animation: fadeInOut 9s ease-in-out infinite; animation-delay: 6s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .cycle-word.cycle-1,
+  .cycle-word.cycle-2,
+  .cycle-word.cycle-3 { animation: none !important; opacity: 1; }
+}
+

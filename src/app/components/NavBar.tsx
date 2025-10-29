@@ -5,11 +5,14 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useState, useRef, useEffect } from 'react';
 import logo from '../assets/InteliEQLogo.png';
+import { path } from 'd3';
 
 
 export default function NavBar() {
   const pathname = usePathname();
   const [openDropdown, setOpenDropdown] = useState<null | 'engine' | 'sectors' | 'resources'>(null);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileSubmenu, setMobileSubmenu] = useState<null | 'engine' | 'sectors' | 'resources'>(null);
   const navRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -49,9 +52,8 @@ export default function NavBar() {
     setOpenDropdown((prev) => (prev === menu ? null : menu));
   };
 
-
   return (
-    <nav className="bg-brand-black shadow-sm relative z-50" ref={navRef}>
+    <nav className="bg-brand-black shadow-sm fixed w-full z-50" ref={navRef}>
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center space-x-2">

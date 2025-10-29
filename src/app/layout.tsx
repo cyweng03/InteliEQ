@@ -17,8 +17,8 @@ const raleway = Raleway({
 })
 
 export const metadata: Metadata = {
-  title: "InteliEQ",
-  description: "InteliEQ",
+  title: "InteliEQ - Indoor Environmental Quality",
+  description: "InteliEQ - Indoor Environmental Quality",
 };
 
 export default function RootLayout({
