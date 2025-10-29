@@ -95,7 +95,7 @@ export default function Home() {
               <div className="flex-1">
                 <Solutions
             title="Symphony-iQ"
-            image=""
+            image="./assets/InteliEQLogo.png"
             caption="Provides 24/7 surface decontamination & air purification in indoor spaces up to 2000 sq. ft. Effective in any environment."
             learn_more="#"
                 />
@@ -104,7 +104,7 @@ export default function Home() {
               <div className="flex-1">
                 <Solutions
             title="SensorPure"
-            image=""
+            image="./assets/InteliEQLogo.png"
             caption="Provides 24/7 surface decontamination & air purification without the use of ozone. It is a proactive & effective solution for any environment."
             learn_more="#"
                 />
@@ -113,7 +113,7 @@ export default function Home() {
               <div className="flex-1">
                 <Solutions
             title="i365+"
-            image=""
+            image="./assets/InteliEQLogo.png"
             caption="Provides real-time monitoring with proactive, predictive, preventative alerts with automated compliance reporting using energy optimization algorithms."
             learn_more="#"
                 />
