@@ -1,5 +1,6 @@
 import Button from "./components/Button";
 import Solutions from "./components/Solutions";
+import placeholder from "./assets/placeholder.png"
 
 export default function Home() {
   return (
@@ -21,7 +22,7 @@ export default function Home() {
             <div className="flex-1">
               <Solutions
                 title="Symphony-iQ"
-                image="https://www.shutterstock.com/image-vector/fill-image-preview-icon-simple-260nw-2338969281.jpg"
+                image={placeholder}
                 caption="Provides 24/7 surface decontamination & air purification in indoor spaces up to 2000 sq. ft. Effective in any environment."
                 learn_more="#"
               />
@@ -30,7 +31,7 @@ export default function Home() {
             <div className="flex-1">
               <Solutions
                 title="SensorPure"
-                image="https://www.shutterstock.com/image-vector/fill-image-preview-icon-simple-260nw-2338969281.jpg"
+                image={placeholder}
                 caption="Provides 24/7 surface decontamination & air purification without the use of ozone. It is a proactive & effective solution for any environment."
                 learn_more="#"
               />
@@ -39,7 +40,7 @@ export default function Home() {
             <div className="flex-1">
               <Solutions
                 title="i365+"
-                image="https://www.shutterstock.com/image-vector/fill-image-preview-icon-simple-260nw-2338969281.jpg"
+                image={placeholder}
                 caption="Provides real-time monitoring with proactive, predictive, preventative alerts with automated compliance reporting using energy optimization algorithms."
                 learn_more="#"
               />
