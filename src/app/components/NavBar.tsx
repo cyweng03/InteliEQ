@@ -5,8 +5,6 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useState, useRef, useEffect } from 'react';
 import logo from '../assets/InteliEQLogo.png';
-import { path } from 'd3';
-
 
 export default function NavBar() {
   const pathname = usePathname();
