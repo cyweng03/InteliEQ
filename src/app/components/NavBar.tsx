@@ -51,7 +51,7 @@ export default function NavBar() {
   };
 
   return (
-    <nav className="bg-brand-black shadow-sm fixed w-full z-50" ref={navRef}>
+    <nav className="bg-brand-black shadow-sm w-full z-50" ref={navRef}>
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center space-x-2">
