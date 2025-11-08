@@ -10,11 +10,6 @@ const openSans = Open_Sans({
   weight: ["400", "600", "700"],
 });
 
-const raleway = Raleway({
-  variable: "--font-raleway",
-  subsets: ["latin"],
-  weight: ["400", "600", "700"],
-})
 
 export const metadata: Metadata = {
   title: "InteliEQ - Indoor Environmental Quality",
