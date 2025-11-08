@@ -64,3 +64,42 @@ body {
   .cycle-word.cycle-3 { animation: none !important; opacity: 1; }
 }
 
+/* Navbar entrance/exit animations */
+@keyframes nav-enter {
+  from { transform: translateY(-12px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes nav-fade-enter {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes nav-exit {
+  from { transform: translateY(0); opacity: 1; }
+  to   { transform: translateY(-12px); opacity: 0; }
+}
+
+.nav-enter {
+  animation: nav-enter 300ms cubic-bezier(.22,.9,.28,1) both;
+}
+
+.nav-fade-enter {
+  animation: nav-fade-enter 220ms ease-out both;
+}
+
+.nav-exit {
+  animation: nav-exit 220ms ease-in both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-enter, .nav-fade-enter, .nav-exit { animation: none !important; }
+}
+
+/* Hide state to avoid flash on initial load */
+.nav-hidden {
+  transform: translateY(-12px);
+  opacity: 0;
+  pointer-events: none;
+}
+
