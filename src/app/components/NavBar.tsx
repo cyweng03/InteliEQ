@@ -150,15 +150,6 @@ export default function NavBar() {
               )}
             </div>
 
-            <Link
-              href="/solutions"
-              className={`inline-flex items-center px-3 py-2 text-sm font-bold transition ${pathname === '/solutions'
-                ? 'text-brand-orange border-b-2 border-brand-orange'
-                : 'text-brand-white hover:text-brand-orange'
-                }`}
-            >
-              Solutions For
-            </Link>
 
             <div className="relative inline-block">
               <button
