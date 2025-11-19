@@ -1,31 +1,31 @@
 import Image, { StaticImageData } from 'next/image';
 import gray from '@/app/assets/gray.png';
+import background from '@/app/assets/plant-keyboard.png';
+import thumb from '@/app/assets/thumbs-up-icon.png';
 
 
 export default function EngineProductsPage() {
   type ProductProps = {
     name: string;
-    description: string;
-    header1: string;
-    content1: string;
+    features: string[];
     img1: StaticImageData;
-    header2: string;
-    img2: StaticImageData;
-    content2: string;
+    header: string;
+    content: string;
     benefits: string[];
   }
 
   const SymphonyiQ: ProductProps = {
-    name: "Symphony iQ",
-    description: "The Symphony-iQ combines multiple complementary technologies, including patented AP cell technology, IAQ sensor package and LoRaWAN connectivity. The advanced surface and air purification technology neutralizes viruses, bacteria and other contaminants in the ambient air and on surfaces.",
-    header1: "Reduces Contaminants and Pathogens",
-    content1: "[placeholder] Symphony iQ uses a combination of advanced technologies to reduce contaminants and pathogens in indoor environments. Its patented AP cell technology continuously eliminates viruses, bacteria, mold, and VOCs from the air and surfaces, providing a safer and healthier space for occupants.",
-    img1: gray,
-    header2: "Benefits",
-    img2: gray,
-    content2: "AP cell technology delivers 24/7 surface decontamination and air purification",
+    name: "SymphonyiQ",
+    features: ["Patented AP cell for active purification",
+  "IAQ sensor package for continuous monitoring",
+  "LoRaWAN connectivity for long-range data",
+  "Air & surface purification to neutralize contaminants",
+  "Targets viruses, bacteria, and pollutants",],
+    img1: require("@/app/assets/placeholder2.png"),
+    header: "Benefits",
+    content: "AP cell technology delivers 24/7 surface decontamination and air purification",
     benefits: [
-      "Proven to reduce over 99.9% of many common airborne and surface contaminants including viruses, bacteria, mold, fungi, ,VOCs, smoke allergens, and odors.",
+      "Proven to reduce over 99.9% of many common airborne and surface contaminants including viruses, bacteria, mold, fungi, VOCs, smoke allergens, and odors.",
       "Reduces VOC gases, smoke and odors without the use of ozone.",
       "Portable, lightweight device.",
       "Easy to use and low maintenance—plug-and-play solution."
@@ -34,64 +34,79 @@ export default function EngineProductsPage() {
 
   const SensorPure: ProductProps = {
     name: "SensorPure",
-    description: "The SensorPURE induct series provides active purification in the form of a cell that attaches directly to the HVAC system ductwork to reduce viruses, bacteria and other contaminants in the ambient air and on surfaces.",
-    header1: "Reduces Contaminants and Pathogens",
-    content1: "[placeholder] Symphony iQ uses a combination of advanced technologies to reduce contaminants and pathogens in indoor environments. Its patented AP cell technology continuously eliminates viruses, bacteria, mold, and VOCs from the air and surfaces, providing a safer and healthier space for occupants.",
-    img1: gray,
-    header2: "Benefits",
-    img2: gray,
-    content2: "The SensorPURE induct provides 24/7 surface decontamination and air purification without the use of ozone. It is a proactive and effective solution for any environment.",
+    features: ["Active purification cell for HVAC ductwork",
+  "Integrates directly with existing systems",
+  "Reduces airborne and surface contaminants",
+  "Neutralizes viruses, bacteria, and pollutants",
+  "Improves overall indoor air quality",],
+    img1: require("@/app/assets/placeholder2.png"),
+    header: "Benefits",
+    content: "The SensorPURE induct provides 24/7 surface decontamination and air purification without the use of ozone. It is a proactive and effective solution for any environment.",
     benefits: [
       "AP cell technology delivers 24/7 surface decontamination and air purification.",
-      "Proven to reduce over 99.9% of many common airborne and surface contaminants including viruses, bacteria, mold, fungi, ,VOCs, smoke allergens, and odors.",
+      "Proven to reduce over 99.9% of many common airborne and surface contaminants including viruses, bacteria, mold, fungi, VOCs, smoke allergens, and odors.",
     ]
   }
+
+  const i365: ProductProps = {
+  name: "i365+",
+  features: [
+    "Real-time monitoring UI dashboard w/ widgets",
+    "Proactive, Predictive, Preventative alerts",
+    "BACnet integration",
+    "Automated compliance reporting",
+    "Energy optimization algorithms"
+  ],
+  img1: require("@/app/assets/placeholder2.png"),
+  header: "Benefits",
+  content: "i365+ provides real-time IAQ monitoring, automated alerts, and actionable building insights to improve comfort and efficiency.",
+  benefits: [
+    "Improves health, comfort, and performance by reducing indoor pollutants and supporting better cognitive function.",
+    "Enhances efficiency and safety with early detection, real-time alerts, and optimized HVAC and energy use.",
+    "Supports compliance and reliability by maintaining IAQ standards and improving overall building performance."
+  ]
+};
 
   function Product({ content }: { content: ProductProps }) {
     return (
       <div>
-
-        <div className='flex flex-col space-y-4'>
-          <div className="text-5xl font-bold">{content.name}</div>
-          <div className="text-lg mt-2">{content.description}</div>
-          <div className="text-2xl font-bold">{content.header1}</div>
-          <div className="flex flex-row items-center gap-8">
+        <h2 className="text-4xl font-bold text-gray-900 mt-12 mb-6">
+          {content.name}
+        </h2>
+          <div className="flex flex-col md:flex-row items-start gap-12 mt-6 mb-12">
             <div className="flex-1">
-              <div>{content.content1}</div>
-            </div>
-            <div className="flex-1">
-              <Image
-                src={content.img1}
-                alt={`${content.name} image 1`}
-                className="w-full h-auto rounded-lg"
-                width={600}
-                height={400}
-              />
-            </div>
-          </div>
-          <div className="text-2xl font-bold">{content.header2}</div>
-          <div className="flex flex-row items-center gap-8">
-            <div className="flex-1">
-              <Image
-                src={content.img2}
-                alt={`${content.name} image 2`}
-                className="w-full h-auto rounded-lg"
-                width={600}
-                height={400}
-              />
-            </div>
-            <div className="flex-1">
-              <div>{content.content2}</div>
-
-              <ul className="list-disc list-inside space-y-2 leading-relaxed">
-                {content.benefits.map((benefit, index) => (
-                  <li key={index}>{benefit}</li>
+          <ul className="list-disc pl-6 space-y-2 text-lg text-gray-700 leading-relaxed">
+                {content.features.map((feature, index) => (
+                  <li key={index}>{feature}</li>
                 ))}
               </ul>
+          </div>
+          <div className="flex-1 max-w-[480px]">
+            <Image
+              src={content.img1}
+              alt={`${content.name} image 1`}
+              className="w-full h-auto border border-gray-200 shadow-sd object-cover"
+            />
+          </div>
+        </div>
+
+          <h3 className="text-3xl font-semibold text-gray-900 mt-10 mb-4">
+            {content.header}
+          </h3>
+          <div className="text-lg text-gray-700 mt-4 mb-4">{content.content}</div>
+          <div className="flex flex-row items-center gap-8 mt-4">
+            <div className="flex-1">
+
+              <div className="space-y-4 mt-4 mb-12">
+                {content.benefits.map((benefit, index) => (
+                  <div key={index} className="flex items-start gap-4">
+                    <Image src={thumb} alt="thumb icon" width={24} height={24} />
+                    <p className="text-base text-gray-800 leading-relaxed">{benefit}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-
-        </div>
       </div>
     )
   }
@@ -99,13 +114,22 @@ export default function EngineProductsPage() {
 
   return (
     <div>
-      <div className="w-full aspect-[3/1] border border-gray-400 flex items-center justify-center bg-gray-100">
-        <span className="text-gray-400 text-3xl">▲</span>
+      <div className="relative w-full h-[300px] md:h-[400px] lg:h-[450px] overflow-hidden mb-10">
+        <Image src = {background} alt = "Engine Products Background" fill className = "object-cover object-center"/>
       </div>
-      <div className="container mx-auto flex flex-col space-y-12 py-8">
+      <div className="max-w-[1000px] mx-auto flex flex-col py-12">
 
-        <Product content={SymphonyiQ} />
-        <Product content={SensorPure} />
+        <div className="pt-10 pb-6 border-b border-gray-300 last:border-none">
+          <Product content={SymphonyiQ} />
+        </div>
+
+        <div className="pt-10 pb-6 border-b border-gray-300 last:border-none">
+          <Product content={SensorPure} />
+        </div>
+
+        <div className="py-10">
+          <Product content={i365} />
+        </div>
       </div>
     </div>
 
