@@ -103,7 +103,6 @@ export default function EngineProductsPage() {
         <span className="text-gray-400 text-3xl">▲</span>
       </div>
       <div className="container mx-auto flex flex-col space-y-12 py-8">
-
         <Product content={SymphonyiQ} />
         <Product content={SensorPure} />
       </div>
