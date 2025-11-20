@@ -97,11 +97,11 @@ export default function EngineProductsPage() {
           <div className="flex flex-row items-center gap-8 mt-4">
             <div className="flex-1">
 
-              <div className="space-y-3 mt-2 mb-6">
+              <div className="space-y-8 mt-2 mb-6">
                 {content.benefits.map((benefit, index) => (
-                  <div key={index} className="flex items-start gap-4">
-                    <Image src={thumb} alt="thumb icon" width={24} height={24} />
-                    <p className="text-base text-gray-800 leading-relaxed">{benefit}</p>
+                  <div key={index} className="flex gap-6 items-center">
+                    <Image src={thumb} alt="thumb icon" width={32} height={32} className = "pt-[2px]" />
+                    <p className="text-base text-gray-800 leading-snug relative top-[4px]">{benefit}</p>
                   </div>
                 ))}
               </div>
