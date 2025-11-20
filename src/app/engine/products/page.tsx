@@ -1,7 +1,7 @@
 import Image, { StaticImageData } from 'next/image';
-import gray from '@/app/assets/gray.png';
 import background from '@/app/assets/plant-keyboard.png';
 import thumb from '@/app/assets/thumbs-up-icon.png';
+import placeholder2 from '@/app/assets/placeholder2.png';
 
 
 export default function EngineProductsPage() {
@@ -21,7 +21,7 @@ export default function EngineProductsPage() {
   "LoRaWAN connectivity for long-range data",
   "Air & surface purification to neutralize contaminants",
   "Targets viruses, bacteria, and pollutants",],
-    img1: require("@/app/assets/placeholder2.png"),
+    img1: placeholder2,
     header: "Benefits",
     content: "AP cell technology delivers 24/7 surface decontamination and air purification",
     benefits: [
@@ -39,7 +39,7 @@ export default function EngineProductsPage() {
   "Reduces airborne and surface contaminants",
   "Neutralizes viruses, bacteria, and pollutants",
   "Improves overall indoor air quality",],
-    img1: require("@/app/assets/placeholder2.png"),
+    img1: placeholder2,
     header: "Benefits",
     content: "The SensorPURE induct provides 24/7 surface decontamination and air purification without the use of ozone. It is a proactive and effective solution for any environment.",
     benefits: [
@@ -57,7 +57,7 @@ export default function EngineProductsPage() {
     "Automated compliance reporting",
     "Energy optimization algorithms"
   ],
-  img1: require("@/app/assets/placeholder2.png"),
+  img1: placeholder2,
   header: "Benefits",
   content: "i365+ provides real-time IAQ monitoring, automated alerts, and actionable building insights to improve comfort and efficiency.",
   benefits: [
