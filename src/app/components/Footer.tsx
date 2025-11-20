@@ -42,7 +42,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-brand-black px-4 py-12 mt-24">
+    <footer className="bg-brand-black px-4 py-12 mt-16">
       <div className='flex flex-col md:flex-row  jufstify-between container mx-auto space-x-20'>
         <div className='flex flex-1 flex-row md:flex-col space-y-4 w-full gap-3'>
           <Link href="/" className="flex items-center space-x-2"><Image src={logo.src} alt="InteliEQ Logo" width={250} height={250} /></Link>

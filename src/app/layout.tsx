@@ -10,6 +10,12 @@ const openSans = Open_Sans({
   weight: ["400", "600", "700"],
 });
 
+const raleway = Raleway({
+  variable: "--font-raleway",
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+});
+
 
 export const metadata: Metadata = {
   title: "InteliEQ - Indoor Environmental Quality",
@@ -24,7 +30,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${openSans.variable} font-sans antialiased min-h-screen flex flex-col`}
+        className={`${openSans.variable} ${raleway.variable} font-sans antialiased min-h-screen flex flex-col`}
+        style={{ fontFamily: "var(--font-raleway)" }}
       >
         <NavBar />
         <main className="flex-grow">{children}</main>

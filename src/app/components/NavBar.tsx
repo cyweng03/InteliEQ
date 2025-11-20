@@ -99,7 +99,7 @@ export default function NavBar() {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center space-x-2">
-            <Image src={logo} alt="InteliEQ Logo" width={140} height={40} className="h-10 w-auto" priority />
+            <Image src={logo} alt="InteliEQ Logo" width={140} height={40} className="h-12 w-auto" priority />
           </Link>
 
           <div className="hidden md:flex space-x-8 text-sm font-semibold">
