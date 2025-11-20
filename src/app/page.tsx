@@ -127,11 +127,50 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* <section id="solutions">
+          <div
+            id="solutions"
+            ref={solutionsRef}
+            className={`transition-opacity duration-1000 ease-in-out ${solutionsVisible ? "opacity-100" : "opacity-0"} flex flex-col justify-center items-center mt-12`}
+          >
+            <h1 className="text-black text-4xl font-bold mb-5">Our Solutions</h1>
+            <div className="flex flex-col md:flex-row space-x-4">
+              <div className="flex-1">
+                <Solutions
+                  title="Symphony-iQ"
+                  image={placeholder}
+                  caption="Provides 24/7 surface decontamination & air purification in indoor spaces up to 2000 sq. ft. Effective in any environment."
+                  learn_more="#"
+                />
+              </div>
+
+              <div className="flex-1">
+                <Solutions
+                  title="SensorPure"
+                  image={placeholder}
+                  caption="Provides 24/7 surface decontamination & air purification without the use of ozone. It is a proactive & effective solution for any environment."
+                  learn_more="#"
+                />
+              </div>
+
+              <div className="flex-1">
+                <Solutions
+                  title="i365+"
+                  image={placeholder}
+                  caption="Provides real-time monitoring with proactive, predictive, preventative alerts with automated compliance reporting using energy optimization algorithms."
+                  learn_more="#"
+                />
+              </div>
+            </div>
+          </div>
+        </section> */}
+
         <section id="different">
           <div id="difference" ref={differenceRef} className={`transition-opacity duration-1000 ease-in-out ${differenceVisible ? "opacity-100" : "opacity-0"} flex flex-col mt-20 mb-6`}>
             <h1 className="text-black text-5xl font-bold mb-7">How are we different?</h1>
-            <p className="text-xl">We offer an industry-leading solution that outperforms competitors by combining active air and surface 
-              purification in an unobtrusive, easy-to-install form factor with integrated sensors and our i365+ intelligent platform. 
+            <p className="text-xl">We offer an industry-leading solution that outperforms competitors by combining active air and surface
+              purification in an unobtrusive, easy-to-install form factor with integrated sensors and our i365+ intelligent platform.
               This system seamlessly integrates with existing building automation systems, <span className="font-bold">reducing energy consumption by over 30%.</span></p>
               <div className="flex items-center justify-center mt-7">
                 <div className="grid grid-cols-1 md:grid-rows-2 md:grid-cols-2 w-full md:w-2/3 items-center justify-center gap-5">

@@ -8,9 +8,9 @@ import logo from "../assets/InteliEQLogo.png";
 
 export default function NavBar() {
   const pathname = usePathname();
-  const [openDropdown, setOpenDropdown] = useState<null | "engine" | "sectors" | "resources">(null);
+  const [openDropdown, setOpenDropdown] = useState<null | "engine" | "resources">(null);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [mobileSubmenu, setMobileSubmenu] = useState<null | "engine" | "sectors" | "resources">(null);
+  const [mobileSubmenu, setMobileSubmenu] = useState<null | "engine" | "resources">(null);
   const [visible, setVisible] = useState(false);
   const navRef = useRef<HTMLDivElement | null>(null);
   const lastScroll = useRef(0);
@@ -27,10 +27,10 @@ export default function NavBar() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [openDropdown]);
 
-  // control visibility on the landing page: hide until user scrolls > 100px
+  // visibility behavior for landing page scroll
   useEffect(() => {
     const rootPath = pathname === "/" || pathname === "";
-    const THRESHOLD = 250; // slightly further than before
+    const THRESHOLD = 250;
     if (!rootPath) {
       setVisible(true);
       setAnimClass("nav-enter");
@@ -45,18 +45,16 @@ export default function NavBar() {
       const nextVisible = y > THRESHOLD;
       setVisible((prev) => {
         if (prev === nextVisible) return prev;
-        // choose animation class based on direction when showing
+
         if (nextVisible) {
           setAnimClass(direction === "up" ? "nav-enter" : "nav-fade-enter");
         } else {
-          // hide with exit animation
           setAnimClass("nav-exit");
         }
         return nextVisible;
       });
     };
 
-    // set initial state on mount (avoid showing the nav briefly)
     const initialY = typeof window !== "undefined" ? window.scrollY : 0;
     lastScroll.current = initialY;
     const initialVisible = initialY > THRESHOLD;
@@ -71,12 +69,6 @@ export default function NavBar() {
     engine: [
       { name: "Full-Stack", path: "/engine/full-stack" },
       { name: "Products", path: "/engine/products" },
-    ],
-    sectors: [
-      { name: "Education", path: "/sectors/education" },
-      { name: "Healthcare", path: "/sectors/healthcare" },
-      { name: "Hospitality", path: "/sectors/hospitality" },
-      { name: "Commercial Real Estate", path: "/sectors/commercial-real-estate" },
     ],
     resources: [
       { name: "About Us", path: "/resources/about-us" },
@@ -99,14 +91,26 @@ export default function NavBar() {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center space-x-2">
-            <Image src={logo} alt="InteliEQ Logo" width={140} height={40} className="h-12 w-auto" priority />
+            <Image
+              src={logo}
+              alt="InteliEQ Logo"
+              width={140}
+              height={40}
+              className="h-10 w-auto"
+              priority
+            />
           </Link>
 
+          {/* Desktop Nav */}
           <div className="hidden md:flex space-x-8 text-sm font-semibold">
+            {/* Engine Dropdown */}
             <div className="relative inline-block">
               <button
                 onClick={() => toggleDropdown("engine")}
-                className={`inline-flex items-center px-3 py-2 text-sm font-bold transition ${pathname.startsWith("/engine") ? "text-brand-orange border-b-2 border-brand-orange" : "text-brand-white hover:text-brand-orange"}`}
+                className={`inline-flex items-center px-3 py-2 text-sm font-bold transition ${pathname.startsWith("/engine")
+                  ? "text-brand-orange border-b-2 border-brand-orange"
+                  : "text-brand-white hover:text-brand-orange"
+                  }`}
               >
                 The Engine
               </button>
@@ -115,7 +119,12 @@ export default function NavBar() {
                 <div className="absolute left-0 mt-2 w-56 origin-top-right rounded-md bg-brand-black shadow-lg">
                   <div className="py-1">
                     {dropdowns.engine.map((item) => (
-                      <Link key={item.path} href={item.path} className="block px-4 py-2 text-sm text-brand-white hover:text-brand-orange" onClick={() => setOpenDropdown(null)}>
+                      <Link
+                        key={item.path}
+                        href={item.path}
+                        className="block px-4 py-2 text-sm text-brand-white hover:text-brand-orange"
+                        onClick={() => setOpenDropdown(null)}
+                      >
                         {item.name}
                       </Link>
                     ))}
@@ -124,32 +133,24 @@ export default function NavBar() {
               )}
             </div>
 
-            <div className="relative inline-block">
-              <button
-                onClick={() => toggleDropdown("sectors")}
-                className={`inline-flex items-center px-3 py-2 text-sm font-bold transition ${pathname.startsWith("/sectors") ? "text-brand-orange border-b-2 border-brand-orange" : "text-brand-white hover:text-brand-orange"}`}
-              >
-                Sectors
-              </button>
+            <Link
+              href="/sectors"
+              className={`inline-flex items-center px-3 py-2 text-sm font-bold transition ${pathname.startsWith("/sectors")
+                ? "text-brand-orange border-b-2 border-brand-orange"
+                : "text-brand-white hover:text-brand-orange"
+                }`}
+            >
+              Sectors
+            </Link>
 
-              {openDropdown === "sectors" && (
-                <div className="absolute left-0 mt-2 w-64 origin-top-right rounded-md bg-brand-black shadow-lg">
-                  <div className="py-1">
-                    {dropdowns.sectors.map((item) => (
-                      <Link key={item.path} href={item.path} className="block px-4 py-2 text-sm text-brand-white hover:text-brand-orange" onClick={() => setOpenDropdown(null)}>
-                        {item.name}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-
-
+            {/* Resources Dropdown */}
             <div className="relative inline-block">
               <button
                 onClick={() => toggleDropdown("resources")}
-                className={`inline-flex items-center px-3 py-2 text-sm font-bold transition ${pathname.startsWith("/resources") ? "text-brand-orange border-b-2 border-brand-orange" : "text-brand-white hover:text-brand-orange"}`}
+                className={`inline-flex items-center px-3 py-2 text-sm font-bold transition ${pathname.startsWith("/resources")
+                  ? "text-brand-orange border-b-2 border-brand-orange"
+                  : "text-brand-white hover:text-brand-orange"
+                  }`}
               >
                 Resources
               </button>
@@ -158,7 +159,12 @@ export default function NavBar() {
                 <div className="absolute left-0 mt-2 w-56 origin-top-right rounded-md bg-brand-black shadow-lg">
                   <div className="py-1">
                     {dropdowns.resources.map((item) => (
-                      <Link key={item.path} href={item.path} className="block px-4 py-2 text-sm text-brand-white hover:text-brand-orange" onClick={() => setOpenDropdown(null)}>
+                      <Link
+                        key={item.path}
+                        href={item.path}
+                        className="block px-4 py-2 text-sm text-brand-white hover:text-brand-orange"
+                        onClick={() => setOpenDropdown(null)}
+                      >
                         {item.name}
                       </Link>
                     ))}
@@ -167,37 +173,78 @@ export default function NavBar() {
               )}
             </div>
 
-            <Link href="/contact" className={`inline-flex items-center px-3 py-2 text-sm font-bold transition ${pathname === "/contact" ? "text-brand-orange border-b-2 border-brand-orange" : "text-brand-white hover:text-brand-orange"}`}>
+            <Link
+              href="/contact"
+              className={`inline-flex items-center px-3 py-2 text-sm font-bold transition ${pathname === "/contact"
+                ? "text-brand-orange border-b-2 border-brand-orange"
+                : "text-brand-white hover:text-brand-orange"
+                }`}
+            >
               Contact Us
             </Link>
           </div>
 
+          {/* Mobile Menu Button */}
           <div className="md:hidden">
-            <button aria-label={mobileOpen ? "Close menu" : "Open menu"} onClick={() => setMobileOpen((s) => !s)} className="inline-flex items-center justify-center p-2 rounded-md text-brand-white hover:text-brand-orange">
-              <svg className={`h-6 w-6 transition-transform ${mobileOpen ? "rotate-90" : ""}`} viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                <path strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            <button
+              aria-label={mobileOpen ? "Close menu" : "Open menu"}
+              onClick={() => setMobileOpen((s) => !s)}
+              className="inline-flex items-center justify-center p-2 rounded-md text-brand-white hover:text-brand-orange"
+            >
+              <svg
+                className={`h-6 w-6 transition-transform ${mobileOpen ? "rotate-90" : ""
+                  }`}
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+              >
+                <path
+                  strokeWidth={2}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
               </svg>
             </button>
           </div>
         </div>
       </div>
 
+      {/* Mobile Menu */}
       {mobileOpen && (
         <div className="md:hidden bg-brand-black border-t border-black/10">
           <div className="px-4 pt-4 pb-6 space-y-2">
-            <Link href="/solutions" className={`block px-3 py-2 rounded text-brand-white ${pathname === "/solutions" ? "text-brand-orange" : ""}`} onClick={() => setMobileOpen(false)}>
+            <Link
+              href="/solutions"
+              className={`block px-3 py-2 rounded text-brand-white ${pathname === "/solutions" ? "text-brand-orange" : ""
+                }`}
+              onClick={() => setMobileOpen(false)}
+            >
               Solutions For
             </Link>
 
+            {/* Engine Mobile Dropdown */}
             <div>
-              <button onClick={() => setMobileSubmenu((s) => (s === "engine" ? null : "engine"))} className="w-full text-left px-3 py-2 text-brand-white flex items-center justify-between">
+              <button
+                onClick={() =>
+                  setMobileSubmenu((s) => (s === "engine" ? null : "engine"))
+                }
+                className="w-full text-left px-3 py-2 text-brand-white flex items-center justify-between"
+              >
                 The Engine
-                <span className="ml-2">{mobileSubmenu === "engine" ? "−" : "+"}</span>
+                <span className="ml-2">
+                  {mobileSubmenu === "engine" ? "−" : "+"}
+                </span>
               </button>
               {mobileSubmenu === "engine" && (
                 <div className="pl-6">
                   {dropdowns.engine.map((item) => (
-                    <Link key={item.path} href={item.path} className="block px-3 py-2 text-sm text-brand-white hover:text-brand-orange" onClick={() => setMobileOpen(false)}>
+                    <Link
+                      key={item.path}
+                      href={item.path}
+                      className="block px-3 py-2 text-sm text-brand-white hover:text-brand-orange"
+                      onClick={() => setMobileOpen(false)}
+                    >
                       {item.name}
                     </Link>
                   ))}
@@ -205,31 +252,40 @@ export default function NavBar() {
               )}
             </div>
 
-            <div>
-              <button onClick={() => setMobileSubmenu((s) => (s === "sectors" ? null : "sectors"))} className="w-full text-left px-3 py-2 text-brand-white flex items-center justify-between">
-                Sectors
-                <span className="ml-2">{mobileSubmenu === "sectors" ? "−" : "+"}</span>
-              </button>
-              {mobileSubmenu === "sectors" && (
-                <div className="pl-6">
-                  {dropdowns.sectors.map((item) => (
-                    <Link key={item.path} href={item.path} className="block px-3 py-2 text-sm text-brand-white hover:text-brand-orange" onClick={() => setMobileOpen(false)}>
-                      {item.name}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
+            {/* Sectors — now a normal mobile link */}
+            <Link
+              href="/sectors"
+              className={`block px-3 py-2 rounded text-brand-white ${pathname.startsWith("/sectors") ? "text-brand-orange" : ""
+                }`}
+              onClick={() => setMobileOpen(false)}
+            >
+              Sectors
+            </Link>
 
+            {/* Resources Mobile Dropdown */}
             <div>
-              <button onClick={() => setMobileSubmenu((s) => (s === "resources" ? null : "resources"))} className="w-full text-left px-3 py-2 text-brand-white flex items-center justify-between">
+              <button
+                onClick={() =>
+                  setMobileSubmenu((s) =>
+                    s === "resources" ? null : "resources"
+                  )
+                }
+                className="w-full text-left px-3 py-2 text-brand-white flex items-center justify-between"
+              >
                 Resources
-                <span className="ml-2">{mobileSubmenu === "resources" ? "−" : "+"}</span>
+                <span className="ml-2">
+                  {mobileSubmenu === "resources" ? "−" : "+"}
+                </span>
               </button>
               {mobileSubmenu === "resources" && (
                 <div className="pl-6">
                   {dropdowns.resources.map((item) => (
-                    <Link key={item.path} href={item.path} className="block px-3 py-2 text-sm text-brand-white hover:text-brand-orange" onClick={() => setMobileOpen(false)}>
+                    <Link
+                      key={item.path}
+                      href={item.path}
+                      className="block px-3 py-2 text-sm text-brand-white hover:text-brand-orange"
+                      onClick={() => setMobileOpen(false)}
+                    >
                       {item.name}
                     </Link>
                   ))}
@@ -237,7 +293,12 @@ export default function NavBar() {
               )}
             </div>
 
-            <Link href="/contact" className={`block px-3 py-2 rounded text-brand-white ${pathname === "/contact" ? "text-brand-orange" : ""}`} onClick={() => setMobileOpen(false)}>
+            <Link
+              href="/contact"
+              className={`block px-3 py-2 rounded text-brand-white ${pathname === "/contact" ? "text-brand-orange" : ""
+                }`}
+              onClick={() => setMobileOpen(false)}
+            >
               Contact Us
             </Link>
           </div>
