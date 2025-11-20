@@ -27,8 +27,8 @@ export default function EngineProductsPage() {
     benefits: [
       "Proven to reduce over 99.9% of many common airborne and surface contaminants including viruses, bacteria, mold, fungi, VOCs, smoke allergens, and odors.",
       "Reduces VOC gases, smoke and odors without the use of ozone.",
-      "Portable, lightweight device.",
-      "Easy to use and low maintenance—plug-and-play solution."
+      "Easy to use and low maintenance—plug-and-play solution.",
+      "Portable, lightweight device."
     ]
   }
 
@@ -70,10 +70,10 @@ export default function EngineProductsPage() {
   function Product({ content }: { content: ProductProps }) {
     return (
       <div>
-        <h2 className="text-4xl font-bold text-gray-900 mt-12 mb-6">
+        <h2 className="text-5xl font-extrabold text-gray-900 mt-6 mb-12">
           {content.name}
         </h2>
-          <div className="flex flex-col md:flex-row items-start gap-12 mt-6 mb-12">
+          <div className="flex flex-col md:flex-row items-start gap-8 mt-4 mb-6">
             <div className="flex-1">
           <ul className="list-disc pl-6 space-y-2 text-lg text-gray-700 leading-relaxed">
                 {content.features.map((feature, index) => (
@@ -81,7 +81,7 @@ export default function EngineProductsPage() {
                 ))}
               </ul>
           </div>
-          <div className="flex-1 max-w-[480px]">
+          <div className="flex-1 max-w-[480px] mt-[-100px] mb-[-20px]">
             <Image
               src={content.img1}
               alt={`${content.name} image 1`}
@@ -90,14 +90,14 @@ export default function EngineProductsPage() {
           </div>
         </div>
 
-          <h3 className="text-3xl font-semibold text-gray-900 mt-10 mb-4">
+          <h3 className="text-4xl font-bold text-gray-900 mt-20 mb-4">
             {content.header}
           </h3>
-          <div className="text-lg text-gray-700 mt-4 mb-4">{content.content}</div>
+          <div className="text-lg text-gray-700 mt-2 mb-3">{content.content}</div>
           <div className="flex flex-row items-center gap-8 mt-4">
             <div className="flex-1">
 
-              <div className="space-y-4 mt-4 mb-12">
+              <div className="space-y-3 mt-2 mb-6">
                 {content.benefits.map((benefit, index) => (
                   <div key={index} className="flex items-start gap-4">
                     <Image src={thumb} alt="thumb icon" width={24} height={24} />
@@ -114,20 +114,20 @@ export default function EngineProductsPage() {
 
   return (
     <div>
-      <div className="relative w-full h-[300px] md:h-[400px] lg:h-[450px] overflow-hidden mb-10">
+      <div className="relative w-full h-[300px] md:h-[400px] lg:h-[450px] overflow-hidden mb-2">
         <Image src = {background} alt = "Engine Products Background" fill className = "object-cover object-center"/>
       </div>
       <div className="max-w-[1000px] mx-auto flex flex-col py-12">
 
-        <div className="pt-10 pb-6 border-b border-gray-300 last:border-none">
+        <div className="py-6">
           <Product content={SymphonyiQ} />
         </div>
 
-        <div className="pt-10 pb-6 border-b border-gray-300 last:border-none">
+        <div className="py-6">
           <Product content={SensorPure} />
         </div>
 
-        <div className="py-10">
+        <div className="py-6">
           <Product content={i365} />
         </div>
       </div>
