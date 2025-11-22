@@ -1,8 +1,12 @@
+"use client";
+
 import type { Metadata } from "next";
+import NavContext from "./components/NavContext"; // create a simple context
 import { Open_Sans, Raleway } from "next/font/google";
 import "./globals.css";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
+import { useState } from "react";
 
 const openSans = Open_Sans({
   variable: "--font-open-sans",
@@ -17,24 +21,24 @@ const raleway = Raleway({
 });
 
 
-export const metadata: Metadata = {
-  title: "InteliEQ - Indoor Environmental Quality",
-  description: "InteliEQ - Indoor Environmental Quality",
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const [hideNav, setHideNav] = useState(false);
+
   return (
     <html lang="en">
       <body
         className={`${openSans.variable} ${raleway.variable} font-sans antialiased min-h-screen flex flex-col`}
         style={{ fontFamily: "var(--font-raleway)" }}
       >
-        <NavBar />
-        <main className="flex-grow pt-16">{children}</main>
+        <NavBar hidden={hideNav} />
+        <NavContext.Provider value={{ hideNav, setHideNav }}>
+          <main className="flex-grow">{children}</main>
+        </NavContext.Provider>
+
         <Footer />
       </body>
     </html>

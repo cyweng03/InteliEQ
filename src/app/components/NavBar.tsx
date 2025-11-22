@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
 import logo from "../assets/InteliEQLogo.png";
 
-export default function NavBar() {
+export default function NavBar({ hidden }: { hidden?: boolean }) {
   const pathname = usePathname();
   const [openDropdown, setOpenDropdown] = useState<null | "engine" | "resources">(null);
   const [mobileOpen, setMobileOpen] = useState(false);

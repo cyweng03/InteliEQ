@@ -5,13 +5,13 @@ import Image from "next/image";
 
 export default function FullStackPage() {
   return (
-    <div>
-      <div className="w-screen relative left-1/2 right-1/2 -mx-[50vw] h-[500px] overflow-hidden">
-        <Image src = {background} alt = "Earth Globe Background" fill className = "object-cover object-[50%_60%]"/>
+    <div className="pt-16">
+      <div className="w-screen relative left-1/2 right-1/2 -mx-[50vw] h-[500px] overflow-hidden ">
+        <Image src={background} alt="Earth Globe Background" fill className="object-cover object-[50%_60%]" />
       </div>
       <div className="m-12 space-y-6">
         <h1 className="text-5xl font-bold mb-10">Our Full Stack Engine</h1>
-        <div className = "text-xl">InteliEQ : An environmental intelligence engine that creates healthy, efficient buildings automatically, which includes:</div>
+        <div className="text-xl">InteliEQ : An environmental intelligence engine that creates healthy, efficient buildings automatically, which includes:</div>
         <div className="flex flex-row justify-between items-stretch mt-12">
           <div className="flex-1 px-16 flex flex-col">
             <div className="text-[28px] font-bold leading-[1.1] mb-6">

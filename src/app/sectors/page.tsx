@@ -1,4 +1,3 @@
-import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 
 
@@ -150,7 +149,6 @@ export default function SectorsPage() {
   function SectorBlock({ content }: { content: SectorProps }) {
     return (
       <div className="max-w-3xl space-y-4">
-        {/* Icon + Title */}
         <div className="flex items-start space-x-4">
           <div
             className="w-12 h-12 text-brand-orange [&>svg]:w-full [&>svg]:h-full"
@@ -159,20 +157,16 @@ export default function SectorsPage() {
           <h1 className="text-3xl font-bold">{content.title}</h1>
         </div>
 
-        {/* First Paragraph */}
         <p className="text-brand-gray leading-relaxed">{content.description1}</p>
 
-        {/* Bullet Points */}
         <ul className="list-disc list-inside space-y-1 text-brand-gray">
           {content.bullets.map((item, idx) => (
             <li key={idx}>{item}</li>
           ))}
         </ul>
 
-        {/* Second Paragraph */}
         <p className="text-brand-gray leading-relaxed">{content.description2}</p>
 
-        {/* Links */}
         <div className="space-x-4 font-semibold">
           <Link href={content.learnMoreLink} className="text-brand-black underline hover:text-brand-orange">
             {content.learnMoreText}
@@ -195,7 +189,7 @@ export default function SectorsPage() {
 
 
   return (
-    <div>
+    <div className='pt-16'>
       <div className="w-full aspect-[3/1] border border-gray-400 flex items-center justify-center bg-gray-100">
         <span className="text-gray-400 text-3xl">▲</span>
       </div>

@@ -47,7 +47,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="container mx-auto py-12 min-h-screen">
+    <div className="m-12 space-y-6 pt-16">
       <h1 className="text-4xl font-bold mb-6">Contact Us</h1>
 
       {isSubmitted ? (

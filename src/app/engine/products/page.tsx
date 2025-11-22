@@ -69,7 +69,7 @@ export default function EngineProductsPage() {
 
   function Product({ content }: { content: ProductProps }) {
     return (
-      <div>
+      <div className='pt-16 max-w-3xl space-y-4'>
         <h2 className="text-5xl font-extrabold text-gray-900 mt-6 mb-12">
           {content.name}
         </h2>
