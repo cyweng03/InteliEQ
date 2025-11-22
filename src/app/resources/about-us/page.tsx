@@ -1,5 +1,6 @@
 import Profile from "../../components/Profile";
 import profile1 from "../../assets/profile_cr.png"
+import Image from "next/image";
 
 export default function ResourcesPage() {
 
@@ -28,27 +29,54 @@ export default function ResourcesPage() {
         <h2 className="text-black text-3xl font-bold mb-7 mt-10">Meet The Team</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 mt-10 gap-2">
           <Profile
-            image={<img src={profile1.src} alt="Profile" className="mx-auto rounded-full p-3 m-3" />}
+            image={
+              <Image
+                src={profile1}
+                alt="Profile"
+                width={200}
+                height={200}
+                className="mx-auto rounded-full p-3 m-3"
+              />
+            }
             name="Christianne Radziewicz"
             title="Co-Founder/CEO"
             email="cradziewicz@intelieq.life"
             linkedin="https://www.linkedin.com/in/christianne-r-radziewicz-601b6540/"
           />
+
           <Profile
-            image={<img src={profile1.src} alt="Profile" className="mx-auto rounded-full p-3 m-3" />}
+            image={
+              <Image
+                src={profile1}
+                alt="Profile"
+                width={200}
+                height={200}
+                className="mx-auto rounded-full p-3 m-3"
+              />
+            }
             name="Karl Selander"
             title="Co-Founder/CTO"
             email="kselander@intelieq.life"
             linkedin="https://www.linkedin.com/in/karl-selander-774571b/"
           />
+
           <Profile
-            image={<img src={profile1.src} alt="Profile" className="mx-auto rounded-full p-3 m-3" />}
+            image={
+              <Image
+                src={profile1}
+                alt="Profile"
+                width={200}
+                height={200}
+                className="mx-auto rounded-full p-3 m-3"
+              />
+            }
             name="Mike Marley"
             title="Co-Founder/Board Chairman"
             email=""
             linkedin="https://www.linkedin.com/in/mikemarley/"
           />
         </div>
+
       </div>
     </div>
   );

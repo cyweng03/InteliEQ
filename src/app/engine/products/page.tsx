@@ -69,10 +69,10 @@ export default function EngineProductsPage() {
 
   function Product({ content }: { content: ProductProps }) {
     return (
-      <div className='pt-16 max-w-3xl space-y-4'>
+      <div className='max-w-3xl space-y-4'>
         <h2 className="text-5xl font-extrabold text-gray-900 mt-6 mb-12">
           {content.name}
-        </h2>
+        </h2 >
         <div className="flex flex-col md:flex-row items-start gap-8 mt-4 mb-6">
           <div className="flex-1">
             <ul className="list-disc pl-6 space-y-2 text-lg text-gray-700 leading-relaxed">
@@ -107,13 +107,13 @@ export default function EngineProductsPage() {
             </div>
           </div>
         </div>
-      </div>
+      </div >
     )
   }
 
 
   return (
-    <div>
+    <div className='pt-16'>
       <div className="relative w-full h-[300px] md:h-[400px] lg:h-[450px] overflow-hidden mb-2">
         <Image src={background} alt="Engine Products Background" fill className="object-cover object-center" />
       </div>

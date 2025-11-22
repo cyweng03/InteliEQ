@@ -52,18 +52,7 @@ export default function Home() {
     if (heroRef.current) observer.observe(heroRef.current);
 
     return () => observer.disconnect();
-  }, []);
-
-
-
-  const enableScrollAndGoToAbout = (e?: React.MouseEvent) => {
-    if (e) e.preventDefault();
-    document.body.style.overflow = "";
-
-    if (aboutRef.current) {
-      aboutRef.current.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  }, [setHideNav]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(

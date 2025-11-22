@@ -1,6 +1,5 @@
 "use client";
 
-import type { Metadata } from "next";
 import NavContext from "./components/NavContext"; // create a simple context
 import { Open_Sans, Raleway } from "next/font/google";
 import "./globals.css";
@@ -34,7 +33,7 @@ export default function RootLayout({
         className={`${openSans.variable} ${raleway.variable} font-sans antialiased min-h-screen flex flex-col`}
         style={{ fontFamily: "var(--font-raleway)" }}
       >
-        <NavBar hidden={hideNav} />
+        <NavBar />
         <NavContext.Provider value={{ hideNav, setHideNav }}>
           <main className="flex-grow">{children}</main>
         </NavContext.Provider>
