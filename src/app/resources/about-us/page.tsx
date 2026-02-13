@@ -1,6 +1,9 @@
 import Profile from "../../components/Profile";
 import profile1 from "../../assets/profile_cr.png"
 import Image from "next/image";
+import people from "../../assets/icons/people.svg"
+import planet from "../../assets/icons/planet.svg"
+import passion from "../../assets/icons/passion.svg"
 
 export default function ResourcesPage() {
 
@@ -21,24 +24,27 @@ export default function ResourcesPage() {
           <br></br><br></br>
           Where many systems stop at dashboards or alerts, we go further, offering actionable insights and system-level automation that drive healthier outcomes,
           lower energy use, and smarter operations across entire facilities.</p>
-        <h3 className="text-black text-2xl font-bold mb-3 mt-5">About InteliEQ</h3>
+        <h3 className="text-black text-3xl font-bold mb-3 mt-5">About InteliEQ</h3>
         <div className="flex flex-row space-x-6">
           <div className="flex flex-1 flex-col space-y-2">
+            <div className="flex justify-center"> <Image src={people} alt="People illustration" /></div>
             <div className="text-center text-black text-2xl font-bold">People</div>
             <div>We design technology that protects what matters most, human health, comfort, and performance. Every environment we touch is made measurably safer, cleaner, and more supportive of the people who live, work, and heal within it.</div>
           </div>
           <div className="flex flex-1 flex-col space-y-2">
+            <div className="flex justify-center"> <Image src={planet} alt="planet illustration" /></div>
             <div className="text-center text-black text-2xl font-bold">Planet</div>
             <div>Sustainability isn’t a feature; it’s a responsibility. Our systems actively reduce energy waste, lower carbon impact, and extend the life of building infrastructure, proving that healthy indoor environments and a healthier planet go hand in hand.</div>
           </div>
           <div className="flex flex-1 flex-col space-y-2">
+            <div className="flex justify-center"> <Image src={passion} alt="passion illustration" /></div>
             <div className="text-center text-black text-2xl font-bold">Passion</div>
             <div>We challenge outdated thinking. We innovate with urgency. And we build with purpose. Our passion is transforming buildings into intelligent, self-optimizing ecosystems that elevate health, efficiency, and trust in the spaces we depend on every day.</div>
           </div>
         </div>
 
         <div>
-          <h3 className="text-black text-2xl font-bold mb-3 mt-5">Core Values</h3>
+          <h3 className="text-black text-3xl font-bold mb-3 mt-5">Core Values</h3>
           <div className="flex flex-row space-x-6">
             <div className="flex flex-1 flex-col space-y-2">
               <div className="text-black text-xl font-bold">Serve with Purpose</div>
@@ -125,6 +131,6 @@ export default function ResourcesPage() {
         </div>
 
       </div>
-    </div>
+    </div >
   );
 }
