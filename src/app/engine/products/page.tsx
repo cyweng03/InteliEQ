@@ -1,5 +1,5 @@
 import Image, { StaticImageData } from 'next/image';
-import background from '@/app/assets/plant-keyboard.png';
+import background from '@/app/assets/products.png';
 import thumb from '@/app/assets/thumbs-up-icon.png';
 import placeholder2 from '@/app/assets/placeholder2.png';
 

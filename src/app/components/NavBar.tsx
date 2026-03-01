@@ -8,29 +8,34 @@ import logo from "../assets/InteliEQLogo.png";
 
 export default function NavBar() {
   const pathname = usePathname();
-  const [openDropdown, setOpenDropdown] = useState<null | "engine" | "resources">(null);
+
+  const [openDropdown, setOpenDropdown] = useState<null | "engine">(null);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [mobileSubmenu, setMobileSubmenu] = useState<null | "engine" | "resources">(null);
+  const [mobileSubmenu, setMobileSubmenu] = useState<null | "engine">(null);
   const [visible, setVisible] = useState(false);
+
   const navRef = useRef<HTMLDivElement | null>(null);
   const lastScroll = useRef(0);
   const [animClass, setAnimClass] = useState("nav-hidden");
 
   useEffect(() => {
     if (!openDropdown) return;
+
     const handleClickOutside = (event: MouseEvent) => {
       if (navRef.current && !navRef.current.contains(event.target as Node)) {
         setOpenDropdown(null);
       }
     };
+
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [openDropdown]);
 
-  // visibility behavior for landing page scroll
+  // Visibility behavior for landing page scroll
   useEffect(() => {
     const rootPath = pathname === "/" || pathname === "";
     const THRESHOLD = 250;
+
     if (!rootPath) {
       setVisible(true);
       setAnimClass("nav-enter");
@@ -57,6 +62,7 @@ export default function NavBar() {
 
     const initialY = typeof window !== "undefined" ? window.scrollY : 0;
     lastScroll.current = initialY;
+
     const initialVisible = initialY > THRESHOLD;
     setVisible(initialVisible);
     setAnimClass(initialVisible ? "nav-enter" : "nav-hidden");
@@ -67,18 +73,12 @@ export default function NavBar() {
 
   const dropdowns = {
     engine: [
-      { name: "Full-Stack", path: "/engine/full-stack" },
+      { name: "System", path: "/engine/system" },
       { name: "Products", path: "/engine/products" },
-    ],
-    resources: [
-      { name: "About Us", path: "/resources/about-us" },
-      { name: "Blog", path: "/resources/blog" },
-      { name: "Case Studies", path: "/resources/case-studies" },
-      { name: "News & Press", path: "/resources/news-press" },
     ],
   } as const;
 
-  const toggleDropdown = (menu: typeof openDropdown) => {
+  const toggleDropdown = (menu: "engine") => {
     setOpenDropdown((prev) => (prev === menu ? null : menu));
   };
 
@@ -101,7 +101,7 @@ export default function NavBar() {
             />
           </Link>
 
-          {/* Desktop Nav */}
+          {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8 text-sm font-semibold">
             {/* Engine Dropdown */}
             <div className="relative inline-block">
@@ -116,7 +116,7 @@ export default function NavBar() {
               </button>
 
               {openDropdown === "engine" && (
-                <div className="absolute left-0 mt-2 w-56 origin-top-right rounded-md bg-brand-black shadow-lg">
+                <div className="absolute left-0 mt-2 w-56 rounded-md bg-brand-black shadow-lg">
                   <div className="py-1">
                     {dropdowns.engine.map((item) => (
                       <Link
@@ -143,35 +143,15 @@ export default function NavBar() {
               Sectors
             </Link>
 
-            {/* Resources Dropdown */}
-            <div className="relative inline-block">
-              <button
-                onClick={() => toggleDropdown("resources")}
-                className={`inline-flex items-center px-3 py-2 text-sm font-bold transition ${pathname.startsWith("/resources")
-                  ? "text-brand-orange border-b-2 border-brand-orange"
-                  : "text-brand-white hover:text-brand-orange"
-                  }`}
-              >
-                Resources
-              </button>
-
-              {openDropdown === "resources" && (
-                <div className="absolute left-0 mt-2 w-56 origin-top-right rounded-md bg-brand-black shadow-lg">
-                  <div className="py-1">
-                    {dropdowns.resources.map((item) => (
-                      <Link
-                        key={item.path}
-                        href={item.path}
-                        className="block px-4 py-2 text-sm text-brand-white hover:text-brand-orange"
-                        onClick={() => setOpenDropdown(null)}
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
+            <Link
+              href="/about-us"
+              className={`inline-flex items-center px-3 py-2 text-sm font-bold transition ${pathname.startsWith("/about-us")
+                ? "text-brand-orange border-b-2 border-brand-orange"
+                : "text-brand-white hover:text-brand-orange"
+                }`}
+            >
+              About Us
+            </Link>
 
             <Link
               href="/contact"
@@ -210,20 +190,10 @@ export default function NavBar() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Navigation */}
       {mobileOpen && (
         <div className="md:hidden bg-brand-black border-t border-black/10">
           <div className="px-4 pt-4 pb-6 space-y-2">
-            <Link
-              href="/solutions"
-              className={`block px-3 py-2 rounded text-brand-white ${pathname === "/solutions" ? "text-brand-orange" : ""
-                }`}
-              onClick={() => setMobileOpen(false)}
-            >
-              Solutions For
-            </Link>
-
-            {/* Engine Mobile Dropdown */}
             <div>
               <button
                 onClick={() =>
@@ -232,10 +202,9 @@ export default function NavBar() {
                 className="w-full text-left px-3 py-2 text-brand-white flex items-center justify-between"
               >
                 The Engine
-                <span className="ml-2">
-                  {mobileSubmenu === "engine" ? "−" : "+"}
-                </span>
+                <span>{mobileSubmenu === "engine" ? "−" : "+"}</span>
               </button>
+
               {mobileSubmenu === "engine" && (
                 <div className="pl-6">
                   {dropdowns.engine.map((item) => (
@@ -252,7 +221,6 @@ export default function NavBar() {
               )}
             </div>
 
-            {/* Sectors — now a normal mobile link */}
             <Link
               href="/sectors"
               className={`block px-3 py-2 rounded text-brand-white ${pathname.startsWith("/sectors") ? "text-brand-orange" : ""
@@ -262,36 +230,14 @@ export default function NavBar() {
               Sectors
             </Link>
 
-            {/* Resources Mobile Dropdown */}
-            <div>
-              <button
-                onClick={() =>
-                  setMobileSubmenu((s) =>
-                    s === "resources" ? null : "resources"
-                  )
-                }
-                className="w-full text-left px-3 py-2 text-brand-white flex items-center justify-between"
-              >
-                Resources
-                <span className="ml-2">
-                  {mobileSubmenu === "resources" ? "−" : "+"}
-                </span>
-              </button>
-              {mobileSubmenu === "resources" && (
-                <div className="pl-6">
-                  {dropdowns.resources.map((item) => (
-                    <Link
-                      key={item.path}
-                      href={item.path}
-                      className="block px-3 py-2 text-sm text-brand-white hover:text-brand-orange"
-                      onClick={() => setMobileOpen(false)}
-                    >
-                      {item.name}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
+            <Link
+              href="/about-us"
+              className={`block px-3 py-2 rounded text-brand-white ${pathname.startsWith("/about-us") ? "text-brand-orange" : ""
+                }`}
+              onClick={() => setMobileOpen(false)}
+            >
+              About Us
+            </Link>
 
             <Link
               href="/contact"

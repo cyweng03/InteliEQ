@@ -16,16 +16,16 @@ export default function FullStackPage() {
           At InteliEQ, we believe the spaces we inhabit should do more than operate.....they should <em>think</em>, <em>breathe</em>, and <em>respond</em>.
         </p>
         <p className="text-lg leading-relaxed">
-        Our Symphony-iQ system fuses intelligent sensors, active purification, and
-        AI-driven analytics into a unified environmental intelligence engine. The
-        result is a building that learns, adapts, and acts—improving air quality,
-        reducing energy waste, and creating environments where people and
-        performance thrive.
-      </p>
-      <div className="mt-14">
-      <h2 className="text-4xl font-bold mt-30">How It Works</h2>
-      <div className="text-xl mt-3">Continuous Awareness. Continuous Action.</div>
-      </div>
+          Our Symphony-iQ system fuses intelligent sensors, active purification, and
+          AI-driven analytics into a unified environmental intelligence engine. The
+          result is a building that learns, adapts, and acts—improving air quality,
+          reducing energy waste, and creating environments where people and
+          performance thrive.
+        </p>
+        <div className="mt-14">
+          <h2 className="text-4xl font-bold mt-30">How It Works</h2>
+          <div className="text-xl mt-3">Continuous Awareness. Continuous Action.</div>
+        </div>
         <div className="flex flex-row justify-between items-stretch mt-12">
           <div className="flex-1 px-16 flex flex-col">
             <div className="text-[28px] font-bold leading-[1.1] mb-6">
@@ -51,7 +51,7 @@ export default function FullStackPage() {
           <div className="w-px bg-[#1A1A1A] self-stretch"></div>
           <div className="flex-1 px-16 flex flex-col">
             <div className="text-[28px] font-bold leading-[1.1] mb-6">
-               i365+ Intelligence Engine
+              i365+ Intelligence Engine
             </div>
             <ul role="list" className="list-disc ml-5 text-lg leading-relaxed">
               <li>Connects sensor, purification, and building automation data</li>
@@ -61,9 +61,9 @@ export default function FullStackPage() {
           </div>
         </div>
         <h2 className="text-4xl font-bold mt-30">The ROI of Environmental Intelligence</h2>
-      <div className="text-xl mt-3">Health. Performance. Sustainability. Delivered.</div>
-      <p className="text-lg leading-relaxed">
-        Poor indoor environments silently cost billions in lost productivity, absenteeism, and energy waste. InteliEQ changes that equation.
+        <div className="text-xl mt-3">Health. Performance. Sustainability. Delivered.</div>
+        <p className="text-lg leading-relaxed">
+          Poor indoor environments silently cost billions in lost productivity, absenteeism, and energy waste. InteliEQ changes that equation.
         </p>
         <div className="flex flex-row justify-center items-start gap-1 w-full mt-12 mb-20 text-brand-orange">
           <div className="flex flex-col justify-center items-center max-w-[300px] w-full mx-auto text-center">
@@ -98,18 +98,18 @@ export default function FullStackPage() {
           This is the power of intelligent air: every breath, every watt, every moment optimized.
         </p>
         <div className="mt-24">
-    <h2 className="text-4xl font-bold">
-      A Smarter Path to Net Zero
-    </h2>
+          <h2 className="text-4xl font-bold">
+            A Smarter Path to Net Zero
+          </h2>
 
-    <div className="text-2xl mt-4">
-      Cleaner Air. Smaller Footprint. Bigger Impact.
-    </div>
+          <div className="text-2xl mt-4">
+            Cleaner Air. Smaller Footprint. Bigger Impact.
+          </div>
 
-    <p className="text-lg leading-relaxed mt-6 mb-8">
-      With the ability to reduce up to 165 million metric tons of CO₂ annually across large-scale deployment, InteliEQ is accelerating the built environment’s path to net zero. By linking health outcomes to energy intelligence, we’re helping organizations transform environmental performance into a competitive advantage, one intelligent building at a time.
-    </p>
-  </div>
+          <p className="text-lg leading-relaxed mt-6 mb-8">
+            With the ability to reduce up to 165 million metric tons of CO₂ annually across large-scale deployment, InteliEQ is accelerating the built environment’s path to net zero. By linking health outcomes to energy intelligence, we’re helping organizations transform environmental performance into a competitive advantage, one intelligent building at a time.
+          </p>
+        </div>
       </div>
     </div>
   );
