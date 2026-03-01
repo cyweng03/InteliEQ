@@ -1,9 +1,9 @@
-import Profile from "../../components/Profile";
-import profile1 from "../../assets/profile_cr.png"
+import Profile from "../components/Profile";
+import profile1 from "../assets/profile_cr.png"
 import Image from "next/image";
-import people from "../../assets/icons/people.svg"
-import planet from "../../assets/icons/planet.svg"
-import passion from "../../assets/icons/passion.svg"
+import people from "../assets/icons/people.svg"
+import planet from "../assets/icons/planet.svg"
+import passion from "../assets/icons/passion.svg"
 
 export default function ResourcesPage() {
 
