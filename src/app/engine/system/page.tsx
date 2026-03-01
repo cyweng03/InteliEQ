@@ -9,7 +9,7 @@ export default function FullStackPage() {
       <div className="w-screen relative left-1/2 right-1/2 -mx-[50vw] h-[500px] overflow-hidden ">
         <Image src={background} alt="Plant Keyboard Background" fill className="object-cover object-[50%_60%]" />
       </div>
-      <div className="w-screen relative left-1/2 right-1/2 -mx-[50vw] px-12 space-y-6">
+      <div className="w-screen relative left-1/2 right-1/2 -mx-[50vw] px-20 space-y-6">
         <h1 className="text-5xl font-bold mt-24 mb-10">The Environmental Intelligence Engine</h1>
         <div className="text-2xl">Turning Buildings Into Living, Intelligent Ecosystems</div>
         <p className="text-lg leading-relaxed">

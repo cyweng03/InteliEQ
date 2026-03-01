@@ -33,12 +33,11 @@ export default function RootLayout({
         className={`${openSans.variable} ${raleway.variable} font-sans antialiased min-h-screen flex flex-col`}
         style={{ fontFamily: "var(--font-raleway)" }}
       >
-        <NavBar />
         <NavContext.Provider value={{ hideNav, setHideNav }}>
+          <NavBar />
           <main className="flex-grow">{children}</main>
+          <Footer />
         </NavContext.Provider>
-
-        <Footer />
       </body>
     </html>
   );

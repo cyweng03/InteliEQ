@@ -3,8 +3,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useContext } from "react";
 import logo from "../assets/InteliEQLogo.png";
+import NavContext from "./NavContext";
 
 export default function NavBar() {
   const pathname = usePathname();
@@ -12,11 +13,13 @@ export default function NavBar() {
   const [openDropdown, setOpenDropdown] = useState<null | "engine">(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileSubmenu, setMobileSubmenu] = useState<null | "engine">(null);
-  const [visible, setVisible] = useState(false);
 
   const navRef = useRef<HTMLDivElement | null>(null);
-  const lastScroll = useRef(0);
-  const [animClass, setAnimClass] = useState("nav-hidden");
+  const { hideNav } = useContext(NavContext);
+
+  const isHome = pathname === "/" || pathname === "";
+  const showNav = !isHome || !hideNav;
+  const animClass = showNav ? "nav-enter" : "nav-hidden";
 
   useEffect(() => {
     if (!openDropdown) return;
@@ -30,46 +33,6 @@ export default function NavBar() {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [openDropdown]);
-
-  // Visibility behavior for landing page scroll
-  useEffect(() => {
-    const rootPath = pathname === "/" || pathname === "";
-    const THRESHOLD = 250;
-
-    if (!rootPath) {
-      setVisible(true);
-      setAnimClass("nav-enter");
-      return;
-    }
-
-    const onScroll = () => {
-      const y = window.scrollY;
-      const direction = y > lastScroll.current ? "down" : "up";
-      lastScroll.current = y;
-
-      const nextVisible = y > THRESHOLD;
-      setVisible((prev) => {
-        if (prev === nextVisible) return prev;
-
-        if (nextVisible) {
-          setAnimClass(direction === "up" ? "nav-enter" : "nav-fade-enter");
-        } else {
-          setAnimClass("nav-exit");
-        }
-        return nextVisible;
-      });
-    };
-
-    const initialY = typeof window !== "undefined" ? window.scrollY : 0;
-    lastScroll.current = initialY;
-
-    const initialVisible = initialY > THRESHOLD;
-    setVisible(initialVisible);
-    setAnimClass(initialVisible ? "nav-enter" : "nav-hidden");
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [pathname]);
 
   const dropdowns = {
     engine: [
@@ -86,7 +49,7 @@ export default function NavBar() {
     <nav
       ref={navRef}
       className={`fixed top-0 left-0 w-full z-50 bg-brand-black shadow-sm ${animClass}`}
-      aria-hidden={!visible}
+      aria-hidden={!showNav}
     >
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
