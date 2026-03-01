@@ -10,7 +10,7 @@ function Icon({ icon, title, content }: { icon: React.ReactNode, title?: string,
         {icon}
       </div>
       {hasTitle && <h1 className='font-bold text-3xl text-center text-black mt-4'>{title}</h1>}
-      {hasContent && <p className='text-center'>{content}</p>}
+      {hasContent && <p className='text-center mt-4'>{content}</p>}
     </div>
   )
 }

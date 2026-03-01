@@ -1,6 +1,6 @@
 import Solutions from "@/app/components/Solutions";
 import placeholder from "@/app/assets/placeholder.png"
-import background from "@/app/assets/earth-globe.png";
+import background from "@/app/assets/plant-keyboard.png";
 import Image from "next/image";
 
 export default function FullStackPage() {
@@ -64,7 +64,7 @@ export default function FullStackPage() {
           </div>
           <div className="w-[1.5px] bg-[#1A1A1A] self-stretch"></div>
           <div className="flex flex-col justify-center items-center max-w-[300px] w-full mx-auto text-center">
-            <svg xmlns="http://www.w3.org/2000/svg" width="140" height="140" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M14.8 9a2 2 0 0 0 -1.8 -1h-2a2 2 0 1 0 0 4h2a2 2 0 1 1 0 4h-2a2 2 0 0 1 -1.8 -1" /><path d="M12 7v10" /></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="140" height="140" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M14.8 9a2 2 0 0 0 -1.8 -1h-2a2 2 0 1 0 0 4h2a2 2 0 1 1 0 4h-2a2 2 0 0 1 -1.8 -1" /><path d="M12 7v10" /></svg>
             <div className="font-bold text-xl text-brand-black">$38 Billion</div>
             <div className="text-brand-black text-lg font-semibold">Potential energy savings</div>
           </div>

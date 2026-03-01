@@ -11,7 +11,6 @@ import NavContext from "./components/NavContext";
 
 import filtration from "./assets/icons/filtration.png";
 import ai from "./assets/icons/ai.png";
-import ruling from "./assets/icons/ruling.png";
 import healthcare from "./assets/icons/healthcare.png";
 import education from "./assets/icons/education.png";
 import estate from "./assets/icons/estate.png";
@@ -19,6 +18,9 @@ import government from "./assets/icons/government.png";
 import senior from "./assets/icons/senior.png";
 import hospitality from "./assets/icons/hospitality.png";
 import arrow from "./assets/icons/downward_arrow.png";
+import data from "./assets/icons/data_icon.png";
+import efficiency from "./assets/icons/efficiency_icon.png";
+
 
 export default function Home() {
   const [differenceVisible, setDifferenceVisible] = useState(false);
@@ -26,6 +28,8 @@ export default function Home() {
   const [offerVisible, setOfferVisible] = useState(false);
   const [serveVisible, setServeVisible] = useState(false);
   const [contactVisible, setContactVisible] = useState(false);
+  const [mattersVisible, setMattersVisible] = useState(false);
+
 
   const differenceRef = useRef<HTMLDivElement | null>(null);
   const aboutRef = useRef<HTMLDivElement | null>(null);
@@ -33,12 +37,17 @@ export default function Home() {
   const serveRef = useRef<HTMLDivElement | null>(null);
   const contactRef = useRef<HTMLDivElement | null>(null);
   const heroRef = useRef<HTMLElement | null>(null);
+  const mattersRef = useRef<HTMLDivElement | null>(null);
 
   const { setHideNav } = useContext(NavContext);
 
 
   const scrollToAbout = () => {
-    aboutRef.current?.scrollIntoView({ behavior: "smooth" });
+    const element = aboutRef.current;
+    if (element) {
+      const offsetTop = element.offsetTop - 70;
+      window.scrollTo({ top: offsetTop, behavior: "smooth" });
+    }
   };
 
   useEffect(() => {
@@ -63,6 +72,7 @@ export default function Home() {
           if (entry.target === offerRef.current) setOfferVisible(entry.isIntersecting);
           if (entry.target === serveRef.current) setServeVisible(entry.isIntersecting);
           if (entry.target === contactRef.current) setContactVisible(entry.isIntersecting);
+          if (entry.target === mattersRef.current) setMattersVisible(entry.isIntersecting);
         });
       },
       { threshold: 0.2 }
@@ -73,6 +83,8 @@ export default function Home() {
     if (offerRef.current) observer.observe(offerRef.current);
     if (serveRef.current) observer.observe(serveRef.current);
     if (contactRef.current) observer.observe(contactRef.current);
+    if (mattersRef.current) observer.observe(mattersRef.current);
+
 
     return () => observer.disconnect();
   }, []);
@@ -97,7 +109,7 @@ export default function Home() {
                   breathe.
                 </span>
                 <span className="cycle-word cycle-3 text-4xl md:text-6xl shadow-xl text-brand-orange font-bold">
-                  heal.
+                  optimize.
                 </span>
               </span>
             </span>
@@ -129,99 +141,18 @@ export default function Home() {
       {/* MAIN CONTENT */}
       <div className="container mx-auto px-16 py-8 bg-white" ref={aboutRef}>
 
-        {/* ABOUT */}
-        <section id="about">
-          <div
-
-            className={`transition-opacity duration-1000 ease-in-out ${aboutVisible ? "opacity-100" : "opacity-0"
-              } flex flex-col mt-12 mb-6`}
-          >
-            <div id="stats" className="flex flex-col mb-14 items-center justify-center">
-              <Statistic header="Every 5 minutes" info="Someone dies of a health-care associated infection" />
-              <Statistic header="$190 Billion" info="Wasted annually on inefficient building energy use" />
-              <Statistic header="$40 Billion" info="Lost productivity, performance & absenteeism annually" />
-              <Statistic header="90 MMT*" info="CO2 emission from commercial buildings *million metric tons" />
-            </div>
-          </div>
-        </section>
-
-        {/* DIFFERENCE */}
-        <section id="different">
-          <div
-            ref={differenceRef}
-            className={`transition-opacity duration-1000 ease-in-out ${differenceVisible ? "opacity-100" : "opacity-0"} flex flex-col mt-20 mb-6`}
-          >
-            <h1 className="text-black text-5xl font-bold mb-7">How are we different?</h1>
-            <p className="text-xl">
-              We offer an industry-leading solution that outperforms competitors by combining active air and surface
-              purification in an unobtrusive, easy-to-install form factor with integrated sensors and our i365+ intelligent platform.
-              This system seamlessly integrates with existing building automation systems,{" "}
-              <span className="font-bold">reducing energy consumption by over 30%.</span>
+        <section id='section2' className="mt-8">
+          <div>
+            <p className="text-xl font-bold">Founded by innovators in environmental health, sensing technology, and intelligent building systems, InteliEQ was built on a simple belief:
+              <br></br><br></br>
+            <span className="text-brand-orange text-2xl">Indoor spaces should empower human well-being, not endanger it. </span><br></br><br></br>
+                We fuse research-grade sensing, proactive purification, and real-time data intelligence into a single platform, turning invisible risks into measurable improvements and giving building operators a new level of clarity and control.<br></br><br></br>
+                Our purpose is to create environments where every breath, every room, and every moment is supported by intelligent systems working quietly in the background.
             </p>
-
-            <div className="flex items-center justify-center mt-7">
-              <div className="grid grid-cols-1 md:grid-rows-2 md:grid-cols-2 w-full md:w-2/3 gap-5">
-
-                <Icon
-                  icon={
-                    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#0070c0" strokeWidth="2"
-                      strokeLinecap="round" strokeLinejoin="round">
-                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                      <path d="M3 17l9 5l9 -5v-3l-9 5l-9 -5v-3l9 5l9 -5v-3l-9 5l-9 -5l9 -5l5.418 3.01" />
-                    </svg>
-                  }
-                  title="Unified platform"
-                />
-
-                <Icon
-                  icon={
-                    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#0070c0" strokeWidth="2"
-                      strokeLinecap="round" strokeLinejoin="round">
-                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                      <path d="M19.875 6.27c.7 .398 1.13 1.143 1.125 1.948v7.284c0 .809 -.443 1.555 -1.158 1.948l-6.75 4.27a2.269 2.269 0 0 1 -2.184 0l-6.75 -4.27a2.225 2.225 0 0 1 -1.158 -1.948v-7.285c0 -.809 .443 -1.554 1.158 -1.947l6.75 -3.98a2.33 2.33 0 0 1 2.25 0l6.75 3.98h-.033z" />
-                      <path d="M12 8v4" /><path d="M12 16h.01" />
-                    </svg>
-                  }
-                  title="Predictive & preventative"
-                />
-
-                <Icon
-                  icon={
-                    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#0070c0" strokeWidth="2"
-                      strokeLinecap="round" strokeLinejoin="round">
-                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                      <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
-                      <path d="M3.6 9h16.8" />
-                      <path d="M3.6 15h16.8" />
-                      <path d="M11.5 3a17 17 0 0 0 0 18" />
-                      <path d="M12.5 3a17 17 0 0 1 0 18" />
-                    </svg>
-                  }
-                  title="Human-centric & planet-conscious"
-                />
-
-                <Icon
-                  icon={
-                    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#0070c0" strokeWidth="2"
-                      strokeLinecap="round" strokeLinejoin="round">
-                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                      <path d="M21 8.007v7.986a2 2 0 0 1 -1.006 1.735l-7 4.007a2 2 0 0 1 -1.988 0l-7 -4.007a2 2 0 0 1 -1.006 -1.735v-7.986a2 2 0 0 1 1.006 -1.735l7 -4.007a2 2 0 0 1 1.988 0l7 4.007a2 2 0 0 1 1.006 1.735" />
-                      <path d="M3.29 6.97l4.21 2.03" />
-                      <path d="M20.71 6.97l-4.21 2.03" />
-                      <path d="M20.7 17h-17.4" />
-                      <path d="M11.76 2.03l-4.26 6.97l-4.3 7.84" />
-                      <path d="M12.24 2.03q 2.797 4.44 4.26 6.97t 4.3 7.84" />
-                      <path d="M12 17l-4.5 -8h9z" />
-                      <path d="M12 17v5" />
-                    </svg>
-                  }
-                  title="Infrastructure-agnostic"
-                />
-              </div>
-            </div>
           </div>
         </section>
 
+        
         {/* OFFER */}
         <section id="offer">
           <div
@@ -231,19 +162,19 @@ export default function Home() {
             <h1 className="text-black text-5xl font-bold mb-7">What We Offer</h1>
             <p className="text-xl">InteliEQ provides intelligent technologies that improve indoor environments:</p>
 
-            <div className="grid grid-col-1 md:grid-cols-3 gap-12 mt-5 mx-10 text-center">
+            <div className="grid grid-col-1 md:grid-cols-4 gap-12 mt-5 mx-10 text-center">
               <Icon
                 icon={
                   <Image
                     src={filtration.src}
                     alt="Filtration"
-                    width={64}
-                    height={64}
+                    width={85}
+                    height={85}
                     className="mx-auto"
                   />
                 }
-                title="Active Air Purification"
-                content="Continuously removes pathogens and contaminants from indoor air."
+                title="Active Purification"
+                content="Proactive, scientifically validated purification that neutralizes threats before they spread."
               />
 
               <Icon
@@ -251,31 +182,103 @@ export default function Home() {
                   <Image
                     src={ai.src}
                     alt="AI"
-                    width={64}
-                    height={64}
+                    width={80}
+                    height={80}
                     className="mx-auto"
                   />
                 }
-                title="AI Monitoring & Optimization"
-                content="Analyzes building conditions and improves performance in real time."
+                title="Real-Time Monitoring"
+                content="High-fidelity sensors that measure the full picture of indoor environmental quality—airborne and surface-level—24/7."
               />
 
               <Icon
                 icon={
                   <Image
-                    src={ruling.src}
-                    alt="Ruling"
-                    width={64}
-                    height={64}
+                    src={data.src}
+                    alt="Data"
+                    width={80}
+                    height={80}
                     className="mx-auto"
                   />
                 }
-                title="Automated Compliance"
-                content="Automatically generates reports to meet health and safety standards."
+                title="Data Intelligence"
+                content="Actionable insights, automated responses, and verified outcomes that turn invisible risks into measurable improvements that build trust with occupants, patients, students and staff."
+              />
+              <Icon
+                icon={
+                  <Image
+                    src={efficiency.src}
+                    alt="Efficiency"
+                    width={80}
+                    height={80}
+                    className="mx-auto"
+                  />
+                }
+                title="Efficiency Gains"
+                content="Better IAQ shouldn’t require more energy. Our systems optimize ventilation and purification intelligently, reducing waste and improving building performance."
               />
             </div>
+          </div>
 
-            <Button image="" content="Learn More &#8599;" />
+          <Link href="/system" className=" mt-4">
+              <Button image="" content="Learn More &#8599;" />
+          </Link>
+        </section>
+        <section id="matters">
+          <div ref={mattersRef} className={`transition-opacity duration-1000 ease-in-out ${mattersVisible ? "opacity-100" : "opacity-0" } flex flex-col mt-20`}>
+            <div className="flex flex-col md:flex-row md:items-center md:gap-8">
+              <div className="md:flex-1">
+                <h1 className="text-black text-5xl font-bold mb-7">Why It Matters</h1>
+                <h2 className="text-brand-orange text-2xl font-bold mb-4">Health, Productivity, Energy, Trust</h2>
+
+                <p className="text-lg mb-4">Great indoor environments don’t happen by accident. They’re engineered continuously, intelligently, and transparently.</p>
+
+                <ul className="list-disc pl-6 space-y-2 text-lg mb-4">
+                  <li>Cleaner air = better health and fewer disruptions</li>
+                  <li>Verified spaces = peace of mind for building owners and occupants</li>
+                  <li>Smart optimization = lower energy costs</li>
+                  <li>Unified intelligence = simpler operations</li>
+                </ul>
+
+                <p className="text-lg">InteliEQ brings clarity to what’s been invisible for too long.</p>
+              </div>
+
+              <div className="md:w-1/3 mt-6 md:mt-0 flex-shrink-0">
+                <div className="w-full h-48 md:h-56 bg-gray-100 rounded-lg border border-gray-200 flex items-center justify-center">
+                  <span className="text-gray-500">Image placeholder</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="difference">
+          <div ref={differenceRef} className={`transition-opacity duration-1000 ease-in-out ${differenceVisible ? "opacity-100" : "opacity-0" } flex flex-col mt-20 mb-6`}>
+            <h1 className="text-black text-5xl font-bold mb-7">The InteliEQ Difference</h1>
+
+            <p className="text-xl mb-4">Most buildings rely on outdated, reactive systems, ventilation that runs blindly, purification that’s inconsistent and monitors that only tell you what already went wrong.</p>
+
+            <div className="grid md:grid-cols-2 gap-6 text-lg w-ful m-5">
+              <div>
+                <h3 className="font-bold">Proactive Instead of Reactive</h3>
+                <p>We prevent problems before they affect people.</p>
+              </div>
+
+              <div>
+                <h3 className="font-bold">Unified Instead of Fragmented</h3>
+                <p>One intelligent system replaces a patchwork of disconnected devices.</p>
+              </div>
+
+              <div>
+                <h3 className="font-bold">Verified Instead of Assumed</h3>
+                <p>Real-time data proves performance — no guesswork, no uncertainty.</p>
+              </div>
+
+              <div>
+                <h3 className="font-bold">Healthy + Efficient Instead of Choosing One</h3>
+                <p>Our environmental intelligence optimizes IAQ and energy at the same time.</p>
+              </div>
+            </div>
+            <p className="mt-2 text-lg font-medium">Environmental intelligence isn’t a feature. It’s the foundation for the future of indoor environments.</p>
           </div>
         </section>
 
@@ -291,7 +294,7 @@ export default function Home() {
             {/* DESKTOP GRID */}
             <div className="hidden md:grid md:grid-cols-6 md:gap-8 md:justify-center md:items-center mt-7">
 
-              <Link href="/sectors/education" className="inline-block">
+              <Link href="/sectors" className="inline-block">
                 <Icon
                   icon={
                     <Image src={education.src} alt="Education" width={64} height={64} className="mx-auto" />
@@ -300,7 +303,7 @@ export default function Home() {
                 />
               </Link>
 
-              <Link href="/sectors/healthcare" className="inline-block">
+              <Link href="/sectors" className="inline-block">
                 <Icon
                   icon={
                     <Image src={healthcare.src} alt="Healthcare" width={64} height={64} className="mx-auto" />
@@ -309,7 +312,7 @@ export default function Home() {
                 />
               </Link>
 
-              <Link href="/sectors/hospitality" className="inline-block">
+              <Link href="/sectors" className="inline-block">
                 <Icon
                   icon={
                     <Image src={hospitality.src} alt="Hospitality" width={64} height={64} className="mx-auto" />
@@ -318,7 +321,7 @@ export default function Home() {
                 />
               </Link>
 
-              <Link href="/sectors/estate" className="inline-block">
+              <Link href="/sectors" className="inline-block">
                 <Icon
                   icon={
                     <Image src={estate.src} alt="Real Estate" width={64} height={64} className="mx-auto" />
@@ -327,7 +330,7 @@ export default function Home() {
                 />
               </Link>
 
-              <Link href="/sectors/government" className="inline-block">
+              <Link href="/sectors" className="inline-block">
                 <Icon
                   icon={
                     <Image src={government.src} alt="Government" width={64} height={64} className="mx-auto" />
@@ -336,7 +339,7 @@ export default function Home() {
                 />
               </Link>
 
-              <Link href="/sectors/senior-living" className="inline-block">
+              <Link href="/sectors" className="inline-block">
                 <Icon
                   icon={
                     <Image src={senior.src} alt="Senior Living" width={64} height={64} className="mx-auto" />
@@ -398,9 +401,13 @@ export default function Home() {
               } flex flex-col mt-20`}
           >
             <h1 className="text-black text-4xl font-bold">
-              Ready to create healthier, smarter indoor environments?
+              Ready to See What an Intelligent Indoor Environment Can Do?
             </h1>
+            <h2 className='text-xl font-bold mt-5'>Let’s transform your spaces into ecosystems that support human health, operational clarity and sustainable performance.</h2>
 
+            {/* <Link href="/system" className="inline-block mt-4">
+              <Button image="" content="See the Engine &#8599;" />
+            </Link> */}
             <Link href="/contact" className="inline-block mt-4">
               <Button image="" content="Contact Us &#8599;" />
             </Link>

@@ -67,7 +67,7 @@ export default function NavBar() {
 
   const dropdowns = {
     engine: [
-      { name: "Full-Stack", path: "/engine/full-stack" },
+      { name: "System", path: "/engine/system" },
       { name: "Products", path: "/engine/products" },
     ],
     resources: [
@@ -184,7 +184,6 @@ export default function NavBar() {
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
@@ -210,7 +209,6 @@ export default function NavBar() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {mobileOpen && (
         <div className="md:hidden bg-brand-black border-t border-black/10">
           <div className="px-4 pt-4 pb-6 space-y-2">
@@ -223,7 +221,6 @@ export default function NavBar() {
               Solutions For
             </Link>
 
-            {/* Engine Mobile Dropdown */}
             <div>
               <button
                 onClick={() =>
@@ -252,7 +249,6 @@ export default function NavBar() {
               )}
             </div>
 
-            {/* Sectors — now a normal mobile link */}
             <Link
               href="/sectors"
               className={`block px-3 py-2 rounded text-brand-white ${pathname.startsWith("/sectors") ? "text-brand-orange" : ""
@@ -262,7 +258,6 @@ export default function NavBar() {
               Sectors
             </Link>
 
-            {/* Resources Mobile Dropdown */}
             <div>
               <button
                 onClick={() =>
