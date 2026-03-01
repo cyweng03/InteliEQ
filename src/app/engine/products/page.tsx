@@ -7,19 +7,57 @@ import placeholder2 from '@/app/assets/placeholder2.png';
 export default function EngineProductsPage() {
   type ProductProps = {
     name: string;
-    features: string[];
-    img1: StaticImageData;
-    header: string;
-    content: string;
-    benefits: string[];
-  }
+    description?: string;
+    topBullets?: string[];
+    image: StaticImageData;
+
+    whatItIsDescription: string;
+    whatItIsBullets?: string[];
+
+    howItWorksIntro?: string;
+    howItWorksSteps?: {
+      title: string;
+      text: string;
+    }[];
+
+    whyItMattersDescription: string;
+    whyItMattersBullets?: string[];
+
+    extraRightSection?: {
+      title: string;
+      bullets: string[];
+    };
+
+    designedFor?: {
+      title: string;
+      items: { label: string; icon?: StaticImageData }[];
+    };
+};
 
   const SymphonyiQ: ProductProps = {
     name: "SymphonyiQ",
-    features: ["Patented AP cell for active purification",
-      "IAQ sensor package for continuous monitoring",
-      "LoRaWAN connectivity for long-range data",
-      "Air & surface purification to neutralize contaminants",
+    description: "An integrated system that senses, purifies, and optimizes indoor environments in real time.",
+    image: placeholder2,
+
+    whatItIsDescription: "SymphonyiQ is a next-generation air and surface purification system that uses patented AP cell technology to neutralize airborne and surface contaminants.",
+    whatItIsBullets: [
+      "Real-time environmental sensing",
+      "Active air and surface intervention",
+      "Adaptive HVAC optimization"
+    ],
+    
+    howItWorksIntro: "SymphonyiQ works by using a patented AP cell that actively purifies the air and surfaces in real-time, neutralizing contaminants without the use of ozone.",
+    howItWorksSteps: 
+    whyItMattersDescription: "SymphonyiQ is important because it provides continuous, effective air and surface purification in any indoor environment, improving health, comfort, and safety."
+  }
+
+  const i365: ProductProps = {
+    name: "i365+",
+    description: "i365+ is an intelligent building management system that provides real-time IAQ monitoring, automated alerts, and actionable insights to improve building performance.",
+    whatItIsdescription: "i365+ is an intelligent building management system that provides real-time IAQ monitoring, automated alerts, and actionable insights to improve building performance.",
+    image: placeholder2,
+    howItWorksDescription: "i365+ works by continuously monitoring indoor air quality through integrated sensors and providing real-time data visualization through an intuitive dashboard.",
+    whyItMattersDescription: "i365+ matters because it helps building managers maintain optimal indoor air quality standards while reducing energy consumption and improving occupant comfort."
       "Targets viruses, bacteria, and pollutants",],
     img1: placeholder2,
     header: "Benefits",
@@ -29,22 +67,6 @@ export default function EngineProductsPage() {
       "Reduces VOC gases, smoke and odors without the use of ozone.",
       "Easy to use and low maintenance—plug-and-play solution.",
       "Portable, lightweight device."
-    ]
-  }
-
-  const SensorPure: ProductProps = {
-    name: "SensorPure",
-    features: ["Active purification cell for HVAC ductwork",
-      "Integrates directly with existing systems",
-      "Reduces airborne and surface contaminants",
-      "Neutralizes viruses, bacteria, and pollutants",
-      "Improves overall indoor air quality",],
-    img1: placeholder2,
-    header: "Benefits",
-    content: "The SensorPURE induct provides 24/7 surface decontamination and air purification without the use of ozone. It is a proactive and effective solution for any environment.",
-    benefits: [
-      "AP cell technology delivers 24/7 surface decontamination and air purification.",
-      "Proven to reduce over 99.9% of many common airborne and surface contaminants including viruses, bacteria, mold, fungi, VOCs, smoke allergens, and odors.",
     ]
   }
 
@@ -121,10 +143,6 @@ export default function EngineProductsPage() {
 
         <div className="py-6">
           <Product content={SymphonyiQ} />
-        </div>
-
-        <div className="py-6">
-          <Product content={SensorPure} />
         </div>
 
         <div className="py-6">
