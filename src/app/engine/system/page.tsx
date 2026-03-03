@@ -58,7 +58,7 @@ export default function FullStackPage() {
             </ul>
           </div>
         </div>
-        <h2 className="type-section-title-sm">The ROI of Environmental Intelligence</h2>
+        <h2 className="type-section-title-sm mt-12">The ROI of Environmental Intelligence</h2>
         <div className="type-kicker mt-3">Health. Performance. Sustainability. Delivered.</div>
         <p className="type-body">
           Poor indoor environments silently cost billions in lost productivity, absenteeism, and energy waste. InteliEQ changes that equation.
