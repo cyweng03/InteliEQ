@@ -152,7 +152,7 @@ export default function SectorsPage() {
     return (
       <div className="relative group min-h-[20rem] rounded-2xl">
         <GlowingEffect
-          spread={40}
+          spread={100}
           glow={true}
           disabled={false}
           proximity={64}
