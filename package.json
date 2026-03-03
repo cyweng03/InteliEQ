@@ -14,7 +14,7 @@
     "framer-motion": "^12.34.4",
     "gsap": "^3.13.0",
     "lucide-react": "^0.576.0",
-    "motion": "^12.34.4",
+    "motion": "^12.34.5",
     "next": "^16.1.6",
     "postcss": "^8.5.6",
     "radix-ui": "^1.4.3",

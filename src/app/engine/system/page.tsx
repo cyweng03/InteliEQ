@@ -28,11 +28,11 @@ export default function FullStackPage() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="flex flex-col space-y-4"
+          className="flex flex-col space-y-4 mt-12 "
         >
-          <div className="mt-12">
+          <div className="">
             <h2 className="type-section-title-sm">How It Works</h2>
-            <div className="type-kicker mt-3 text-brand-orange">Continuous Awareness. Continuous Action.</div>
+            <div className="type-kicker mt-3 text-brand-orange mb-4">Continuous Awareness. Continuous Action.</div>
           </div>
           <div className="flex flex-row justify-between">
             <div className="flex-1 items-center flex flex-col">
