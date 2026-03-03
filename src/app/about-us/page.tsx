@@ -13,10 +13,10 @@ export default function ResourcesPage() {
         <span className="text-gray-400 text-3xl">▲</span>
       </div>
       <div className="container mx-auto my-6 space-y-2 ">
-        <h1 className="type-page-title text-black mb-7 mt-3">About Us</h1>
-        <h2 className="type-lead text-black font-bold">Our Mission</h2>
+        <h1 className="type-page-title text-black mb-6 mt-12">About Us</h1>
+        <h2 className="type-lead text-brand-orange font-bold">Our Mission</h2>
         <p className="type-body">In a world flooded with point solutions, InteliEQ is doing something fundamentally different. While others focus on monitoring air,
-          purifying air, or optimizing HVAC systems in isolation, InteliEQ delivers something bigger: <span className="font-bold">a full-stack environmental intelligence
+          purifying air, or optimizing HVAC systems in isolation, InteliEQ delivers something bigger: <span className="font-bold text-brand-orange">a full-stack environmental intelligence
             engine</span> that connects the dots between health, energy, and performance to address the Health-Performance Gap within our built environments.
           <br></br><br></br>
           We believe buildings shouldn’t just respond to problems, they should predict and prevent them. That’s why InteliEQ integrates real-time sensing,

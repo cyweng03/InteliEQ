@@ -1,5 +1,7 @@
-import Link from 'next/link';
+"use client";
 
+import { GlowingEffect } from '@/components/ui/glowing-effect';
+import Link from 'next/link';
 
 export default function SectorsPage() {
   type SectorProps = {
@@ -148,39 +150,46 @@ export default function SectorsPage() {
 
   function SectorBlock({ content }: { content: SectorProps }) {
     return (
-      <div className="max-w-3xl space-y-4">
-        <div className="flex items-start space-x-4">
-          <div
-            className="w-12 h-12 text-brand-orange [&>svg]:w-full [&>svg]:h-full"
-            dangerouslySetInnerHTML={{ __html: content.icon }}
-          />
-          <h2 className="type-card-title">{content.title}</h2>
-        </div>
+      <div className="relative group min-h-[20rem] rounded-2xl">
+        <GlowingEffect
+          spread={40}
+          glow={true}
+          disabled={false}
+          proximity={64}
+          inactiveZone={0.01}
+        />
 
-        <p className="type-body text-brand-gray">{content.description1}</p>
+        {/* Content */}
+        <div className="relative z-10 p-6 h-full space-y-4 rounded-2xl border bg-white dark:bg-neutral-900 shadow-md">
+          <div className="flex items-start space-x-4">
+            <div
+              className="w-12 h-12 text-brand-orange [&>svg]:w-full [&>svg]:h-full"
+              dangerouslySetInnerHTML={{ __html: content.icon }}
+            />
+            <h2 className="type-card-title">{content.title}</h2>
+          </div>
 
-        <ul className="list-disc list-inside space-y-1 text-brand-gray">
-          {content.bullets.map((item, idx) => (
-            <li key={idx}>{item}</li>
-          ))}
-        </ul>
+          <p className="type-body text-brand-gray">{content.description1}</p>
 
-        <p className="type-body text-brand-gray">{content.description2}</p>
+          <ul className="list-disc list-inside space-y-1 text-brand-gray">
+            {content.bullets.map((item, idx) => (
+              <li key={idx}>{item}</li>
+            ))}
+          </ul>
 
-        <div className="space-x-4 font-semibold">
-          <Link href={content.learnMoreLink} className="text-brand-black underline hover:text-brand-orange">
-            {content.learnMoreText}
-          </Link>
+          <p className="type-body text-brand-gray">{content.description2}</p>
 
-          <div className='space-x-4'>
+          <div className="space-x-4 font-semibold">
+            <Link href={content.learnMoreLink} className="text-brand-black underline hover:text-brand-orange">
+              {content.learnMoreText}
+            </Link>
             <Link href={content.caseStudyLink} className="text-brand-black underline hover:text-brand-orange">
               {content.caseStudyText}
             </Link>
-
             <Link href={content.blogPostsLink} className="text-brand-black underline hover:text-brand-orange">
               {content.blogPostsText}
-            </Link></div>
-
+            </Link>
+          </div>
         </div>
       </div>
     );
@@ -190,15 +199,15 @@ export default function SectorsPage() {
 
   return (
     <div className='pt-16'>
-      <div className="w-full aspect-[3/1] border border-gray-400 flex items-center justify-center bg-gray-100">
+      <div className="w-full h-[50vh] border border-gray-400 flex items-center justify-center bg-gray-100">
         <span className="text-gray-400 text-3xl">▲</span>
       </div>
-      <div className="container mx-auto my-12 space-y-6">
+      <div className="container mx-auto my-12 space-y-4">
         <h1 className="type-page-title">Sectors</h1>
-        <div className="type-lead font-bold"> Where we make an impact</div>
+        <div className="type-lead font-bold text-brand-orange"> Where we make an impact</div>
         <div className='type-body mb-5'>Every building breathes ... and how well it does, defines health, performance and energy outcomes.InteliEQ transforms indoor spaces into intelligent ecosystems that actively purify air and surfaces, monitor real-time conditions and optimize building performance.</div>
         <div className="type-body">The result: measurable ROI through healthier people, smarter energy use and more resilient, sustainable environments.</div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-16 p-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-16">
           <SectorBlock content={Education} />
           <SectorBlock content={Healthcare} />
           <SectorBlock content={Hospitality} />
