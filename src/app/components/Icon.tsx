@@ -9,8 +9,8 @@ function Icon({ icon, title, content }: { icon: React.ReactNode, title?: string,
       <div className='w-20 h-20 md:w-24 md:h-24 flex items-center justify-center'>
         {icon}
       </div>
-      {hasTitle && <h1 className='font-bold text-3xl text-center text-black mt-4'>{title}</h1>}
-      {hasContent && <p className='text-center mt-4'>{content}</p>}
+      {hasTitle && <h2 className='type-card-title text-center text-black mt-4'>{title}</h2>}
+      {hasContent && <p className='type-body text-center mt-4'>{content}</p>}
     </div>
   )
 }

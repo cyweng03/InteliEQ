@@ -4,10 +4,10 @@ function Profile({image, name, title, email, linkedin}: {image: React.ReactNode,
   return (
     <div className='flex flex-col items-center justify-center'>
         <div>{image}</div>
-        <h1 className='text-2xl mb-2'>{name}</h1>
-        <h2 className='text-lg'>{title}</h2>
-        <h2 className='text-lg mb-2'>{email}</h2>
-        <a href={linkedin} target="_blank" className='text-lg underline'>Linkedin</a>
+        <h2 className='type-card-title-sm mb-2'>{name}</h2>
+        <p className='type-body'>{title}</p>
+        <p className='type-body mb-2'>{email}</p>
+        <a href={linkedin} target="_blank" className='type-body underline'>Linkedin</a>
     </div>
   )
 }

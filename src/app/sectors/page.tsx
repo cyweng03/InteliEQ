@@ -154,10 +154,10 @@ export default function SectorsPage() {
             className="w-12 h-12 text-brand-orange [&>svg]:w-full [&>svg]:h-full"
             dangerouslySetInnerHTML={{ __html: content.icon }}
           />
-          <h1 className="text-3xl font-bold">{content.title}</h1>
+          <h2 className="type-card-title">{content.title}</h2>
         </div>
 
-        <p className="text-brand-gray leading-relaxed">{content.description1}</p>
+        <p className="type-body text-brand-gray">{content.description1}</p>
 
         <ul className="list-disc list-inside space-y-1 text-brand-gray">
           {content.bullets.map((item, idx) => (
@@ -165,7 +165,7 @@ export default function SectorsPage() {
           ))}
         </ul>
 
-        <p className="text-brand-gray leading-relaxed">{content.description2}</p>
+        <p className="type-body text-brand-gray">{content.description2}</p>
 
         <div className="space-x-4 font-semibold">
           <Link href={content.learnMoreLink} className="text-brand-black underline hover:text-brand-orange">
@@ -193,12 +193,12 @@ export default function SectorsPage() {
       <div className="w-full aspect-[3/1] border border-gray-400 flex items-center justify-center bg-gray-100">
         <span className="text-gray-400 text-3xl">▲</span>
       </div>
-      <div className="m-12 space-y-6">
-        <h1 className="text-5xl font-bold">Sectors</h1>
-        <div className="text-xl font-bold"> Where we make an impact</div>
-        <div className='mb-5'>Every building breathes…and how well it does, defines health, performance and energy outcomes.InteliEQ transforms indoor spaces into intelligent ecosystems that actively purify air and surfaces, monitor real-time conditions and optimize building performance.</div>
-        <div>The result: measurable ROI through healthier people, smarter energy use and more resilient, sustainable environments.</div>
-        <div className="grid grid-cols-2 gap-16">
+      <div className="container mx-auto my-12 space-y-6">
+        <h1 className="type-page-title">Sectors</h1>
+        <div className="type-lead font-bold"> Where we make an impact</div>
+        <div className='type-body mb-5'>Every building breathes ... and how well it does, defines health, performance and energy outcomes.InteliEQ transforms indoor spaces into intelligent ecosystems that actively purify air and surfaces, monitor real-time conditions and optimize building performance.</div>
+        <div className="type-body">The result: measurable ROI through healthier people, smarter energy use and more resilient, sustainable environments.</div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-16 p-6">
           <SectorBlock content={Education} />
           <SectorBlock content={Healthcare} />
           <SectorBlock content={Hospitality} />

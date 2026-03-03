@@ -47,13 +47,14 @@ export default function Contact() {
   };
 
   return (
-    <div className="m-12 space-y-6 pt-16">
-      <h1 className="text-4xl font-bold mb-6">Contact Us</h1>
+    <div className="pt-16 my-12">
+      <div className="container mx-auto space-y-6">
+        <h1 className="type-page-title mb-6">Contact Us</h1>
 
       {isSubmitted ? (
         <div className="rounded-lg shadow-sm p-12 text-center">
-          <p className="text-xl mb-2">Thank you for contacting us!</p>
-          <p className=" mb-8">
+          <p className="type-lead mb-2">Thank you for contacting us!</p>
+          <p className="type-body mb-8">
             We will reach out to you via email, so please keep an eye out for our message.
           </p>
           <div className="flex gap-4 justify-center">
@@ -76,7 +77,7 @@ export default function Contact() {
           onSubmit={handleSubmit}
           className="rounded-lg shadow-sm p-12"
         >
-          <p className=" mb-8 max-w-2xl">
+          <p className="type-body mb-8 max-w-2xl">
             We&apos;re happy to hear from you. Contact us today to learn more about our business
             and how you can benefit from working with us.
           </p>
@@ -166,6 +167,7 @@ export default function Contact() {
           </button>
         </form>
       )}
+      </div>
     </div>
   );
 }

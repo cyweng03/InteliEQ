@@ -21,6 +21,11 @@
   --color-brand-green: #04D098;
 }
 
+@theme {
+  --breakpoint-sm: 700px;
+
+}
+
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -40,13 +45,37 @@ body {
    opacity (and slight translate) with staggered delays so words fade in/out.
 */
 @keyframes fadeInOut {
-  0% { opacity: 0; transform: translateY(6px); }
-  8% { opacity: 1; transform: translateY(0); }
-  30% { opacity: 1; transform: translateY(0); }
-  38% { opacity: 0; transform: translateY(-6px); }
-  100% { opacity: 0; transform: translateY(-6px); }
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  8% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  30% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  38% {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
 }
-.cycle-wrapper { position: relative; vertical-align: baseline; }
+
+.cycle-wrapper {
+  position: relative;
+  vertical-align: baseline;
+}
+
 .cycle-wrapper .cycle-word {
   position: absolute;
   left: 0;
@@ -54,34 +83,68 @@ body {
   opacity: 0;
 }
 
-.cycle-word.cycle-1 { animation: fadeInOut 9s ease-in-out infinite; animation-delay: 0s; }
-.cycle-word.cycle-2 { animation: fadeInOut 9s ease-in-out infinite; animation-delay: 3s; }
-.cycle-word.cycle-3 { animation: fadeInOut 9s ease-in-out infinite; animation-delay: 6s; }
+.cycle-word.cycle-1 {
+  animation: fadeInOut 9s ease-in-out infinite;
+  animation-delay: 0s;
+}
+
+.cycle-word.cycle-2 {
+  animation: fadeInOut 9s ease-in-out infinite;
+  animation-delay: 3s;
+}
+
+.cycle-word.cycle-3 {
+  animation: fadeInOut 9s ease-in-out infinite;
+  animation-delay: 6s;
+}
 
 @media (prefers-reduced-motion: reduce) {
+
   .cycle-word.cycle-1,
   .cycle-word.cycle-2,
-  .cycle-word.cycle-3 { animation: none !important; opacity: 1; }
+  .cycle-word.cycle-3 {
+    animation: none !important;
+    opacity: 1;
+  }
 }
 
 /* Navbar entrance/exit animations */
 @keyframes nav-enter {
-  from { transform: translateY(-12px); opacity: 0; }
-  to   { transform: translateY(0); opacity: 1; }
+  from {
+    transform: translateY(-12px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 @keyframes nav-fade-enter {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes nav-exit {
-  from { transform: translateY(0); opacity: 1; }
-  to   { transform: translateY(-12px); opacity: 0; }
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  to {
+    transform: translateY(-12px);
+    opacity: 0;
+  }
 }
 
 .nav-enter {
-  animation: nav-enter 300ms cubic-bezier(.22,.9,.28,1) both;
+  animation: nav-enter 300ms cubic-bezier(.22, .9, .28, 1) both;
 }
 
 .nav-fade-enter {
@@ -93,7 +156,12 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .nav-enter, .nav-fade-enter, .nav-exit { animation: none !important; }
+
+  .nav-enter,
+  .nav-fade-enter,
+  .nav-exit {
+    animation: none !important;
+  }
 }
 
 /* Hide state to avoid flash on initial load */
@@ -101,4 +169,52 @@ body {
   transform: translateY(-12px);
   opacity: 0;
   pointer-events: none;
+}
+
+@layer components {
+
+  /* Typography scale (use home page as reference) */
+  .type-hero-title {
+    @apply text-4xl md:text-6xl font-bold;
+  }
+
+  .type-page-title {
+    @apply text-5xl font-bold;
+  }
+
+  .type-section-title {
+    @apply text-5xl font-bold;
+  }
+
+  .type-section-title-sm {
+    @apply text-4xl font-bold;
+  }
+
+  .type-subtitle {
+    @apply text-2xl;
+  }
+
+  .type-kicker {
+    @apply text-xl font-bold;
+  }
+
+  .type-lead {
+    @apply text-xl;
+  }
+
+  .type-body {
+    @apply text-lg leading-relaxed;
+  }
+
+  .type-body-strong {
+    @apply text-lg font-semibold;
+  }
+
+  .type-card-title {
+    @apply text-3xl font-bold;
+  }
+
+  .type-card-title-sm {
+    @apply text-2xl font-bold;
+  }
 }
