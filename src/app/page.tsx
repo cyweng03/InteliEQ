@@ -20,7 +20,7 @@ import hospitality from "./assets/icons/hospitality.png";
 import arrow from "./assets/icons/downward_arrow.png";
 import data from "./assets/icons/data_icon.png";
 import efficiency from "./assets/icons/efficiency_icon.png";
-import graphic from "./assets/graphic.png";
+import graphic from "./assets/matters_image.png";
 
 
 export default function Home() {
@@ -167,20 +167,6 @@ export default function Home() {
               <Icon
                 icon={
                   <Image
-                    src={filtration.src}
-                    alt="Filtration"
-                    width={85}
-                    height={85}
-                    className="mx-auto"
-                  />
-                }
-                title="Active Purification"
-                content="Proactive, scientifically validated purification that neutralizes threats before they spread."
-              />
-
-              <Icon
-                icon={
-                  <Image
                     src={ai.src}
                     alt="AI"
                     width={80}
@@ -190,6 +176,20 @@ export default function Home() {
                 }
                 title="Real-Time Monitoring"
                 content="High-fidelity sensors that measure the full picture of indoor environmental quality—airborne and surface-level—24/7."
+              />
+
+              <Icon
+                icon={
+                  <Image
+                    src={filtration.src}
+                    alt="Filtration"
+                    width={85}
+                    height={85}
+                    className="mx-auto"
+                  />
+                }
+                title="Active Purification"
+                content="Proactive, scientifically validated purification that neutralizes threats before they spread."
               />
 
               <Icon
@@ -225,12 +225,12 @@ export default function Home() {
               <Button image="" content="See the Engine &#8599;" />
           </Link>
         </section>
-        <section id="matters" className="px-16">
+        <section id="matters" className="px-16 mb-16">
           <div ref={mattersRef} className={`transition-opacity duration-1000 ease-in-out ${mattersVisible ? "opacity-100" : "opacity-0"} flex flex-col mt-20`}>
             <div className="flex flex-col md:flex-row md:items-center md:gap-8">
               
               <div className="md:flex-1">
-                <h1 className={`md:w-1/2 type-section-title text-black mb-7 header-underline ${mattersVisible ? "visible" : ""}`}>Why It Matters</h1>
+                <h1 className={`md:w-3/5 type-section-title text-black mb-7 header-underline ${mattersVisible ? "visible" : ""}`}>Why It Matters</h1>
                 <h2 className="type-subtitle text-brand-orange font-bold mb-4">Health, Productivity, Energy, Trust</h2>
 
                 <p className="type-body mb-4">Great indoor environments don’t happen by accident. They’re engineered continuously, intelligently, and transparently.</p>
@@ -244,8 +244,14 @@ export default function Home() {
 
                 <p className="type-body">InteliEQ brings clarity to what’s been invisible for too long.</p>
               </div>
-              <div className="md:w-1/3 mt-6 md:mt-0 flex-shrink-0">
-                <Image className="relative right-0" src={graphic.src} width={600} height={600} alt="graphic" />
+              <div className="mt-6 md:mt-0 flex-shrink-0">
+                <Image
+                  className=""
+                  src={graphic.src}
+                  width={600}
+                  height={600}
+                  alt="graphic"
+                />
                 {/* <div className="w-full h-48 md:h-56 bg-gray-100 rounded-lg border border-gray-200 flex items-center justify-center">
                   <span className="text-gray-500">Image placeholder</span>
                 </div> */}
