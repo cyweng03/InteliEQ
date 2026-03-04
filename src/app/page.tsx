@@ -160,7 +160,7 @@ export default function Home() {
             ref={offerRef}
             className={`transition-opacity duration-1000 ease-in-out ${offerVisible ? "opacity-100" : "opacity-0"} flex flex-col mt-20 mb-6`}
           >
-            <h1 className="type-section-title text-black mb-7">What We Offer</h1>
+            <h1 className={`md:w-1/3 type-section-title text-black mb-7 header-underline ${offerVisible ? "visible" : ""}`}>What We Offer</h1>
             <p className="type-lead">InteliEQ provides intelligent technologies that improve indoor environments:</p>
 
             <div className="grid grid-col-1 md:grid-cols-4 gap-8 mt-5 mx-4 text-center">
@@ -225,12 +225,12 @@ export default function Home() {
               <Button image="" content="See the Engine &#8599;" />
           </Link>
         </section>
-        <section id="matters">
+        <section id="matters" className="px-16">
           <div ref={mattersRef} className={`transition-opacity duration-1000 ease-in-out ${mattersVisible ? "opacity-100" : "opacity-0"} flex flex-col mt-20`}>
             <div className="flex flex-col md:flex-row md:items-center md:gap-8">
               
               <div className="md:flex-1">
-                <h1 className="type-section-title text-black mb-7">Why It Matters</h1>
+                <h1 className={`md:w-1/2 type-section-title text-black mb-7 header-underline ${mattersVisible ? "visible" : ""}`}>Why It Matters</h1>
                 <h2 className="type-subtitle text-brand-orange font-bold mb-4">Health, Productivity, Energy, Trust</h2>
 
                 <p className="type-body mb-4">Great indoor environments don’t happen by accident. They’re engineered continuously, intelligently, and transparently.</p>
@@ -253,11 +253,11 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section id="difference">
+        <section id="difference" className="bg-brand-black text-white py-6 px-16">
           <div ref={differenceRef} className={`transition-opacity duration-1000 ease-in-out ${differenceVisible ? "opacity-100" : "opacity-0"} flex flex-col mt-20 mb-6`}>
-            <h1 className="type-section-title text-black mb-7">The InteliEQ Difference</h1>
+            <h1 className={`md:w-1/2 type-section-title text-white mb-7 header-underline ${differenceVisible ? "visible" : ""}`}>The InteliEQ Difference</h1>
 
-            <p className="type-lead mb-4">Most buildings rely on outdated, reactive systems, ventilation that runs blindly, purification that’s inconsistent and monitors that only tell you what already went wrong.</p>
+            <p className="type-lead mb-4 text-white">Most buildings rely on outdated, reactive systems, ventilation that runs blindly, purification that's inconsistent and monitors that only tell you what already went wrong.</p>
 
             <div className="grid md:grid-cols-2 gap-6 type-body w-ful m-5">
               <div className="shadow-md p-4 rounded-lg m-2 bg-white text-black">
@@ -265,7 +265,7 @@ export default function Home() {
                 <p>We prevent problems before they affect people.</p>
               </div>
 
-              <div className="shadow-md p-4 rounded-lg m-2 bg-white text-black">
+              <div className="shadow-md p-4 rounded-lg m-2 bg-white text-black ">
                 <h3 className="font-bold">Unified Instead of Fragmented</h3>
                 <p>One intelligent system replaces a patchwork of disconnected devices.</p>
               </div>
@@ -290,7 +290,7 @@ export default function Home() {
             ref={serveRef}
             className={`transition-opacity duration-1000 ease-in-out ${serveVisible ? "opacity-100" : "opacity-0"} flex flex-col mt-20 mb-6`}
           >
-            <h1 className="type-section-title text-black mb-7">Who We Serve</h1>
+            <h1 className={`md:w-1/3 type-section-title text-black mb-7 header-underline ${serveVisible ? "visible" : ""}`}>Who We Serve</h1>
             <p className="type-lead">InteliEQ provides intelligent technologies that improve indoor environments:</p>
 
             {/* DESKTOP GRID */}
