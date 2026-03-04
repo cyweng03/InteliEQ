@@ -17,7 +17,7 @@ export default function Footer() {
           />
         </Link>
 
-        <div className="flex flex-col items-start space-y-2 ">
+        <div className="flex flex-col items-start ">
           <div className="flex flex-row items-center space-x-2 text-brand-orange">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -46,7 +46,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="mt-8 pt-8 flex flex-col text-center text-sm text-brand-white space-y-2">
+      <div className="pt-8 flex flex-col text-center text-sm text-brand-white space-y-2">
         <p>Made By Women in Computing at Cornell</p>
         <p>© {new Date().getFullYear()} InteliEQ. All rights reserved.</p>
       </div>

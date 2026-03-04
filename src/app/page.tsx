@@ -99,17 +99,17 @@ export default function Home() {
         className="overflow-hidden relative w-full flex items-center bg-[url(./assets/city-background3.png)] bg-cover bg-center bg-no-repeat h-screen"
       >
         <div className="relative z-10 container px-8 lg:px-20">
-          <h1 className="text-white text-4xl md:text-6xl font-bold w-full text-left m-2">
+          <h1 className="type-hero-title text-white w-full text-left m-2">
             Redefining how buildings
             <span className="ml-4">
               <span className="cycle-wrapper">
-                <span className="cycle-word cycle-1 text-4xl md:text-6xl shadow-xl text-brand-orange font-bold">
+                <span className="cycle-word cycle-1 type-hero-title shadow-xl text-brand-orange">
                   think.
                 </span>
-                <span className="cycle-word cycle-2 text-4xl md:text-6xl shadow-xl text-brand-orange font-bold">
+                <span className="cycle-word cycle-2 type-hero-title shadow-xl text-brand-orange">
                   breathe.
                 </span>
-                <span className="cycle-word cycle-3 text-4xl md:text-6xl shadow-xl text-brand-orange font-bold">
+                <span className="cycle-word cycle-3 type-hero-title shadow-xl text-brand-orange">
                   optimize.
                 </span>
               </span>
@@ -140,28 +140,28 @@ export default function Home() {
       </section>
 
       {/* MAIN CONTENT */}
-      <div className="container mx-auto bg-white" ref={aboutRef}>
+      <div className="container mx-auto py-8 bg-white" ref={aboutRef}>
 
         <section id='section2' className="p-5 py-8 px-16">
           <div>
-            <p className="text-xl font-bold">Founded by innovators in environmental health, sensing technology, and intelligent building systems, InteliEQ was built on a simple belief:
+            <p className="type-lead font-bold">Founded by innovators in environmental health, sensing technology, and intelligent building systems, InteliEQ was built on a simple belief:
               <br></br><br></br>
-            <span className="text-brand-orange text-2xl">Indoor spaces should empower human well-being, not endanger it. </span><br></br><br></br>
-                We fuse research-grade sensing, proactive purification, and real-time data intelligence into a single platform, turning invisible risks into measurable improvements and giving building operators a new level of clarity and control.<br></br><br></br>
-                Our purpose is to create environments where every breath, every room, and every moment is supported by intelligent systems working quietly in the background.
+              <span className="type-subtitle text-brand-orange">Indoor spaces should empower human well-being, not endanger it. </span><br></br><br></br>
+              We fuse research-grade sensing, proactive purification, and real-time data intelligence into a single platform, turning invisible risks into measurable improvements and giving building operators a new level of clarity and control.<br></br><br></br>
+              Our purpose is to create environments where every breath, every room, and every moment is supported by intelligent systems working quietly in the background.
             </p>
           </div>
         </section>
 
-        
+
         {/* OFFER */}
         <section id="offer" className="px-16">
           <div
             ref={offerRef}
             className={`transition-opacity duration-1000 ease-in-out ${offerVisible ? "opacity-100" : "opacity-0"} flex flex-col mt-20 mb-6`}
           >
-            <h1 className={`text-black md:w-1/3 text-5xl font-bold mb-7 header-underline ${offerVisible ? 'visible' : ''}`}>What We Offer</h1>
-            <p className="text-xl">InteliEQ provides intelligent technologies that improve indoor environments:</p>
+            <h1 className="type-section-title text-black mb-7">What We Offer</h1>
+            <p className="type-lead">InteliEQ provides intelligent technologies that improve indoor environments:</p>
 
             <div className="grid grid-col-1 md:grid-cols-4 gap-8 mt-5 mx-4 text-center">
               <Icon
@@ -225,24 +225,24 @@ export default function Home() {
               <Button image="" content="See the Engine &#8599;" />
           </Link>
         </section>
-        <section id="matters"  className="px-16 mb-5">
-          <div ref={mattersRef} className={`transition-opacity duration-1000 ease-in-out ${mattersVisible ? "opacity-100" : "opacity-0" } flex flex-col mt-20`}>
+        <section id="matters">
+          <div ref={mattersRef} className={`transition-opacity duration-1000 ease-in-out ${mattersVisible ? "opacity-100" : "opacity-0"} flex flex-col mt-20`}>
             <div className="flex flex-col md:flex-row md:items-center md:gap-8">
               
               <div className="md:flex-1">
-                <h1 className={`text-black text-5xl md:w-1/2 font-bold mb-7 header-underline ${mattersVisible ? 'visible' : ''}`}>Why It Matters</h1>
-                <h2 className="text-brand-orange text-2xl font-bold mb-4">Health, Productivity, Energy, Trust</h2>
+                <h1 className="type-section-title text-black mb-7">Why It Matters</h1>
+                <h2 className="type-subtitle text-brand-orange font-bold mb-4">Health, Productivity, Energy, Trust</h2>
 
-                <p className="text-lg mb-4">Great indoor environments don’t happen by accident. They’re engineered continuously, intelligently, and transparently.</p>
+                <p className="type-body mb-4">Great indoor environments don’t happen by accident. They’re engineered continuously, intelligently, and transparently.</p>
 
-                <ul className="list-disc pl-6 space-y-2 text-lg mb-4">
+                <ul className="type-body list-disc pl-6 space-y-2 mb-4">
                   <li>Cleaner air = better health and fewer disruptions</li>
                   <li>Verified spaces = peace of mind for building owners and occupants</li>
                   <li>Smart optimization = lower energy costs</li>
                   <li>Unified intelligence = simpler operations</li>
                 </ul>
 
-                <p className="text-lg">InteliEQ brings clarity to what’s been invisible for too long.</p>
+                <p className="type-body">InteliEQ brings clarity to what’s been invisible for too long.</p>
               </div>
               <div className="md:w-1/3 mt-6 md:mt-0 flex-shrink-0">
                 <Image className="relative right-0" src={graphic.src} width={600} height={600} alt="graphic" />
@@ -253,13 +253,13 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section id="difference"  className="px-16 bg-brand-black p-5 text-white">
-          <div ref={differenceRef} className={`transition-opacity duration-1000 ease-in-out ${differenceVisible ? "opacity-100" : "opacity-0" } flex flex-col mt-20 mb-6`}>
-            <h1 className={`text-white text-5xl md:w-1/2 font-bold mb-7 header-underline ${differenceVisible ? 'visible' : ''}`}>The InteliEQ Difference</h1>
+        <section id="difference">
+          <div ref={differenceRef} className={`transition-opacity duration-1000 ease-in-out ${differenceVisible ? "opacity-100" : "opacity-0"} flex flex-col mt-20 mb-6`}>
+            <h1 className="type-section-title text-black mb-7">The InteliEQ Difference</h1>
 
-            <p className="text-xl mb-4">Most buildings rely on outdated, reactive systems, ventilation that runs blindly, purification that’s inconsistent and monitors that only tell you what already went wrong.</p>
+            <p className="type-lead mb-4">Most buildings rely on outdated, reactive systems, ventilation that runs blindly, purification that’s inconsistent and monitors that only tell you what already went wrong.</p>
 
-            <div className="grid md:grid-cols-2 gap-6 text-lg w-ful m-5">
+            <div className="grid md:grid-cols-2 gap-6 type-body w-ful m-5">
               <div className="shadow-md p-4 rounded-lg m-2 bg-white text-black">
                 <h3 className="font-bold">Proactive Instead of Reactive</h3>
                 <p>We prevent problems before they affect people.</p>
@@ -280,7 +280,7 @@ export default function Home() {
                 <p>Our environmental intelligence optimizes IAQ and energy concurrently.</p>
               </div>
             </div>
-            <p className="mt-2 text-lg font-medium">Environmental intelligence isn’t a feature. It’s the foundation for the future of indoor environments.</p>
+            <p className="type-body mt-2 font-medium">Environmental intelligence isn’t a feature. It’s the foundation for the future of indoor environments.</p>
           </div>
         </section>
 
@@ -290,8 +290,8 @@ export default function Home() {
             ref={serveRef}
             className={`transition-opacity duration-1000 ease-in-out ${serveVisible ? "opacity-100" : "opacity-0"} flex flex-col mt-20 mb-6`}
           >
-            <h1 className={`text-black text-5xl md:w-1/3 font-bold mb-7 header-underline ${serveVisible ? 'visible' : ''}`}>Who We Serve</h1>
-            <p className="text-xl">InteliEQ provides intelligent technologies that improve indoor environments:</p>
+            <h1 className="type-section-title text-black mb-7">Who We Serve</h1>
+            <p className="type-lead">InteliEQ provides intelligent technologies that improve indoor environments:</p>
 
             {/* DESKTOP GRID */}
             <div className="hidden md:grid md:grid-cols-6 md:gap-8 md:justify-center md:items-center mt-7">
@@ -401,10 +401,10 @@ export default function Home() {
             className={`transition-opacity duration-1000 ease-in-out ${contactVisible ? "opacity-100" : "opacity-0"
               } flex flex-col mt-20`}
           >
-            <h1 className="text-black text-4xl font-bold">
+            <h1 className="type-section-title-sm text-black">
               Ready to See What an Intelligent Indoor Environment Can Do?
             </h1>
-            <h2 className='text-xl font-bold mt-5'>Let’s transform your spaces into ecosystems that support human health, operational clarity and sustainable performance.</h2>
+            <h2 className='type-kicker mt-5'>Let’s transform your spaces into ecosystems that support human health, operational clarity and sustainable performance.</h2>
 
             {/* <Link href="/system" className="inline-block mt-4">
               <Button image="" content="See the Engine &#8599;" />
