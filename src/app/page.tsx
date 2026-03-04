@@ -20,6 +20,7 @@ import hospitality from "./assets/icons/hospitality.png";
 import arrow from "./assets/icons/downward_arrow.png";
 import data from "./assets/icons/data_icon.png";
 import efficiency from "./assets/icons/efficiency_icon.png";
+import graphic from "./assets/graphic.png";
 
 
 export default function Home() {
@@ -139,9 +140,9 @@ export default function Home() {
       </section>
 
       {/* MAIN CONTENT */}
-      <div className="container mx-auto px-16 py-8 bg-white" ref={aboutRef}>
+      <div className="container mx-auto bg-white" ref={aboutRef}>
 
-        <section id='section2' className="mt-8">
+        <section id='section2' className="p-5 py-8 px-16">
           <div>
             <p className="text-xl font-bold">Founded by innovators in environmental health, sensing technology, and intelligent building systems, InteliEQ was built on a simple belief:
               <br></br><br></br>
@@ -154,15 +155,15 @@ export default function Home() {
 
         
         {/* OFFER */}
-        <section id="offer">
+        <section id="offer" className="px-16">
           <div
             ref={offerRef}
             className={`transition-opacity duration-1000 ease-in-out ${offerVisible ? "opacity-100" : "opacity-0"} flex flex-col mt-20 mb-6`}
           >
-            <h1 className="text-black text-5xl font-bold mb-7">What We Offer</h1>
+            <h1 className={`text-black md:w-1/3 text-5xl font-bold mb-7 header-underline ${offerVisible ? 'visible' : ''}`}>What We Offer</h1>
             <p className="text-xl">InteliEQ provides intelligent technologies that improve indoor environments:</p>
 
-            <div className="grid grid-col-1 md:grid-cols-4 gap-12 mt-5 mx-10 text-center">
+            <div className="grid grid-col-1 md:grid-cols-4 gap-8 mt-5 mx-4 text-center">
               <Icon
                 icon={
                   <Image
@@ -221,14 +222,15 @@ export default function Home() {
           </div>
 
           <Link href="/system" className=" mt-4">
-              <Button image="" content="Learn More &#8599;" />
+              <Button image="" content="See the Engine &#8599;" />
           </Link>
         </section>
-        <section id="matters">
+        <section id="matters"  className="px-16 mb-5">
           <div ref={mattersRef} className={`transition-opacity duration-1000 ease-in-out ${mattersVisible ? "opacity-100" : "opacity-0" } flex flex-col mt-20`}>
             <div className="flex flex-col md:flex-row md:items-center md:gap-8">
+              
               <div className="md:flex-1">
-                <h1 className="text-black text-5xl font-bold mb-7">Why It Matters</h1>
+                <h1 className={`text-black text-5xl md:w-1/2 font-bold mb-7 header-underline ${mattersVisible ? 'visible' : ''}`}>Why It Matters</h1>
                 <h2 className="text-brand-orange text-2xl font-bold mb-4">Health, Productivity, Energy, Trust</h2>
 
                 <p className="text-lg mb-4">Great indoor environments don’t happen by accident. They’re engineered continuously, intelligently, and transparently.</p>
@@ -242,40 +244,40 @@ export default function Home() {
 
                 <p className="text-lg">InteliEQ brings clarity to what’s been invisible for too long.</p>
               </div>
-
               <div className="md:w-1/3 mt-6 md:mt-0 flex-shrink-0">
-                <div className="w-full h-48 md:h-56 bg-gray-100 rounded-lg border border-gray-200 flex items-center justify-center">
+                <Image className="relative right-0" src={graphic.src} width={600} height={600} alt="graphic" />
+                {/* <div className="w-full h-48 md:h-56 bg-gray-100 rounded-lg border border-gray-200 flex items-center justify-center">
                   <span className="text-gray-500">Image placeholder</span>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
         </section>
-        <section id="difference">
+        <section id="difference"  className="px-16 bg-brand-black p-5 text-white">
           <div ref={differenceRef} className={`transition-opacity duration-1000 ease-in-out ${differenceVisible ? "opacity-100" : "opacity-0" } flex flex-col mt-20 mb-6`}>
-            <h1 className="text-black text-5xl font-bold mb-7">The InteliEQ Difference</h1>
+            <h1 className={`text-white text-5xl md:w-1/2 font-bold mb-7 header-underline ${differenceVisible ? 'visible' : ''}`}>The InteliEQ Difference</h1>
 
             <p className="text-xl mb-4">Most buildings rely on outdated, reactive systems, ventilation that runs blindly, purification that’s inconsistent and monitors that only tell you what already went wrong.</p>
 
             <div className="grid md:grid-cols-2 gap-6 text-lg w-ful m-5">
-              <div>
+              <div className="shadow-md p-4 rounded-lg m-2 bg-white text-black">
                 <h3 className="font-bold">Proactive Instead of Reactive</h3>
                 <p>We prevent problems before they affect people.</p>
               </div>
 
-              <div>
+              <div className="shadow-md p-4 rounded-lg m-2 bg-white text-black">
                 <h3 className="font-bold">Unified Instead of Fragmented</h3>
                 <p>One intelligent system replaces a patchwork of disconnected devices.</p>
               </div>
 
-              <div>
+              <div className="shadow-md p-4 rounded-lg m-2 bg-white text-black">
                 <h3 className="font-bold">Verified Instead of Assumed</h3>
                 <p>Real-time data proves performance — no guesswork, no uncertainty.</p>
               </div>
 
-              <div>
+              <div className="shadow-md p-4 rounded-lg m-2 bg-white text-black">
                 <h3 className="font-bold">Healthy + Efficient Instead of Choosing One</h3>
-                <p>Our environmental intelligence optimizes IAQ and energy at the same time.</p>
+                <p>Our environmental intelligence optimizes IAQ and energy concurrently.</p>
               </div>
             </div>
             <p className="mt-2 text-lg font-medium">Environmental intelligence isn’t a feature. It’s the foundation for the future of indoor environments.</p>
@@ -283,12 +285,12 @@ export default function Home() {
         </section>
 
         {/* SERVE */}
-        <section id="serve">
+        <section id="serve"  className="px-16">
           <div
             ref={serveRef}
             className={`transition-opacity duration-1000 ease-in-out ${serveVisible ? "opacity-100" : "opacity-0"} flex flex-col mt-20 mb-6`}
           >
-            <h1 className="text-black text-5xl font-bold mb-7">Who We Serve</h1>
+            <h1 className={`text-black text-5xl md:w-1/3 font-bold mb-7 header-underline ${serveVisible ? 'visible' : ''}`}>Who We Serve</h1>
             <p className="text-xl">InteliEQ provides intelligent technologies that improve indoor environments:</p>
 
             {/* DESKTOP GRID */}
@@ -349,7 +351,6 @@ export default function Home() {
               </Link>
             </div>
 
-            {/* MOBILE SCROLLER */}
             <div className="md:hidden mt-2">
               <div className="flex gap-4 overflow-x-auto px-4 py-2 snap-x snap-mandatory touch-pan-x">
                 <Link href="/sectors/education" className="snap-center flex-shrink-0 w-40">
@@ -394,7 +395,7 @@ export default function Home() {
         </section>
 
         {/* CONTACT */}
-        <section id="contact">
+        <section id="contact" className="px-16">
           <div
             ref={contactRef}
             className={`transition-opacity duration-1000 ease-in-out ${contactVisible ? "opacity-100" : "opacity-0"

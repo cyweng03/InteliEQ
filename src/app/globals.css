@@ -102,3 +102,53 @@ body {
   opacity: 0;
   pointer-events: none;
 }
+
+
+@property --border-angle {
+  inherits: false;
+  initial-value: 0deg;
+  syntax: '<angle>';
+}
+
+@keyframes border-spin {
+  to { --border-angle: 360deg; }
+}
+
+.border-animated {
+  /* thicker border for better visibility */
+  border: 2px solid transparent;
+  background: white;
+}
+
+.border-animated:hover {
+  background:
+    linear-gradient(white, white) padding-box,
+    conic-gradient(
+      from var(--border-angle),
+      transparent 80%,
+      #f15f33 86%,
+      #d14313 90%,
+      #f15f33 94%,
+      transparent
+    ) border-box;
+  animation: border-spin 4s linear infinite;
+}
+
+/* animated underline for section headers */
+.header-underline {
+  position: relative;
+  display: inline-block; /* ensures underline matches text width */
+}
+.header-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -0.35rem; /* move a bit lower now that it's thicker */
+  height: 3px; /* thicker line */
+  width: 0;
+  background: var(--color-brand-orange);
+  transition: width 0.7s ease;
+}
+.header-underline.visible::after {
+  width: 80%;
+}

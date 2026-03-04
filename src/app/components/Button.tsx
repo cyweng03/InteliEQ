@@ -15,7 +15,7 @@ function Button({ image, content, onClick }: { image?: React.ReactNode, content?
           {image}
         </div>
         {hasContent && (
-          <div className='bg-brand-orange w-1/2 md:w-1/5 p-4 mt-4 shadow-sm text-center rounded-xl text-white text-md md:text-xl font-bold transition duration-200 hover:bg-[#dc5d36]'>
+          <div className='bg-brand-orange w-1/2 md:w-1/5 p-4 mt-4 shadow-md text-center rounded-xl text-white text-md md:text-xl font-bold transition duration-200 hover:bg-[#dc5d36]'>
               <h1>{content}</h1>
           </div>
         )}
