@@ -35,10 +35,6 @@ export default function EngineProductsPage() {
                 environments in real time.
               </p>
 
-              <h3 className="mt-6 text-3xl font-bold text-gray-900">
-                What It Is
-              </h3>
-
               <p className="text-lg text-gray-700 leading-relaxed">
                 Symphony-iQ is a modular environmental intelligence system
                 designed for high-density, high-performance environments.
@@ -69,10 +65,6 @@ export default function EngineProductsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
 
             <div className="space-y-4 mt-6">
-              <h3 className="text-3xl font-bold text-gray-900">
-                How It Works
-              </h3>
-
               <div>
                 <div className="font-extrabold text-gray-900">SENSE</div>
                 <p className="text-lg text-gray-700">
@@ -99,12 +91,10 @@ export default function EngineProductsPage() {
 
             <div className="space-y-4 mt-6">
               <h3 className="text-3xl font-bold text-gray-900">
-                Why It Matters
+                High-performance facilities  <p className="text-brand-orange">cannot afford</p> reactive environments.
               </h3>
 
-              <p className="text-lg text-gray-700">
-                High-performance facilities cannot afford reactive environments.
-              </p>
+              <p className="font-extrabold text-gray-900">The Symphony:</p>
 
               <ul className="list-disc pl-6 space-y-2 text-lg text-gray-700">
                 <li>Stabilizes conditions during peak occupancy</li>
@@ -150,10 +140,6 @@ export default function EngineProductsPage() {
                 Continuous environmental awareness. Continuous optimization.
               </p>
 
-              <h3 className="text-3xl font-bold text-gray-900 mt-6">
-                What It Is
-              </h3>
-
               <p className="text-lg text-gray-700">
                 i365+ is the data and control layer that powers
                 Symphony-iQ deployments.
@@ -182,10 +168,6 @@ export default function EngineProductsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
 
             <div className="space-y-4">
-              <h3 className="text-3xl font-bold text-gray-900 mt-6">
-                Why It Matters
-              </h3>
-
               <p className="text-lg text-gray-700">
                 Traditional systems monitor, i365+ <em>adapts</em>.<br />
                 Traditional systems report, i365+ <em>optimizes</em>.
@@ -194,7 +176,7 @@ export default function EngineProductsPage() {
 
             <div className="space-y-4">
               <h3 className="text-3xl font-bold text-gray-900 mt-6">
-                Data Layer
+                Features
               </h3>
 
               <ul className="list-disc pl-6 text-lg text-gray-700">

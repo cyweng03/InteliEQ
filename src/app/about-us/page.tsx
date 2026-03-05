@@ -43,8 +43,6 @@ export default function ResourcesPage() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="space-y-6"
         >
-          <h3 className="type-section-title-sm text-black">About InteliEQ</h3>
-
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             <div className="flex flex-1 flex-col space-y-2">
               <div className="flex justify-center"> <Image src={people} alt="People illustration" /></div>

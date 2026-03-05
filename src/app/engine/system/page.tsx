@@ -3,7 +3,8 @@
 import background from "@/app/assets/plant-keyboard.png";
 import Image from "next/image";
 import { motion } from "framer-motion";
-
+import { HoverCard } from "@/app/components/HoverCard";
+import SpotlightCard from "@/components/SpotlightCard";
 export default function FullStackPage() {
   return (
     <div className="pt-16 ">
@@ -30,31 +31,37 @@ export default function FullStackPage() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="flex flex-col space-y-4 mt-12 "
         >
+
           <div className="">
             <h2 className="type-section-title-sm">How It Works</h2>
             <div className="type-kicker mt-3 text-brand-orange mb-4">Continuous Awareness. Continuous Action.</div>
           </div>
           <div className="flex flex-row justify-between">
-            <div className="flex-1 items-center flex flex-col">
-              <div className="type-card-title mb-4">
-                Continuous Monitoring
+            <HoverCard>
+              <div className="flex-1 items-center flex flex-col">
+                <div className="type-card-title mb-4">
+                  Continuous Monitoring
+                </div>
+                <ul role="list" className="type-body list-disc ml-5">
+                  <li>Symphony-iQ monitors indoor air and surface conditions in real time</li>
+                  <li>Tracks pollutants, CO₂, humidity, and ventilation performance</li>
+                  <li>Enables continuous awareness and action</li>
+                </ul>
               </div>
-              <ul role="list" className="type-body list-disc ml-5">
-                <li>Symphony-iQ monitors indoor air and surface conditions in real time</li>
-                <li>Tracks pollutants, CO₂, humidity, and ventilation performance</li>
-                <li>Enables continuous awareness and action</li>
-              </ul>
-            </div>
-            <div className="flex-1 items-center flex flex-col">
-              <div className="type-card-title mb-4">
-                Active Purification
+            </HoverCard>
+            <SpotlightCard>
+              <div className="flex-1 items-center flex flex-col text-white">
+                <div className="type-card-title mb-4">
+                  Active Purification
+                </div>
+                <ul role="list" className="type-body list-disc ml-5">
+                  <li>Responds immediately when threats emerge</li>
+                  <li>Reduces contamination risk through active purification</li>
+                  <li>Optimizes ventilation and zone dampers dynamically</li>
+                </ul>
               </div>
-              <ul role="list" className="type-body list-disc ml-5">
-                <li>Responds immediately when threats emerge</li>
-                <li>Reduces contamination risk through active purification</li>
-                <li>Optimizes ventilation and zone dampers dynamically</li>
-              </ul>
-            </div>
+            </SpotlightCard>
+
             <div className="flex-1 items-center flex flex-col">
               <div className="type-card-title mb-4">
                 i365+ Intelligence
