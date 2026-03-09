@@ -10,7 +10,6 @@ We aim to deliver a modern, multi-page, responsive website that communicates Int
 - Create multi-page, responsive React/Next.js site
 - Clarify and simplify messaging and storytelling
 - Develop visual elements (graphics, icons, simple animations)
-- Integrate AI chatbot for visitor interaction
 - Build scalable framework for future growth
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
