@@ -20,7 +20,7 @@ export default function ResourcesPage() {
         <span className="text-gray-400 text-3xl">▲</span>
       </div>
 
-      <div className="container mx-auto my-6 space-y-12">
+      <div className="px-[10vw] my-6 space-y-12">
         <div className="space-y-4">
           <h1 className="type-page-title text-black">About Us</h1>
           <h2 className="type-lead text-brand-orange font-bold">Our Mission</h2>
@@ -102,7 +102,7 @@ export default function ResourcesPage() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="space-y-6"
         >
-          <h2 className="type-section-title-sm text-black">Meet The Team</h2>
+          <h2 className="type-section-title-sm text-black">Meet The Leadership</h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             <Profile

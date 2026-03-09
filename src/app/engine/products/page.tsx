@@ -21,7 +21,7 @@ export default function EngineProductsPage() {
         />
       </div>
 
-      <div className="container mx-auto mt-12 space-y-6">
+      <div className="px-[10vw] mt-12 space-y-6">
         <section className="space-y-6">
           <h2 className="text-5xl font-extrabold text-gray-900">
             Symphony-iQ

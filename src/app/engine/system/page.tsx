@@ -11,7 +11,7 @@ export default function FullStackPage() {
       <div className="w-full relative h-[50vh] overflow-hidden">
         <Image src={background} alt="Plant Keyboard Background" fill className="object-cover object-center" />
       </div>
-      <div className="container mx-auto space-y-2">
+      <div className="px-[10vw] space-y-2">
         <h1 className="type-page-title mt-12 mb-6">The Environmental Intelligence Engine</h1>
         <div className="type-lead font-bold text-brand-orange">Turning Buildings Into Living, Intelligent Ecosystems</div>
         <p className="type-body">
@@ -24,56 +24,62 @@ export default function FullStackPage() {
           reducing energy waste, and creating environments where people and
           performance thrive.
         </p>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="flex flex-col space-y-4 mt-12 "
-        >
+        <div className="bg-brand-black w-screen relative left-1/2 right-1/2 -mx-[50vw] mt-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="flex flex-col space-y-4  "
+          >
+            <SpotlightCard className="flex-1 px-[10vw]">
+              <h2 className="type-section-title-sm text-white relative z-10">How It Works</h2>
+              <div className="type-kicker mt-3 text-brand-orange mb-4 relative z-10">Continuous Awareness. Continuous Action.</div>
+              <div className="flex flex-row justify-between space-x-6 text-white relative z-10">
+                <div className="flex-1 items-center flex flex-col rounded-xl">
+                  <div className="type-card-title mb-4">
+                    Continuous Monitoring
+                  </div>
+                  <ul role="list" className="type-body list-disc ml-5">
+                    <li>Symphony-iQ monitors indoor air and surface conditions in real time</li>
+                    <li>Tracks pollutants, CO₂, humidity, and ventilation performance</li>
+                    <li>Enables continuous awareness and action</li>
+                  </ul>
+                </div>
+                {/* <SpotlightCard className="flex-1 text-white"> */}
+                <div className="flex-1 items-center flex flex-col rounded-xl">
+                  <div className="type-card-title mb-4">
+                    Active Purification
+                  </div>
+                  <ul role="list" className="type-body list-disc ml-5">
+                    <li>Responds immediately when threats emerge</li>
+                    <li>Reduces contamination risk through active purification</li>
+                    <li>Optimizes ventilation and zone dampers dynamically</li>
+                  </ul>
+                </div>
+                {/* </SpotlightCard> */}
 
-          <div className="">
-            <h2 className="type-section-title-sm">How It Works</h2>
-            <div className="type-kicker mt-3 text-brand-orange mb-4">Continuous Awareness. Continuous Action.</div>
-          </div>
-          <div className="flex flex-row justify-between">
-            <HoverCard>
-              <div className="flex-1 items-center flex flex-col">
-                <div className="type-card-title mb-4">
-                  Continuous Monitoring
+                {/* <SpotlightCard className="flex-1 text-white"> */}
+                <div className="flex-1 items-center flex flex-col rounded-xl">
+                  <div className="type-card-title mb-4">
+                    i365+ Intelligence
+                  </div>
+                  <ul role="list" className="type-body list-disc ml-5">
+                    <li>Connects sensor, purification, and building automation data</li>
+                    <li>AI models interpret conditions and predict issues early</li>
+                    <li>Actionable insights delivered through a secure cloud interface</li>
+                  </ul>
                 </div>
-                <ul role="list" className="type-body list-disc ml-5">
-                  <li>Symphony-iQ monitors indoor air and surface conditions in real time</li>
-                  <li>Tracks pollutants, CO₂, humidity, and ventilation performance</li>
-                  <li>Enables continuous awareness and action</li>
-                </ul>
-              </div>
-            </HoverCard>
-            <SpotlightCard>
-              <div className="flex-1 items-center flex flex-col text-white">
-                <div className="type-card-title mb-4">
-                  Active Purification
-                </div>
-                <ul role="list" className="type-body list-disc ml-5">
-                  <li>Responds immediately when threats emerge</li>
-                  <li>Reduces contamination risk through active purification</li>
-                  <li>Optimizes ventilation and zone dampers dynamically</li>
-                </ul>
+                {/* </SpotlightCard> */}
+
               </div>
             </SpotlightCard>
 
-            <div className="flex-1 items-center flex flex-col">
-              <div className="type-card-title mb-4">
-                i365+ Intelligence
-              </div>
-              <ul role="list" className="type-body list-disc ml-5">
-                <li>Connects sensor, purification, and building automation data</li>
-                <li>AI models interpret conditions and predict issues early</li>
-                <li>Actionable insights delivered through a secure cloud interface</li>
-              </ul>
-            </div>
-          </div>
-        </motion.div>
+
+
+          </motion.div>
+        </div>
+
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
