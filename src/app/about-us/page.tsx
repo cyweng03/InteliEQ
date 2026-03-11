@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import aboutus from "@/app/assets/aboutus.jpeg";
+import aboutus from "@/app/assets/aboutus.png";
 
 import people from "../assets/icons/people.svg";
 import planet from "../assets/icons/planet.svg";
@@ -58,18 +58,18 @@ export default function ResourcesPage() {
           className="space-y-6"
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            <div className="flex flex-1 flex-col space-y-2">
-              <div className="flex justify-center"> <Image src={people} alt="People illustration" width={120} height={120} /></div>
+            <div className="flex flex-1 flex-col space-y-2 shadow-xl rounded-xl p-8 m-4">
+              <div className="flex justify-center"> <Image src={people} alt="People illustration" width={100} height={100} /></div>
               <div className="type-card-title-sm text-center text-black">People</div>
               <div className="type-body">We design technology that protects what matters most, human health, comfort, and performance. Every environment we touch is made measurably safer, cleaner, and more supportive of the people who live, work, and heal within it.</div>
             </div>
-            <div className="flex flex-1 flex-col space-y-2">
-              <div className="flex justify-center"> <Image src={planet} alt="planet illustration" width={120} height={120}/></div>
+            <div className="flex flex-1 flex-col space-y-2 shadow-xl rounded-xl p-8 m-4">
+              <div className="flex justify-center"> <Image src={planet} alt="planet illustration" width={100} height={100}/></div>
               <div className="type-card-title-sm text-center text-black">Planet</div>
               <div className="type-body">Sustainability isn’t a feature; it’s a responsibility. Our systems actively reduce energy waste, lower carbon impact, and extend the life of building infrastructure, proving that healthy indoor environments and a healthier planet go hand in hand.</div>
             </div>
-            <div className="flex flex-1 flex-col space-y-2">
-              <div className="flex justify-center"> <Image src={passion} alt="passion illustration" width={120} height={120}/></div>
+            <div className="flex flex-1 flex-col space-y-2 shadow-xl rounded-xl p-8 m-4">
+              <div className="flex justify-center"> <Image src={passion} alt="passion illustration" width={100} height={100}/></div>
               <div className="type-card-title-sm text-center text-black">Passion</div>
               <div className="type-body">We challenge outdated thinking. We innovate with urgency. And we build with purpose. Our passion is transforming buildings into intelligent, self-optimizing ecosystems that elevate health, efficiency, and trust in the spaces we depend on every day.</div>
             </div>
