@@ -4,7 +4,7 @@ import background from "@/app/assets/plant-keyboard.png";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { HoverCard } from "@/app/components/HoverCard";
-import SpotlightCard from "@/components/SpotlightCard";
+import SpotlightCard from "@/app/components/SpotlightCard";
 export default function FullStackPage() {
   return (
     <div className="pt-16 ">
@@ -74,9 +74,6 @@ export default function FullStackPage() {
 
               </div>
             </SpotlightCard>
-
-
-
           </motion.div>
         </div>
 

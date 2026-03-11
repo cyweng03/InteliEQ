@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 
-import { GlowingEffect } from '@/components/ui/glowing-effect';
+import { GlowingEffect } from '@/app/components/ui/glowing-effect';
 import HeroCarousel from '../components/Carousel';
 import carousel3 from '../assets/carousel3.jpeg';
 import carousel4 from '../assets/carousel4.jpg';
