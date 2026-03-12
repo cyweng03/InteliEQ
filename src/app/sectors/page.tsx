@@ -64,7 +64,7 @@ export default function SectorsPage() {
     title: "Hospitality: Comfort Perfected",
     icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-building-skyscraper"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 21l18 0" /><path d="M5 21v-14l8 -4v18" /><path d="M19 21v-10l-6 -4" /><path d="M9 9l0 .01" /><path d="M9 12l0 .01" /><path d="M9 15l0 .01" /><path d="M9 18l0 .01" /></svg>`,
     description1:
-      "In environments where every breath matters, InteliEQ delivers continuous protection against airborne and surface pathogens while ensuring optimal ventilation and energy efficiency.",
+      "Guests remember how a space makes them feel. InteliEQ enhances that experience by delivering cleaner, fresher air and more balanced environments while reducing operational costs through intelligent energy management.",
     bullets: [
       "Elevated guest comfort and satisfaction",
       "Reduced energy consumption and operational costs",
@@ -89,14 +89,14 @@ export default function SectorsPage() {
   };
 
   const Government: SectorProps = {
-    title: "Government: Mission Critical",
+    title: "Athletic Facilities: Built for Performance ",
     icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-scale"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 20l10 0" /><path d="M6 6l6 -1l6 1" /><path d="M12 3l0 17" /><path d="M9 12l-3 -6l-3 6a3 3 0 0 0 6 0" /><path d="M21 12l-3 -6l-3 6a3 3 0 0 0 6 0" /></svg>`,
     description1:
-      "From public safety facilities to defense operations, mission-critical environments demand uncompromising reliability. InteliEQ integrates continuous air purification, real-time monitoring, and energy optimization to safeguard health, improve resilience, and enhance operational readiness.",
+      "From locker rooms and training facilities to weight rooms and recovery spaces, InteliEQ helps athletic programs protect athlete health by actively purifying air and surfaces while continuously monitoring air quality, humidity, temperature, and ventilation performance.",
     bullets: [
-      "Verified compliance",
-      "Enhanced resilience",
-      "Lower lifecycle costs"
+      "Healthier athletes",
+      "Reduced infection risk",
+      "Peak performance environments"
     ],
     learnMoreText: "Learn more",
     learnMoreLink: "/sectors/government/learn-more.pdf",

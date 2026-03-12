@@ -34,9 +34,9 @@ export default function FullStackPage() {
           >
             <SpotlightCard className="flex-1 px-[10vw]">
               <h2 className="type-section-title-sm text-white relative z-10">How It Works</h2>
-              <div className="type-kicker mt-3 text-brand-orange mb-4 relative z-10">Continuous Awareness. Continuous Action.</div>
-              <div className="flex flex-row justify-between space-x-6 text-white relative z-10">
-                <div className="flex-1 items-center flex flex-col rounded-xl">
+              <div className="type-kicker mt-3 text-brand-orange mb-8 relative z-10">Continuous Awareness. Continuous Action.</div>
+              <div className="flex flex-row justify-between space-x-18 text-white relative z-10">
+                <div className="flex-1 items-start flex flex-col rounded-xl">
                   <div className="type-card-title mb-4">
                     Continuous Monitoring
                   </div>
@@ -47,7 +47,7 @@ export default function FullStackPage() {
                   </ul>
                 </div>
                 {/* <SpotlightCard className="flex-1 text-white"> */}
-                <div className="flex-1 items-center flex flex-col rounded-xl">
+                <div className="flex-1 items-start flex flex-col rounded-xl">
                   <div className="type-card-title mb-4">
                     Active Purification
                   </div>
@@ -60,7 +60,7 @@ export default function FullStackPage() {
                 {/* </SpotlightCard> */}
 
                 {/* <SpotlightCard className="flex-1 text-white"> */}
-                <div className="flex-1 items-center flex flex-col rounded-xl">
+                <div className="flex-1 items-start flex flex-col rounded-xl">
                   <div className="type-card-title mb-4">
                     i365+ Intelligence
                   </div>
@@ -122,7 +122,7 @@ export default function FullStackPage() {
               <div className="type-body-strong text-brand-black">Measurable Sustainability Impact</div>
             </div>
           </div>
-          <p className="type-body">
+          <p className="type-body mt-4">
             This is the power of intelligent air: every breath, every watt, every moment optimized.
           </p>
 

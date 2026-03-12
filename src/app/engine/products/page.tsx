@@ -36,18 +36,20 @@ export default function EngineProductsPage() {
               </p>
 
               <p className="text-lg text-gray-700 leading-relaxed">
-                Symphony-iQ is a modular environmental intelligence system
-                designed for high-density, high-performance environments.
+                {/* Symphony-iQ is a modular environmental intelligence system
+                designed for high-density, high-performance environments. */}
+                Explore the Intelligence Layer
+
               </p>
 
-              <div className="text-lg text-gray-700">
+              {/* <div className="text-lg text-gray-700">
                 <div className="mt-3 mb-2">It combines:</div>
                 <ul className="list-disc pl-6 leading-relaxed">
                   <li>Real-time environmental sensing</li>
                   <li>Active air and surface intervention</li>
                   <li>Adaptive HVAC optimization</li>
                 </ul>
-              </div>
+              </div> */}
             </div>
 
             <div className="flex items-stretch">
