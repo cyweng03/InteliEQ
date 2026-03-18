@@ -12,6 +12,7 @@ import karl from "@/app/assets/karl.png";
 import terry from "@/app/assets/terry.png";
 import jeff from "@/app/assets/jeff.png";
 import william from "@/app/assets/william.png";
+import joe from "@/app/assets/joe.png";
 
 import { motion } from "framer-motion";
 import Profile from "../components/Profile";
@@ -35,7 +36,7 @@ export default function ResourcesPage() {
           <h1 className="text-white font-bold text-4xl md:text-5xl leading-tight">
             Purpose Driven.
             <br />
-            Intelligence Enabled
+            Intelligence Enabled.
           </h1>
           <p className="mt-4 text-brand-orange font-semibold text-xl md:text-2xl">
             For the spaces where life happens
@@ -99,7 +100,7 @@ export default function ResourcesPage() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="px-[6vw] py-12 space-y-6"
+          className="px-[2vw] py-12 space-y-6"
         >
           <h3 className="type-section-title-sm text-white">Core Values</h3>
 
@@ -134,15 +135,15 @@ export default function ResourcesPage() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="space-y-6"
         >
+          <h2 className="type-section-title-sm text-black mt-12">Meet The Leadership</h2>
           <div className="space-y-3">
-            <h2 className="type-lead text-brand-orange font-bold max-w-[800px] mt-12">
+            <h2 className="type-lead text-brand-orange font-bold max-w-[800px]">
               Leadership Built on Performance, Experience, and Real-World Execution
             </h2>
             <p className="type-body text-black">
               InteliEQ’s leadership team brings deep expertise across building systems, sustainability, infrastructure deployment, and enterprise market development. United by a shared belief that indoor environments directly influence health, performance, and operational outcomes, the team combines strategic vision with practical execution experience. From mechanical systems integration to large-scale client partnerships, InteliEQ’s leaders are focused on delivering Environmental Intelligence solutions that perform reliably in real buildings, and create measurable impact where people live, learn, train, and recover.
             </p>
           </div>
-          <h2 className="type-section-title-sm text-black mt-12">Meet The Leadership</h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             <Profile
@@ -178,9 +179,13 @@ At InteliEQ, he ensures environmental intelligence is not only visionary, but ma
 
             <Profile
               image={
-                <div className="mx-auto h-[300px] w-[300px] rounded-full bg-gray-300 flex items-center justify-center text-4xl font-semibold text-gray-700">
-                  JM
-                </div>
+                <Image
+                  src={joe}
+                  alt="Joseph McLaughlin"
+                  width={300}
+                  height={300}
+                  className="mx-auto rounded-full object-cover object-[30%_0%] h-[300px] w-[300px] shrink-0"
+                />
               }
               name="Joseph McLaughlin"
               title="VP of Business Development & Client Services"
