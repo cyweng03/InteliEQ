@@ -47,7 +47,7 @@ export default function Footer() {
       </div>
 
       <div className="pt-8 flex flex-col text-center text-sm text-brand-white space-y-2">
-        <p>Made By Women in Computing at Cornell</p>
+        <p>Developed By Women in Computing at Cornell</p>
         <p>© {new Date().getFullYear()} InteliEQ. All rights reserved.</p>
       </div>
     </footer>

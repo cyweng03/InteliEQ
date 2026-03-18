@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState, useRef, useContext } from "react";
+import React, { useEffect, useRef, useContext } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -10,43 +10,28 @@ import Button from "./components/Button";
 import Statistic from "./components/Statistic";
 import Icon from "./components/Icon";
 import NavContext from "./components/NavContext";
+import StatProfile from "./components/StatProfile";
 
 import filtration from "./assets/icons/filtration.png";
 import ai from "./assets/icons/ai.png";
-import healthcare from "./assets/icons/healthcare.png";
-import education from "./assets/icons/education.png";
 import estate from "./assets/icons/estate.png";
 import government from "./assets/icons/government.png";
 import senior from "./assets/icons/senior.png";
-import hospitality from "./assets/icons/hospitality.png";
 import arrow from "./assets/icons/downward_arrow.png";
 import data from "./assets/icons/data_icon.png";
 import efficiency from "./assets/icons/efficiency_icon.png";
 import graphic from "./assets/matters_image.png";
 import capabilities_graphic from "./assets/capabilities_image.png";
 
+import athleticIcon from "@/app/assets/athletic.png";
+import educationIcon from "@/app/assets/education.png";
+import hospitalityIcon from "@/app/assets/hospitality.png";
+import healthcareIcon from "@/app/assets/healthcare.png";
+
 
 export default function Home() {
-  const [differenceVisible, setDifferenceVisible] = useState(false);
-  const [aboutVisible, setAboutVisible] = useState(false);
-  const [offerVisible, setOfferVisible] = useState(false);
-  const [serveVisible, setServeVisible] = useState(false);
-  const [contactVisible, setContactVisible] = useState(false);
-  const [mattersVisible, setMattersVisible] = useState(false);
-  const [capabilitiesVisible, setcapabilitiesVisible] = useState(false);
-
-
-
-  const differenceRef = useRef<HTMLDivElement | null>(null);
   const aboutRef = useRef<HTMLDivElement | null>(null);
-  const offerRef = useRef<HTMLDivElement | null>(null);
-  const serveRef = useRef<HTMLDivElement | null>(null);
-  const contactRef = useRef<HTMLDivElement | null>(null);
   const heroRef = useRef<HTMLElement | null>(null);
-  const mattersRef = useRef<HTMLDivElement | null>(null);
-  const capabilitiesRef = useRef<HTMLDivElement | null>(null);
-
-  
 
   const { setHideNav } = useContext(NavContext);
 
@@ -62,7 +47,7 @@ export default function Home() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setHideNav(entry.isIntersecting); // hide when hero visible
+        setHideNav(entry.isIntersecting);
       },
       { threshold: 0.6 }
     );
@@ -71,36 +56,6 @@ export default function Home() {
 
     return () => observer.disconnect();
   }, [setHideNav]);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.target === differenceRef.current) setDifferenceVisible(entry.isIntersecting);
-          if (entry.target === aboutRef.current) setAboutVisible(entry.isIntersecting);
-          if (entry.target === offerRef.current) setOfferVisible(entry.isIntersecting);
-          if (entry.target === serveRef.current) setServeVisible(entry.isIntersecting);
-          if (entry.target === contactRef.current) setContactVisible(entry.isIntersecting);
-          if (entry.target === mattersRef.current) setMattersVisible(entry.isIntersecting);
-          if (entry.target === capabilitiesRef.current) setcapabilitiesVisible(entry.isIntersecting);
-
-        });
-      },
-      { threshold: 0.2 }
-    );
-
-    if (differenceRef.current) observer.observe(differenceRef.current);
-    if (aboutRef.current) observer.observe(aboutRef.current);
-    if (offerRef.current) observer.observe(offerRef.current);
-    if (serveRef.current) observer.observe(serveRef.current);
-    if (contactRef.current) observer.observe(contactRef.current);
-    if (mattersRef.current) observer.observe(mattersRef.current);
-    if (capabilitiesRef.current) observer.observe(capabilitiesRef.current);
-
-
-
-    return () => observer.disconnect();
-  }, []);
 
   return (
     <>
@@ -155,21 +110,21 @@ export default function Home() {
       <div className="container mx-auto py-8 bg-white" ref={aboutRef}>
 
         <section id='section2' className="p-5 py-8 px-16">
-          <div className="font-bold mb-12">
-            <h3 className="type-section-title mb-4"> Environmental Intelligence for the Spaces We Rely On</h3>
-            <div className="flex flex-col items-center justify-center">
+          <div className="font-bold mb-10">
+            <h3 className="type-section-title mb-4 md:w-full md:text-5xl mr-3 text-4xl"> Environmental Intelligence for the Spaces We Rely On</h3>
+            <div className="flex flex-col items-center justify-center m-8">
               <Statistic 
-                header="Buildings shouldn’t guess."
+                header="Buildings shouldn't guess."
                 info="They should know."/>
               <Statistic 
-                header="They shouldn’t react."
+                header="They shouldn't react."
                 info="They should anticipate."/>
             </div>
             
           </div>
           <div>
-            <p className="type-lead font-bold shadow-lg p-8 rounded-xl">
-              <span className="type-subtitle text-brand-orange">Indoor spaces should empower human well-being, not endanger it. </span><br></br><br></br>
+            <p className="type-lead font-bold rounded-2xl border bg-white p-8">
+              <span className="type-subtitle text-black">Indoor spaces should empower human well-being, not endanger it. </span><br></br><br></br>
               We fuse research-grade sensing, proactive purification, and real-time data intelligence into a single platform, turning invisible risks into measurable improvements and giving building operators a new level of clarity and control.<br></br><br></br>
               Our purpose is to create environments where every breath, every room, and every moment is supported by intelligent systems working quietly in the background.
             </p>
@@ -179,83 +134,65 @@ export default function Home() {
 
         {/* OFFER */}
         <section id="offer" className="px-16">
-          <div
-            ref={offerRef}
-            className={`transition-opacity duration-1000 ease-in-out ${offerVisible ? "opacity-100" : "opacity-0"} flex flex-col mt-20 mb-6`}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="flex flex-col mt-14 mb-6"
           >
-            <h1 className={`md:w-1/3 type-section-title text-black mb-7 ${offerVisible ? "visible" : ""}`}>What We Offer</h1>
+            <h1 className="md:w-1/3 type-section-title text-black mb-7">What We Offer</h1>
             <p className="type-lead">InteliEQ provides intelligent technologies that improve indoor environments:</p>
 
             <div className="grid grid-col-1 md:grid-cols-4 gap-8 mt-5 mx-4 text-center">
               
-              <Icon
-                icon={
-                  <Image
-                    src={ai.src}
-                    alt="AI"
-                    width={80}
-                    height={80}
-                    className="mx-auto"
-                  />
-                }
-                title="Real-Time Monitoring"
-                content="High-fidelity sensors that measure the full picture of indoor environmental quality—airborne and surface-level—24/7."
+              <StatProfile
+                image={<Image src={ai.src} alt="AI" width={120} height={120} className="mx-auto" />}
+                name="Real-Time Monitoring"
+                title=""
+                hoverText="High-fidelity sensors that measure the full picture of indoor environmental quality—airborne and surface-level—24/7."
               />
-              <Icon
-                icon={
-                  <Image
-                    src={filtration.src}
-                    alt="Filtration"
-                    width={85}
-                    height={85}
-                    className="mx-auto"
-                  />
-                }
-                title="Active Purification"
-                content="Proactive, scientifically validated purification that neutralizes threats before they spread."
+              <StatProfile
+                image={<Image src={filtration.src} alt="filtration" width={125} height={125} className="mx-auto" />}
+                name="Active Purification"
+                title=""
+                hoverText="Proactive, scientifically validated purification that neutralizes threats before they spread."
               />
-              <Icon
-                icon={
-                  <Image
-                    src={data.src}
-                    alt="Data"
-                    width={80}
-                    height={80}
-                    className="mx-auto"
-                  />
-                }
-                title="Data Intelligence"
-                content="Actionable insights, automated responses, and verified outcomes that turn invisible risks into measurable improvements that build trust with occupants, patients, students and staff."
+
+              <StatProfile
+                image={<Image src={data.src} alt="data" width={125} height={125} className="mx-auto" />}
+                name="Data Intelligence"
+                title=""
+                hoverText="Actionable insights, automated responses, and verified outcomes that turn invisible risks into measurable improvements that build trust with occupants, patients, students and staff."
               />
-              <Icon
-                icon={
-                  <Image
-                    src={efficiency.src}
-                    alt="Efficiency"
-                    width={80}
-                    height={80}
-                    className="mx-auto"
-                  />
-                }
-                title="Efficiency Gains"
-                content="Better IAQ shouldn’t require more energy. Our systems optimize ventilation and purification intelligently, reducing waste and improving building performance."
+              <StatProfile
+                image={<Image src={efficiency.src} alt="efficiency" width={135} height={135} className="mx-auto" />}
+                name="Efficiency Gains"
+                title=""
+                hoverText="Better IAQ shouldn't require more energy. Our systems optimize ventilation and purification intelligently, reducing waste and improving building performance."
               />
             </div>
-          </div>
+          </motion.div>
 
           <Link href="/system" className=" mt-4">
               <Button image="" content="See the Engine &#8599;" />
           </Link>
         </section>
-        <section id="matters" className="px-16 mb-15">
-          <div ref={mattersRef} className={`transition-opacity duration-1000 ease-in-out ${mattersVisible ? "opacity-100" : "opacity-0"} flex flex-col mt-20`}>
-            <div className="flex flex-col md:flex-row md:items-center md:gap-8">
+        <section id="matters" className="px-16 mb-15 flex items-center justify-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="flex flex-col mt-20"
+          >
+            <div className="flex flex-col md:flex-row md:items-center md:gap-8 justify-center">
               
               <div className="md:flex-1">
-                <h1 className={`md:w-1/2 type-section-title text-black mb-7 ${mattersVisible ? "visible" : ""}`}>Why It Matters</h1>
+                <h1 className="md:w-3/4 type-section-title text-black mb-7">Why It Matters</h1>
                 <h2 className="type-subtitle text-brand-orange font-bold mb-4">Health, Productivity, Energy, Trust</h2>
 
-                <p className="type-body mb-4">Great indoor environments don’t happen by accident. They’re engineered continuously, intelligently, and transparently.</p>
+                <p className="type-body mb-4">Great indoor environments don't happen by accident. They're engineered continuously, intelligently, and transparently.</p>
 
                 <ul className="type-body list-disc pl-6 space-y-2 mb-4">
                   <li>Cleaner air = better health and fewer disruptions</li>
@@ -264,9 +201,9 @@ export default function Home() {
                   <li>Unified intelligence = simpler operations</li>
                 </ul>
 
-                <p className="type-body">InteliEQ brings clarity to what’s been invisible for too long.</p>
+                <p className="type-body">InteliEQ brings clarity to what's been invisible for too long.</p>
               </div>
-              <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0">
+              <div className="md:w-1/2 mt-6 md:mt-0 flex-shrink-0 items-center justify-center flex">
                 <Image 
                   className="w-full h-auto" 
                   src={graphic.src} 
@@ -276,7 +213,7 @@ export default function Home() {
                 />
               </div>
             </div>
-          </div>
+          </motion.div>
         </section>
        <section id="difference" className="bg-brand-black text-white py-6 px-16">
         <motion.div
@@ -284,7 +221,7 @@ export default function Home() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="flex flex-col mt-20 mb-6"
+          className="flex flex-col mt-12 mb-8"
         >
           <h1 className="md:w-1/2 type-section-title text-white mb-5">
             The InteliEQ Difference
@@ -340,44 +277,46 @@ export default function Home() {
       </section>
 
         {/* SERVE */}
-        <section id="serve"  className="px-16">
-          <div
-            ref={serveRef}
-            className={`transition-opacity duration-1000 ease-in-out ${serveVisible ? "opacity-100" : "opacity-0"} flex flex-col mt-20 mb-6`}
+        <section id="serve" className="px-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="flex flex-col mt-20 mb-6"
           >
-            <h1 className={`md:w-1/3 type-section-title text-black mb-7 ${serveVisible ? "visible" : ""}`}>Who We Serve</h1>
+            <h1 className="md:w-1/3 type-section-title text-black mb-7">Who We Serve</h1>
             <p className="type-lead font-bold text-brand-orange mb-2">Designed for the Places Where Performance Matters Most</p>
             <p>Any indoor space where health, trust, and efficiency are mission-critical.
-Whether it’s a hospital wing, a school district, or a corporate campus, InteliEQ scales seamlessly.
+Whether it's a hospital wing, a school district, or a corporate campus, InteliEQ scales seamlessly.
 </p>
 
-            {/* DESKTOP GRID */}
             <div className="hidden md:grid md:grid-cols-6 md:gap-8 md:justify-center md:items-center mt-7">
 
               <Link href="/sectors" className="inline-block">
                 <Icon
                   icon={
-                    <Image src={education.src} alt="Education" width={64} height={64} className="mx-auto" />
+                    <Image src={educationIcon.src} alt="Education" width={64} height={64} className="mx-auto" />
                   }
-                  content="Education"
+                  subtitle="Education"
                 />
               </Link>
 
               <Link href="/sectors" className="inline-block">
                 <Icon
                   icon={
-                    <Image src={healthcare.src} alt="Healthcare" width={64} height={64} className="mx-auto" />
+                    <Image src={healthcareIcon.src} alt="Healthcare" width={64} height={64} className="mx-auto" />
                   }
-                  content="Healthcare"
+                  subtitle="Healthcare"
                 />
               </Link>
 
               <Link href="/sectors" className="inline-block">
                 <Icon
                   icon={
-                    <Image src={hospitality.src} alt="Hospitality" width={64} height={64} className="mx-auto" />
+                    <Image src={hospitalityIcon.src} alt="Hospitality" width={64} height={64} className="mx-auto" />
                   }
-                  content="Hospitality"
+                  subtitle="Hospitality"
                 />
               </Link>
 
@@ -386,16 +325,16 @@ Whether it’s a hospital wing, a school district, or a corporate campus, Inteli
                   icon={
                     <Image src={estate.src} alt="Real Estate" width={64} height={64} className="mx-auto" />
                   }
-                  content="Real Estate"
+                  subtitle="Real Estate"
                 />
               </Link>
 
               <Link href="/sectors" className="inline-block">
                 <Icon
                   icon={
-                    <Image src={government.src} alt="Government" width={64} height={64} className="mx-auto" />
+                    <Image src={athleticIcon.src} alt="Government" width={64} height={64} className="mx-auto" />
                   }
-                  content="Government"
+                  subtitle="Athletic Facilities"
                 />
               </Link>
 
@@ -404,7 +343,7 @@ Whether it’s a hospital wing, a school district, or a corporate campus, Inteli
                   icon={
                     <Image src={senior.src} alt="Senior Living" width={64} height={64} className="mx-auto" />
                   }
-                  content="Senior Living"
+                  subtitle="Senior Living"
                 />
               </Link>
             </div>
@@ -413,59 +352,59 @@ Whether it’s a hospital wing, a school district, or a corporate campus, Inteli
               <div className="flex gap-4 overflow-x-auto px-4 py-2 snap-x snap-mandatory touch-pan-x">
                 <Link href="/sectors/education" className="snap-center flex-shrink-0 w-40">
                   <Icon
-                    icon={<Image src={education.src} alt="Education" width={64} height={64} className="mx-auto" />}
-                    content="Education"
+                    icon={<Image src={educationIcon.src} alt="Education" width={64} height={64} className="mx-auto" />}
+                    subtitle="Education"
                   />
                 </Link>
                 <Link href="/sectors/healthcare" className="snap-center flex-shrink-0 w-40">
                   <Icon
-                    icon={<Image src={healthcare.src} alt="Healthcare" width={64} height={64} className="mx-auto" />}
-                    content="Healthcare"
+                    icon={<Image src={healthcareIcon.src} alt="Healthcare" width={64} height={64} className="mx-auto" />}
+                    subtitle="Healthcare"
                   />
                 </Link>
                 <Link href="/sectors/hospitality" className="snap-center flex-shrink-0 w-40">
                   <Icon
-                    icon={<Image src={hospitality.src} alt="Hospitality" width={64} height={64} className="mx-auto" />}
-                    content="Hospitality"
+                    icon={<Image src={hospitalityIcon.src} alt="Hospitality" width={64} height={64} className="mx-auto" />}
+                    subtitle="Hospitality"
                   />
                 </Link>
                 <Link href="/sectors/estate" className="snap-center flex-shrink-0 w-40">
                   <Icon
                     icon={<Image src={estate.src} alt="Real Estate" width={64} height={64} className="mx-auto" />}
-                    content="Real Estate"
+                    subtitle="Real Estate"
                   />
                 </Link>
                 <Link href="/sectors/government" className="snap-center flex-shrink-0 w-40">
                   <Icon
-                    icon={<Image src={government.src} alt="Government" width={64} height={64} className="mx-auto" />}
-                    content="Government"
+                    icon={<Image src={athleticIcon.src} alt="Government" width={64} height={64} className="mx-auto" />}
+                    subtitle="Athletic Facilities"
                   />
                 </Link>
                 <Link href="/sectors/senior-living" className="snap-center flex-shrink-0 w-40">
                   <Icon
                     icon={<Image src={senior.src} alt="Senior Living" width={64} height={64} className="mx-auto" />}
-                    content="Senior Living"
+                    subtitle="Senior Living"
                   />
                 </Link>
               </div>
             </div>
-          </div>
+          </motion.div>
         </section>
         <section id="capabilities" className="mt-20 px-16">
-          <div
-            ref={capabilitiesRef}
-            className={`transition-opacity duration-1000 ease-in-out ${capabilitiesVisible ? "opacity-100" : "opacity-0"}`}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <h1 className="md:w-1/3 type-section-title text-black mb-7">Key Capabilities</h1>
 
             <div className="flex flex-col md:flex-row md:items-center md:gap-12">
 
-              {/* Image on the left */}
               <div className="md:w-2/5 w-full flex items-center justify-center flex-shrink-0">
                 <Image src={capabilities_graphic.src} width={600} height={600} alt="graphic" />
               </div>
 
-              {/* Text pushed to the right edge */}
               <div className="flex-1 flex flex-col justify-center ml-auto pl-8">
                 <h2 className="type-subtitle text-brand-orange font-bold mb-4">
                   Science-Driven. Field-Tested. Human-Centered.
@@ -487,31 +426,30 @@ Whether it’s a hospital wing, a school district, or a corporate campus, Inteli
               </div>
 
             </div>
-          </div>
+          </motion.div>
         </section>
 
         {/* CONTACT */}
         <section id="contact" className="px-16">
-          <div
-            ref={contactRef}
-            className={`transition-opacity duration-1000 ease-in-out ${contactVisible ? "opacity-100" : "opacity-0"
-              } flex flex-col mt-20`}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="flex flex-col mt-20"
           >
             <h1 className="type-section-title-sm text-black">
               Ready to See What an Intelligent Indoor Environment Can Do?
             </h1>
-            <h2 className='type-kicker mt-5'>Let’s transform your spaces into ecosystems that support human health, operational clarity and sustainable performance.</h2>
+            <h2 className='type-kicker mt-5'>Let's transform your spaces into ecosystems that support human health, operational clarity and sustainable performance.</h2>
 
-            {/* <Link href="/system" className="inline-block mt-4">
-              <Button image="" content="See the Engine &#8599;" />
-            </Link> */}
             <Link href="/contact" className="inline-block mt-4">
               <Button image="" content="Request a Demo &#8599;" />
             </Link>
             <Link href="/system" className="inline-block mt-4">
               <Button image="" content="Learn about the Engine &#8599;" />
             </Link>
-          </div>
+          </motion.div>
         </section>
       </div>
     </>
