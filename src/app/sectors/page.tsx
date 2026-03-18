@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 
-import { GlowingEffect } from '@/components/ui/glowing-effect';
+import { GlowingEffect } from '@/app/components/ui/glowing-effect';
 import HeroCarousel from '../components/Carousel';
 import carousel3 from '../assets/carousel3.jpeg';
 import carousel4 from '../assets/carousel4.jpg';
@@ -71,7 +71,7 @@ export default function SectorsPage() {
       "Verified indoor environmental quality for brand trust"
     ],
     learnMoreText: "Learn more",
-    learnMoreLink: "/sectors/hospitality/learn-more.pdf",
+    learnMoreLink: "/sectors/hospitality.pdf",
   };
 
   const CommercialRealEstate: SectorProps = {
@@ -90,7 +90,7 @@ export default function SectorsPage() {
 
   const Government: SectorProps = {
     title: "Athletic Facilities: Built for Performance ",
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-scale"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 20l10 0" /><path d="M6 6l6 -1l6 1" /><path d="M12 3l0 17" /><path d="M9 12l-3 -6l-3 6a3 3 0 0 0 6 0" /><path d="M21 12l-3 -6l-3 6a3 3 0 0 0 6 0" /></svg>`,
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-shoe"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 6h5.426a1 1 0 0 1 .863 .496l1.064 1.823a3 3 0 0 0 1.896 1.407l4.677 1.114a4 4 0 0 1 3.074 3.89v2.27a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1v-10a1 1 0 0 1 1 -1" /><path d="M14 13l1 -2" /><path d="M8 18v-1a4 4 0 0 0 -4 -4h-1" /><path d="M10 12l1.5 -3" /></svg>`,
     description1:
       "From locker rooms and training facilities to weight rooms and recovery spaces, InteliEQ helps athletic programs protect athlete health by actively purifying air and surfaces while continuously monitoring air quality, humidity, temperature, and ventilation performance.",
     bullets: [
@@ -99,7 +99,7 @@ export default function SectorsPage() {
       "Peak performance environments"
     ],
     learnMoreText: "Learn more",
-    learnMoreLink: "/sectors/government/learn-more.pdf",
+    learnMoreLink: "/sectors/athletic.pdf",
   };
 
 
@@ -185,11 +185,11 @@ export default function SectorsPage() {
         <div className='type-body mb-5'>Every building tells a story of the people within it, the energy it consumes, and the invisible forces that shape how it performs.</div>
         <div className="type-body">From healthcare to education, commercial to government, our solutions deliver more than clean air … we deliver proof. Proof of healthier people, more efficient operations, and smarter buildings. Because when you can see what’s in the air, you can finally take control of what’s possible.</div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-16">
+          <SectorBlock content={Government} />
+          <SectorBlock content={Hospitality} />
           <SectorBlock content={Education} />
           <SectorBlock content={Healthcare} />
-          <SectorBlock content={Hospitality} />
           <SectorBlock content={CommercialRealEstate} />
-          <SectorBlock content={Government} />
           <SectorBlock content={SeniorLiving} />
         </div>
 

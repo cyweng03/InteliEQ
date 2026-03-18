@@ -3,6 +3,8 @@
 import React, { useEffect, useState, useRef, useContext } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { motion } from "framer-motion";
+
 
 import Button from "./components/Button";
 import Statistic from "./components/Statistic";
@@ -20,7 +22,8 @@ import hospitality from "./assets/icons/hospitality.png";
 import arrow from "./assets/icons/downward_arrow.png";
 import data from "./assets/icons/data_icon.png";
 import efficiency from "./assets/icons/efficiency_icon.png";
-import graphic from "./assets/graphic.png";
+import graphic from "./assets/matters_image.png";
+import capabilities_graphic from "./assets/capabilities_image.png";
 
 
 export default function Home() {
@@ -30,6 +33,8 @@ export default function Home() {
   const [serveVisible, setServeVisible] = useState(false);
   const [contactVisible, setContactVisible] = useState(false);
   const [mattersVisible, setMattersVisible] = useState(false);
+  const [capabilitiesVisible, setcapabilitiesVisible] = useState(false);
+
 
 
   const differenceRef = useRef<HTMLDivElement | null>(null);
@@ -39,6 +44,9 @@ export default function Home() {
   const contactRef = useRef<HTMLDivElement | null>(null);
   const heroRef = useRef<HTMLElement | null>(null);
   const mattersRef = useRef<HTMLDivElement | null>(null);
+  const capabilitiesRef = useRef<HTMLDivElement | null>(null);
+
+  
 
   const { setHideNav } = useContext(NavContext);
 
@@ -74,6 +82,8 @@ export default function Home() {
           if (entry.target === serveRef.current) setServeVisible(entry.isIntersecting);
           if (entry.target === contactRef.current) setContactVisible(entry.isIntersecting);
           if (entry.target === mattersRef.current) setMattersVisible(entry.isIntersecting);
+          if (entry.target === capabilitiesRef.current) setcapabilitiesVisible(entry.isIntersecting);
+
         });
       },
       { threshold: 0.2 }
@@ -85,6 +95,8 @@ export default function Home() {
     if (serveRef.current) observer.observe(serveRef.current);
     if (contactRef.current) observer.observe(contactRef.current);
     if (mattersRef.current) observer.observe(mattersRef.current);
+    if (capabilitiesRef.current) observer.observe(capabilitiesRef.current);
+
 
 
     return () => observer.disconnect();
@@ -143,9 +155,20 @@ export default function Home() {
       <div className="container mx-auto py-8 bg-white" ref={aboutRef}>
 
         <section id='section2' className="p-5 py-8 px-16">
+          <div className="font-bold mb-12">
+            <h3 className="type-section-title mb-4"> Environmental Intelligence for the Spaces We Rely On</h3>
+            <div className="flex flex-col items-center justify-center">
+              <Statistic 
+                header="Buildings shouldn’t guess."
+                info="They should know."/>
+              <Statistic 
+                header="They shouldn’t react."
+                info="They should anticipate."/>
+            </div>
+            
+          </div>
           <div>
-            <p className="type-lead font-bold">Founded by innovators in environmental health, sensing technology, and intelligent building systems, InteliEQ was built on a simple belief:
-              <br></br><br></br>
+            <p className="type-lead font-bold shadow-lg p-8 rounded-xl">
               <span className="type-subtitle text-brand-orange">Indoor spaces should empower human well-being, not endanger it. </span><br></br><br></br>
               We fuse research-grade sensing, proactive purification, and real-time data intelligence into a single platform, turning invisible risks into measurable improvements and giving building operators a new level of clarity and control.<br></br><br></br>
               Our purpose is to create environments where every breath, every room, and every moment is supported by intelligent systems working quietly in the background.
@@ -160,24 +183,11 @@ export default function Home() {
             ref={offerRef}
             className={`transition-opacity duration-1000 ease-in-out ${offerVisible ? "opacity-100" : "opacity-0"} flex flex-col mt-20 mb-6`}
           >
-            <h1 className={`md:w-1/3 type-section-title text-black mb-7 header-underline ${offerVisible ? "visible" : ""}`}>What We Offer</h1>
+            <h1 className={`md:w-1/3 type-section-title text-black mb-7 ${offerVisible ? "visible" : ""}`}>What We Offer</h1>
             <p className="type-lead">InteliEQ provides intelligent technologies that improve indoor environments:</p>
 
             <div className="grid grid-col-1 md:grid-cols-4 gap-8 mt-5 mx-4 text-center">
-              <Icon
-                icon={
-                  <Image
-                    src={filtration.src}
-                    alt="Filtration"
-                    width={85}
-                    height={85}
-                    className="mx-auto"
-                  />
-                }
-                title="Active Purification"
-                content="Proactive, scientifically validated purification that neutralizes threats before they spread."
-              />
-
+              
               <Icon
                 icon={
                   <Image
@@ -191,7 +201,19 @@ export default function Home() {
                 title="Real-Time Monitoring"
                 content="High-fidelity sensors that measure the full picture of indoor environmental quality—airborne and surface-level—24/7."
               />
-
+              <Icon
+                icon={
+                  <Image
+                    src={filtration.src}
+                    alt="Filtration"
+                    width={85}
+                    height={85}
+                    className="mx-auto"
+                  />
+                }
+                title="Active Purification"
+                content="Proactive, scientifically validated purification that neutralizes threats before they spread."
+              />
               <Icon
                 icon={
                   <Image
@@ -225,12 +247,12 @@ export default function Home() {
               <Button image="" content="See the Engine &#8599;" />
           </Link>
         </section>
-        <section id="matters" className="px-16">
+        <section id="matters" className="px-16 mb-15">
           <div ref={mattersRef} className={`transition-opacity duration-1000 ease-in-out ${mattersVisible ? "opacity-100" : "opacity-0"} flex flex-col mt-20`}>
             <div className="flex flex-col md:flex-row md:items-center md:gap-8">
               
               <div className="md:flex-1">
-                <h1 className={`md:w-1/2 type-section-title text-black mb-7 header-underline ${mattersVisible ? "visible" : ""}`}>Why It Matters</h1>
+                <h1 className={`md:w-1/2 type-section-title text-black mb-7 ${mattersVisible ? "visible" : ""}`}>Why It Matters</h1>
                 <h2 className="type-subtitle text-brand-orange font-bold mb-4">Health, Productivity, Energy, Trust</h2>
 
                 <p className="type-body mb-4">Great indoor environments don’t happen by accident. They’re engineered continuously, intelligently, and transparently.</p>
@@ -244,45 +266,78 @@ export default function Home() {
 
                 <p className="type-body">InteliEQ brings clarity to what’s been invisible for too long.</p>
               </div>
-              <div className="md:w-1/3 mt-6 md:mt-0 flex-shrink-0">
-                <Image className="relative right-0" src={graphic.src} width={600} height={600} alt="graphic" />
-                {/* <div className="w-full h-48 md:h-56 bg-gray-100 rounded-lg border border-gray-200 flex items-center justify-center">
-                  <span className="text-gray-500">Image placeholder</span>
-                </div> */}
+              <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0">
+                <Image 
+                  className="w-full h-auto" 
+                  src={graphic.src} 
+                  width={600} 
+                  height={600} 
+                  alt="graphic" 
+                />
               </div>
             </div>
           </div>
         </section>
-        <section id="difference" className="bg-brand-black text-white py-6 px-16">
-          <div ref={differenceRef} className={`transition-opacity duration-1000 ease-in-out ${differenceVisible ? "opacity-100" : "opacity-0"} flex flex-col mt-20 mb-6`}>
-            <h1 className={`md:w-1/2 type-section-title text-white mb-7 header-underline ${differenceVisible ? "visible" : ""}`}>The InteliEQ Difference</h1>
+       <section id="difference" className="bg-brand-black text-white py-6 px-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="flex flex-col mt-20 mb-6"
+        >
+          <h1 className="md:w-1/2 type-section-title text-white mb-5">
+            The InteliEQ Difference
+          </h1>
 
-            <p className="type-lead mb-4 text-white">Most buildings rely on outdated, reactive systems, ventilation that runs blindly, purification that's inconsistent and monitors that only tell you what already went wrong.</p>
+          <p className="type-lead mb-6 text-white">
+            Most buildings rely on outdated, reactive systems, ventilation that runs blindly, purification that's inconsistent and monitors that only tell you what already went wrong.
+          </p>
 
-            <div className="grid md:grid-cols-2 gap-6 type-body w-ful m-5">
-              <div className="shadow-md p-4 rounded-lg m-2 bg-white text-black">
-                <h3 className="font-bold">Proactive Instead of Reactive</h3>
-                <p>We prevent problems before they affect people.</p>
-              </div>
-
-              <div className="shadow-md p-4 rounded-lg m-2 bg-white text-black ">
-                <h3 className="font-bold">Unified Instead of Fragmented</h3>
-                <p>One intelligent system replaces a patchwork of disconnected devices.</p>
-              </div>
-
-              <div className="shadow-md p-4 rounded-lg m-2 bg-white text-black">
-                <h3 className="font-bold">Verified Instead of Assumed</h3>
-                <p>Real-time data proves performance — no guesswork, no uncertainty.</p>
-              </div>
-
-              <div className="shadow-md p-4 rounded-lg m-2 bg-white text-black">
-                <h3 className="font-bold">Healthy + Efficient Instead of Choosing One</h3>
-                <p>Our environmental intelligence optimizes IAQ and energy concurrently.</p>
-              </div>
-            </div>
-            <p className="type-body mt-2 font-medium">Environmental intelligence isn’t a feature. It’s the foundation for the future of indoor environments.</p>
+          <div className="flex flex-col gap-1 type-body w-full">
+            {[
+              {
+                title: "Proactive Instead of Reactive",
+                body: "We prevent problems before they affect people.",
+              },
+              {
+                title: "Unified Instead of Fragmented",
+                body: "One intelligent system replaces a patchwork of disconnected devices.",
+              },
+              {
+                title: "Verified Instead of Assumed",
+                body: "Real-time data proves performance — no guesswork, no uncertainty.",
+              },
+              {
+                title: "Healthy + Efficient Instead of Choosing One",
+                body: "Our environmental intelligence optimizes IAQ and energy at the same time.",
+              },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, x: -16 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.5, ease: "easeOut", delay: i * 0.12 }}
+                className="py-2 px-3 border-b border-white/10 rounded-md cursor-default transition-colors"
+              >
+                <h3 className="font-bold text-white">{item.title}</h3>
+                <p className="text-white/80 mt-0.5">{item.body}</p>
+              </motion.div>
+            ))}
           </div>
-        </section>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="type-body text-xl mt-5 font-bold text-brand-orange"
+          >
+            Environmental intelligence isn't a feature. It's the foundation for the future of indoor environments.
+          </motion.p>
+        </motion.div>
+      </section>
 
         {/* SERVE */}
         <section id="serve"  className="px-16">
@@ -290,8 +345,11 @@ export default function Home() {
             ref={serveRef}
             className={`transition-opacity duration-1000 ease-in-out ${serveVisible ? "opacity-100" : "opacity-0"} flex flex-col mt-20 mb-6`}
           >
-            <h1 className={`md:w-1/3 type-section-title text-black mb-7 header-underline ${serveVisible ? "visible" : ""}`}>Who We Serve</h1>
-            <p className="type-lead">InteliEQ provides intelligent technologies that improve indoor environments:</p>
+            <h1 className={`md:w-1/3 type-section-title text-black mb-7 ${serveVisible ? "visible" : ""}`}>Who We Serve</h1>
+            <p className="type-lead font-bold text-brand-orange mb-2">Designed for the Places Where Performance Matters Most</p>
+            <p>Any indoor space where health, trust, and efficiency are mission-critical.
+Whether it’s a hospital wing, a school district, or a corporate campus, InteliEQ scales seamlessly.
+</p>
 
             {/* DESKTOP GRID */}
             <div className="hidden md:grid md:grid-cols-6 md:gap-8 md:justify-center md:items-center mt-7">
@@ -393,6 +451,44 @@ export default function Home() {
             </div>
           </div>
         </section>
+        <section id="capabilities" className="mt-20 px-16">
+          <div
+            ref={capabilitiesRef}
+            className={`transition-opacity duration-1000 ease-in-out ${capabilitiesVisible ? "opacity-100" : "opacity-0"}`}
+          >
+            <h1 className="md:w-1/3 type-section-title text-black mb-7">Key Capabilities</h1>
+
+            <div className="flex flex-col md:flex-row md:items-center md:gap-12">
+
+              {/* Image on the left */}
+              <div className="md:w-2/5 w-full flex items-center justify-center flex-shrink-0">
+                <Image src={capabilities_graphic.src} width={600} height={600} alt="graphic" />
+              </div>
+
+              {/* Text pushed to the right edge */}
+              <div className="flex-1 flex flex-col justify-center ml-auto pl-8">
+                <h2 className="type-subtitle text-brand-orange font-bold mb-4">
+                  Science-Driven. Field-Tested. Human-Centered.
+                </h2>
+
+                <h3 className="mb-3 text-lg">
+                  Our systems are developed by multidisciplinary experts in engineering, environmental science, building systems and data intelligence.
+                </h3>
+
+                <ul className="type-body list-disc pl-6 space-y-2 mb-4">
+                  <li>Pathogen & contaminant reduction in real-world environments</li>
+                  <li>Research-grade sensor accuracy</li>
+                  <li>Automated ventilation optimization</li>
+                  <li>Transparent, continuous performance verification</li>
+                  <li>Proven alignment with IAQ, WELL, LEED, and ASHRAE standards</li>
+                </ul>
+
+                <p className="type-body">InteliEQ doesn't ask for trust. We earn it with data.</p>
+              </div>
+
+            </div>
+          </div>
+        </section>
 
         {/* CONTACT */}
         <section id="contact" className="px-16">
@@ -410,7 +506,10 @@ export default function Home() {
               <Button image="" content="See the Engine &#8599;" />
             </Link> */}
             <Link href="/contact" className="inline-block mt-4">
-              <Button image="" content="Contact Us &#8599;" />
+              <Button image="" content="Request a Demo &#8599;" />
+            </Link>
+            <Link href="/system" className="inline-block mt-4">
+              <Button image="" content="Learn about the Engine &#8599;" />
             </Link>
           </div>
         </section>

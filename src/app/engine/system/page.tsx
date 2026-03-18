@@ -4,7 +4,7 @@ import background from "@/app/assets/plant-keyboard.png";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { HoverCard } from "@/app/components/HoverCard";
-import SpotlightCard from "@/components/SpotlightCard";
+import SpotlightCard from "@/app/components/SpotlightCard";
 export default function FullStackPage() {
   return (
     <div className="pt-16 ">
@@ -33,9 +33,9 @@ export default function FullStackPage() {
             className="flex flex-col space-y-4  "
           >
             <SpotlightCard className="flex-1 px-[10vw]">
-              <h2 className="type-section-title-sm text-white relative z-10">How It Works</h2>
+              <h2 className="type-section-title-sm text-white relative z-10 mt-10">How It Works</h2>
               <div className="type-kicker mt-3 text-brand-orange mb-8 relative z-10">Continuous Awareness. Continuous Action.</div>
-              <div className="flex flex-row justify-between space-x-18 text-white relative z-10">
+              <div className="flex flex-row justify-between space-x-18 text-white relative z-10 mb-10">
                 <div className="flex-1 items-start flex flex-col rounded-xl">
                   <div className="type-card-title mb-4">
                     Continuous Monitoring
@@ -74,9 +74,6 @@ export default function FullStackPage() {
 
               </div>
             </SpotlightCard>
-
-
-
           </motion.div>
         </div>
 

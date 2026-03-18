@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useState, ChangeEvent, FormEvent } from 'react';
+import Image from "next/image";
+import background from "@/app/assets/carousel5.jpg"
 
 interface FormData {
   firstName: string;
@@ -47,8 +49,11 @@ export default function Contact() {
   };
 
   return (
-    <div className="pt-16 my-12">
-      <div className="px-[10vw] space-y-6">
+    <div className="pt-16">
+      <div className="w-full relative h-[50vh] overflow-hidden">
+        <Image src={background} alt="Plant Keyboard Background" fill className="object-cover object-center" />
+      </div>
+      <div className="px-[10vw] space-y-6 my-12">
         <h1 className="type-page-title mb-6">Contact Us</h1>
 
         {isSubmitted ? (

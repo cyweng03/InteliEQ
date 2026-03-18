@@ -21,6 +21,12 @@ export default function EngineProductsPage() {
         />
       </div>
 
+      <h3 className="px-[10vw] mt-12 text-3xl font-bold text-gray-900">
+        High-performance facilities{" "}
+        <span className="text-brand-orange">cannot afford</span>{" "}
+        reactive environments.
+      </h3>
+
       <div className="px-[10vw] mt-12 space-y-6">
         <section className="space-y-6">
           <h2 className="text-5xl font-extrabold text-gray-900">
@@ -31,16 +37,42 @@ export default function EngineProductsPage() {
 
             <div className="space-y-2">
               <p className="text-lg text-gray-700 leading-relaxed">
-                An integrated system that senses, purifies, and optimizes indoor
-                environments in real time.
-              </p>
+                is an integrated modular environmental intelligence system designed for high-density, high-performance environments.
 
-              <p className="text-lg text-gray-700 leading-relaxed">
-                {/* Symphony-iQ is a modular environmental intelligence system
+
+
+              </p>
+              <div className="space-y-4">
+                <div>
+                  <div className="font-extrabold text-gray-900">SENSE</div>
+                  <p className="text-lg text-gray-700">
+                    Continuously monitors IAQ metrics, occupancy dynamics,
+                    and environmental load.
+                  </p>
+                </div>
+
+                <div>
+                  <div className="font-extrabold text-gray-900">INTERVENE</div>
+                  <p className="text-lg text-gray-700">
+                    Actively treats air and surfaces within occupied zones.
+                  </p>
+                </div>
+
+                <div>
+                  <div className="font-extrabold text-gray-900">OPTIMIZE</div>
+                  <p className="text-lg text-gray-700">
+                    Integrates with HVAC systems to balance exposure reduction
+                    and energy demand.
+                  </p>
+                </div>
+              </div>
+
+              {/* <p className="text-lg text-gray-700 leading-relaxed"> */}
+              {/* Symphony-iQ is a modular environmental intelligence system
                 designed for high-density, high-performance environments. */}
-                Explore the Intelligence Layer
+              {/* Explore the Intelligence Layer */}
 
-              </p>
+              {/* </p> */}
 
               {/* <div className="text-lg text-gray-700">
                 <div className="mt-3 mb-2">It combines:</div>
@@ -62,49 +94,8 @@ export default function EngineProductsPage() {
                 />
               </div>
             </div>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
 
-            <div className="space-y-4 mt-6">
-              <div>
-                <div className="font-extrabold text-gray-900">SENSE</div>
-                <p className="text-lg text-gray-700">
-                  Continuously monitors IAQ metrics, occupancy dynamics,
-                  and environmental load.
-                </p>
-              </div>
-
-              <div>
-                <div className="font-extrabold text-gray-900">INTERVENE</div>
-                <p className="text-lg text-gray-700">
-                  Actively treats air and surfaces within occupied zones.
-                </p>
-              </div>
-
-              <div>
-                <div className="font-extrabold text-gray-900">OPTIMIZE</div>
-                <p className="text-lg text-gray-700">
-                  Integrates with HVAC systems to balance exposure reduction
-                  and energy demand.
-                </p>
-              </div>
-            </div>
-
-            <div className="space-y-4 mt-6">
-              <h3 className="text-3xl font-bold text-gray-900">
-                High-performance facilities  <p className="text-brand-orange">cannot afford</p> reactive environments.
-              </h3>
-
-              <p className="font-extrabold text-gray-900">The Symphony:</p>
-
-              <ul className="list-disc pl-6 space-y-2 text-lg text-gray-700">
-                <li>Stabilizes conditions during peak occupancy</li>
-                <li>Reduces unnecessary conditioning demand</li>
-                <li>Improves environmental recovery dynamics</li>
-                <li>Aligns performance with energy efficiency goals</li>
-              </ul>
-            </div>
           </div>
 
           <div className="space-y-6">
@@ -138,7 +129,7 @@ export default function EngineProductsPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
             <div className="space-y-2">
-              <p className="text-lg text-gray-700">
+              <p className="text-lg text-gray-700 font-bold">
                 Continuous environmental awareness. Continuous optimization.
               </p>
 
@@ -167,26 +158,48 @@ export default function EngineProductsPage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-
+          <div className="gap-16">
             <div className="space-y-4">
-              <p className="text-lg text-gray-700">
-                Traditional systems monitor, i365+ <em>adapts</em>.<br />
-                Traditional systems report, i365+ <em>optimizes</em>.
-              </p>
-            </div>
+              <h3 className="text-3xl font-bold text-gray-900 mt-6">Features</h3>
 
-            <div className="space-y-4">
-              <h3 className="text-3xl font-bold text-gray-900 mt-6">
-                Features
-              </h3>
+              {/* Timeline */}
+              <div className="relative mt-8">
+                {/* Mobile: vertical layout */}
+                <div className="flex flex-col gap-6 md:hidden">
+                  {/* Vertical line */}
+                  <div className="absolute left-[7px] top-0 bottom-0 w-[3px] bg-orange-500" />
 
-              <ul className="list-disc pl-6 text-lg text-gray-700">
-                <li>Environmental trend visualization</li>
-                <li>Exposure stabilization tracking</li>
-                <li>Energy optimization modeling</li>
-                <li>Deployment analytics</li>
-              </ul>
+                  {[
+                    "Environmental trend visualization",
+                    "Exposure stabilization tracking",
+                    "Energy optimization modeling",
+                    "Deployment analytics",
+                  ].map((label) => (
+                    <div key={label} className="flex items-center gap-4 relative">
+                      <div className="w-[15px] h-[15px] rounded-full bg-gray-600 z-10 flex-shrink-0" />
+                      <span className="text-sm text-gray-700 leading-tight">{label}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Desktop: horizontal layout */}
+                <div className="hidden md:block relative px-4">
+                  <div className="absolute top-[7px] left-4 right-4 h-[3px] bg-orange-500" />
+                  <div className="relative flex justify-between">
+                    {[
+                      "Environmental trend visualization",
+                      "Exposure stabilization tracking",
+                      "Energy optimization modeling",
+                      "Deployment analytics",
+                    ].map((label) => (
+                      <div key={label} className="flex flex-col items-center gap-3 w-24">
+                        <div className="w-[15px] h-[15px] rounded-full bg-gray-600 z-10 flex-shrink-0" />
+                        <span className="text-sm text-center text-gray-700 leading-tight">{label}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
