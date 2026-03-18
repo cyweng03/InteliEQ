@@ -24,7 +24,7 @@ export default function ResourcesPage() {
       src={aboutus}
       alt="About Us banner"
       fill
-      className="object-cover object-[52%_42%]"
+      className="object-cover object-[70%_50%]"
       priority
     />
   </div>
