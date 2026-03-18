@@ -20,14 +20,29 @@ export default function ResourcesPage() {
   return (
     <div className="pt-16">
     <div className="relative w-full h-[50vh]">
-    <Image
-      src={aboutus}
-      alt="About Us banner"
-      fill
-      className="object-cover object-[70%_50%]"
-      priority
-    />
-  </div>
+      <Image
+        src={aboutus}
+        alt="About Us banner"
+        fill
+        className="object-cover object-[70%_50%]"
+        priority
+      />
+
+      <div className="absolute inset-0 bg-black/35 z-0" />
+
+      <div className="absolute inset-0 z-10 flex items-center">
+        <div className="px-[6vw] max-w-[700px]">
+          <h1 className="text-white font-bold text-4xl md:text-5xl leading-tight">
+            Purpose Driven.
+            <br />
+            Intelligence Enabled
+          </h1>
+          <p className="mt-4 text-brand-orange font-semibold text-xl md:text-2xl">
+            For the spaces where life happens
+          </p>
+        </div>
+      </div>
+    </div>
 
       <div className="px-[10vw] my-6 space-y-12">
         <motion.div
