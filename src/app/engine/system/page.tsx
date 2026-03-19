@@ -46,7 +46,6 @@ export default function FullStackPage() {
                     <li>Enables continuous awareness and action</li>
                   </ul>
                 </div>
-                {/* <SpotlightCard className="flex-1 text-white"> */}
                 <div className="flex-1 items-start flex flex-col rounded-xl">
                   <div className="type-card-title mb-4">
                     Active Purification
@@ -57,9 +56,7 @@ export default function FullStackPage() {
                     <li>Optimizes ventilation and zone dampers dynamically</li>
                   </ul>
                 </div>
-                {/* </SpotlightCard> */}
 
-                {/* <SpotlightCard className="flex-1 text-white"> */}
                 <div className="flex-1 items-start flex flex-col rounded-xl">
                   <div className="type-card-title mb-4">
                     i365+ Intelligence
@@ -70,7 +67,6 @@ export default function FullStackPage() {
                     <li>Actionable insights delivered through a secure cloud interface</li>
                   </ul>
                 </div>
-                {/* </SpotlightCard> */}
 
               </div>
             </SpotlightCard>

@@ -4,9 +4,11 @@ import Link from 'next/link';
 
 import { GlowingEffect } from '@/app/components/ui/glowing-effect';
 import HeroCarousel from '../components/Carousel';
+import carousel1 from '../assets/carousel1.png';
+import carousel2 from '../assets/carousel2.png';
 import carousel3 from '../assets/carousel3.jpeg';
 import carousel4 from '../assets/carousel4.jpg';
-import carousel5 from '../assets/carousel5.jpg';
+import carousel5 from '../assets/carousel5.png';
 import carousel6 from '../assets/carousel6.jpeg';
 
 export default function SectorsPage() {
@@ -118,10 +120,12 @@ export default function SectorsPage() {
   };
 
   const slides = [
-    { id: 1, image: carousel3, alt: 'Hero slide 1' },
-    { id: 2, image: carousel4, alt: 'Hero slide 2' },
-    { id: 3, image: carousel5, alt: 'Hero slide 3' },
-    { id: 4, image: carousel6, alt: 'Hero slide 4' }
+    { id: 1, image: carousel1, alt: 'Hero slide 1' },
+    { id: 2, image: carousel2, alt: 'Hero slide 2' },
+    { id: 3, image: carousel3, alt: 'Hero slide 3' },
+    { id: 4, image: carousel4, alt: 'Hero slide 4' },
+    { id: 5, image: carousel5, alt: 'Hero slide 5' },
+    { id: 6, image: carousel6, alt: 'Hero slide 6' }
   ];
 
 
@@ -157,7 +161,7 @@ export default function SectorsPage() {
           <p className="type-body text-brand-gray">{content.description2}</p>
 
           <div className="font-semibold flex flex-row text-brand-black underline">
-            <Link href={content.learnMoreLink} className="font-semibold flex flex-row items-center gap-2 text-brand-black underline hover:text-brand-orange">
+            <Link target="_blank" href={content.learnMoreLink} className="font-semibold flex flex-row items-center gap-2 text-brand-black underline hover:text-brand-orange">
               {content.learnMoreText}
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />

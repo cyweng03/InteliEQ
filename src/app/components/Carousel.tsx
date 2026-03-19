@@ -52,33 +52,32 @@ const HeroCarousel: React.FC<HeroCarouselProps> = ({
 
   return (
     <div
-      className={`relative h-[50vh] w-full overflow-hidden bg-brand-black ${className}`}
+      className={`relative h-[30vh] md:h-[50vh] w-full overflow-hidden bg-brand-black ${className}`}
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {/* Slides */}
-      <div className="relative w-full aspect-[16/7]">
-        <AnimatePresence initial={false} custom={direction}>
-          <motion.div
-            key={currentIndex}
-            custom={direction}
-            variants={variants}
-            initial="enter"
-            animate="center"
-            exit="exit"
-            transition={{ duration: 0.6, ease: [0.32, 0.72, 0, 1] }}
-            className="absolute inset-0"
-          >
-            <Image
-              src={slides[currentIndex].image}
-              alt={slides[currentIndex].alt}
-              className="object-cover"
-            />
-            {/* Subtle dark overlay at bottom for nav contrast */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-          </motion.div>
-        </AnimatePresence>
-      </div>
+      <AnimatePresence initial={false} custom={direction}>
+        <motion.div
+          key={currentIndex}
+          custom={direction}
+          variants={variants}
+          initial="enter"
+          animate="center"
+          exit="exit"
+          transition={{ duration: 0.6, ease: [0.32, 0.72, 0, 1] }}
+          className="absolute inset-0"
+        >
+          <Image
+            src={slides[currentIndex].image}
+            alt={slides[currentIndex].alt}
+            fill
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+        </motion.div>
+      </AnimatePresence>
+
 
       {/* Prev button */}
       <button
