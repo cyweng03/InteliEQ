@@ -1,8 +1,8 @@
 import Image from "next/image";
 
 import background from "@/app/assets/products.png";
-import symphonyImage from "@/app/assets/symphony-IQ.png";
-import i365Image from "@/app/assets/365mockup.png";
+import symphonyImage from "@/app/assets/Symphony-iQ3d.png";
+import i365Image from "@/app/assets/i365+platformimage.png";
 
 import athleticIcon from "@/app/assets/athletic.png";
 import educationIcon from "@/app/assets/education.png";
@@ -38,9 +38,6 @@ export default function EngineProductsPage() {
             <div className="space-y-2">
               <p className="text-lg text-gray-700 leading-relaxed">
                 is an integrated modular environmental intelligence system designed for high-density, high-performance environments.
-
-
-
               </p>
               <div className="space-y-4">
                 <div>
