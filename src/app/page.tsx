@@ -107,20 +107,20 @@ export default function Home() {
       </section>
 
       {/* MAIN CONTENT */}
-      <div className="container mx-auto py-8 bg-white" ref={aboutRef}>
+      <div className="px-[10vw] mx-auto py-8 bg-white" ref={aboutRef}>
 
         <section id='section2' className="p-5 py-8 px-16">
           <div className="font-bold mb-10">
             <h3 className="type-section-title mb-4 md:w-full md:text-5xl mr-3 text-4xl"> Environmental Intelligence for the Spaces We Rely On</h3>
             <div className="flex flex-col items-center justify-center m-8">
-              <Statistic 
+              <Statistic
                 header="Buildings shouldn't guess."
-                info="They should know."/>
-              <Statistic 
+                info="They should know." />
+              <Statistic
                 header="They shouldn't react."
-                info="They should anticipate."/>
+                info="They should anticipate." />
             </div>
-            
+
           </div>
           <div>
             <p className="type-lead font-bold rounded-2xl border bg-white p-8">
@@ -145,7 +145,7 @@ export default function Home() {
             <p className="type-lead">InteliEQ provides intelligent technologies that improve indoor environments:</p>
 
             <div className="grid grid-col-1 md:grid-cols-4 gap-8 mt-5 mx-4 text-center">
-              
+
               <StatProfile
                 image={<Image src={ai.src} alt="AI" width={120} height={120} className="mx-auto" />}
                 name="Real-Time Monitoring"
@@ -175,7 +175,7 @@ export default function Home() {
           </motion.div>
 
           <Link href="/system" className=" mt-4">
-              <Button image="" content="See the Engine &#8599;" />
+            <Button image="" content="See the Engine &#8599;" />
           </Link>
         </section>
         <section id="matters" className="px-16 mb-15 flex items-center justify-center">
@@ -187,7 +187,7 @@ export default function Home() {
             className="flex flex-col mt-20"
           >
             <div className="flex flex-col md:flex-row md:items-center md:gap-8 justify-center">
-              
+
               <div className="md:flex-1">
                 <h1 className="md:w-3/4 type-section-title text-black mb-7">Why It Matters</h1>
                 <h2 className="type-subtitle text-brand-orange font-bold mb-4">Health, Productivity, Energy, Trust</h2>
@@ -204,77 +204,77 @@ export default function Home() {
                 <p className="type-body">InteliEQ brings clarity to what's been invisible for too long.</p>
               </div>
               <div className="md:w-1/2 mt-6 md:mt-0 flex-shrink-0 items-center justify-center flex">
-                <Image 
-                  className="w-full h-auto" 
-                  src={graphic.src} 
-                  width={600} 
-                  height={600} 
-                  alt="graphic" 
+                <Image
+                  className="w-full h-auto"
+                  src={graphic.src}
+                  width={600}
+                  height={600}
+                  alt="graphic"
                 />
               </div>
             </div>
           </motion.div>
         </section>
-       <section id="difference" className="bg-brand-black text-white py-6 px-16">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="flex flex-col mt-12 mb-8"
-        >
-          <h1 className="md:w-1/2 type-section-title text-white mb-5">
-            The InteliEQ Difference
-          </h1>
-
-          <p className="type-lead mb-6 text-white">
-            Most buildings rely on outdated, reactive systems, ventilation that runs blindly, purification that's inconsistent and monitors that only tell you what already went wrong.
-          </p>
-
-          <div className="flex flex-col gap-1 type-body w-full">
-            {[
-              {
-                title: "Proactive Instead of Reactive",
-                body: "We prevent problems before they affect people.",
-              },
-              {
-                title: "Unified Instead of Fragmented",
-                body: "One intelligent system replaces a patchwork of disconnected devices.",
-              },
-              {
-                title: "Verified Instead of Assumed",
-                body: "Real-time data proves performance — no guesswork, no uncertainty.",
-              },
-              {
-                title: "Healthy + Efficient Instead of Choosing One",
-                body: "Our environmental intelligence optimizes IAQ and energy at the same time.",
-              },
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, x: -16 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.5, ease: "easeOut", delay: i * 0.12 }}
-                className="py-2 px-3 border-b border-white/10 rounded-md cursor-default transition-colors"
-              >
-                <h3 className="font-bold text-white">{item.title}</h3>
-                <p className="text-white/80 mt-0.5">{item.body}</p>
-              </motion.div>
-            ))}
-          </div>
-
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="type-body text-xl mt-5 font-bold text-brand-orange"
+        <section id="difference" className="bg-brand-black w-screen left-1/2 right-1/2 -mx-[50vw] text-white py-6 px-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="flex flex-col mt-12 mb-8"
           >
-            Environmental intelligence isn't a feature. It's the foundation for the future of indoor environments.
-          </motion.p>
-        </motion.div>
-      </section>
+            <h1 className="md:w-1/2 type-section-title text-white mb-5">
+              The InteliEQ Difference
+            </h1>
+
+            <p className="type-lead mb-6 text-white">
+              Most buildings rely on outdated, reactive systems, ventilation that runs blindly, purification that's inconsistent and monitors that only tell you what already went wrong.
+            </p>
+
+            <div className="flex flex-col gap-1 type-body w-full">
+              {[
+                {
+                  title: "Proactive Instead of Reactive",
+                  body: "We prevent problems before they affect people.",
+                },
+                {
+                  title: "Unified Instead of Fragmented",
+                  body: "One intelligent system replaces a patchwork of disconnected devices.",
+                },
+                {
+                  title: "Verified Instead of Assumed",
+                  body: "Real-time data proves performance — no guesswork, no uncertainty.",
+                },
+                {
+                  title: "Healthy + Efficient Instead of Choosing One",
+                  body: "Our environmental intelligence optimizes IAQ and energy at the same time.",
+                },
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: -16 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.5, ease: "easeOut", delay: i * 0.12 }}
+                  className="py-2 px-3 border-b border-white/10 rounded-md cursor-default transition-colors"
+                >
+                  <h3 className="font-bold text-white">{item.title}</h3>
+                  <p className="text-white/80 mt-0.5">{item.body}</p>
+                </motion.div>
+              ))}
+            </div>
+
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="type-body text-xl mt-5 font-bold text-brand-orange"
+            >
+              Environmental intelligence isn't a feature. It's the foundation for the future of indoor environments.
+            </motion.p>
+          </motion.div>
+        </section>
 
         {/* SERVE */}
         <section id="serve" className="px-16">
@@ -288,8 +288,8 @@ export default function Home() {
             <h1 className="md:w-1/3 type-section-title text-black mb-7">Who We Serve</h1>
             <p className="type-lead font-bold text-brand-orange mb-2">Designed for the Places Where Performance Matters Most</p>
             <p>Any indoor space where health, trust, and efficiency are mission-critical.
-Whether it's a hospital wing, a school district, or a corporate campus, InteliEQ scales seamlessly.
-</p>
+              Whether it's a hospital wing, a school district, or a corporate campus, InteliEQ scales seamlessly.
+            </p>
 
             <div className="hidden md:grid md:grid-cols-6 md:gap-8 md:justify-center md:items-center mt-7">
 

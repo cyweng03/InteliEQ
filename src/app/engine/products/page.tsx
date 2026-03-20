@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import background from "@/app/assets/products.png";
 import symphonyImage from "@/app/assets/symphony-IQ.png";
-import i365Image from "@/app/assets/i365.png";
+import i365Image from "@/app/assets/365mockup.png";
 
 import athleticIcon from "@/app/assets/athletic.png";
 import educationIcon from "@/app/assets/education.png";
@@ -124,7 +124,7 @@ export default function EngineProductsPage() {
 
         <section className="space-y-6">
           <h2 className="text-5xl font-extrabold text-gray-900 mt-12">
-            i365+
+            <span className="align-top t">i</span><span className="align-top">3</span>65+
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
