@@ -41,7 +41,7 @@ function Profile({
         className="absolute inset-0 rounded-2xl bg-white/95 p-6"
       >
         <div className="h-full max-h-[65vh] md:max-h-full overflow-y-auto pr-2">
-          <p className="type-body text-sm text-neutral-700 leading-relaxed whitespace-pre-line">
+          <p className="type-body text-lg text-neutral-700 leading-relaxed whitespace-pre-line">
             {hoverText}
           </p>
         </div>
