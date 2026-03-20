@@ -14,9 +14,6 @@ import StatProfile from "./components/StatProfile";
 
 import filtration from "./assets/icons/filtration.png";
 import ai from "./assets/icons/ai.png";
-import estate from "./assets/icons/estate.png";
-import government from "./assets/icons/government.png";
-import senior from "./assets/icons/senior.png";
 import arrow from "./assets/icons/downward_arrow.png";
 import data from "./assets/icons/data_icon.png";
 import efficiency from "./assets/icons/efficiency_icon.png";
@@ -27,6 +24,8 @@ import athleticIcon from "@/app/assets/athletic.png";
 import educationIcon from "@/app/assets/education.png";
 import hospitalityIcon from "@/app/assets/hospitality.png";
 import healthcareIcon from "@/app/assets/healthcare.png";
+import seniorIcon from "@/app/assets/senior.png";
+import estateIcon from "@/app/assets/realestate.png";
 
 
 export default function Home() {
@@ -296,6 +295,22 @@ Whether it's a hospital wing, a school district, or a corporate campus, InteliEQ
               <Link href="/sectors" className="inline-block">
                 <Icon
                   icon={
+                    <Image src={athleticIcon.src} alt="Government" width={64} height={64} className="mx-auto" />
+                  }
+                  subtitle="Athletic Facilities"
+                />
+              </Link>
+              <Link href="/sectors" className="inline-block">
+                <Icon
+                  icon={
+                    <Image src={hospitalityIcon.src} alt="Hospitality" width={64} height={64} className="mx-auto" />
+                  }
+                  subtitle="Hospitality"
+                />
+              </Link>
+              <Link href="/sectors" className="inline-block">
+                <Icon
+                  icon={
                     <Image src={educationIcon.src} alt="Education" width={64} height={64} className="mx-auto" />
                   }
                   subtitle="Education"
@@ -314,16 +329,7 @@ Whether it's a hospital wing, a school district, or a corporate campus, InteliEQ
               <Link href="/sectors" className="inline-block">
                 <Icon
                   icon={
-                    <Image src={hospitalityIcon.src} alt="Hospitality" width={64} height={64} className="mx-auto" />
-                  }
-                  subtitle="Hospitality"
-                />
-              </Link>
-
-              <Link href="/sectors" className="inline-block">
-                <Icon
-                  icon={
-                    <Image src={estate.src} alt="Real Estate" width={64} height={64} className="mx-auto" />
+                    <Image src={estateIcon.src} alt="Real Estate" width={64} height={64} className="mx-auto" />
                   }
                   subtitle="Real Estate"
                 />
@@ -332,16 +338,7 @@ Whether it's a hospital wing, a school district, or a corporate campus, InteliEQ
               <Link href="/sectors" className="inline-block">
                 <Icon
                   icon={
-                    <Image src={athleticIcon.src} alt="Government" width={64} height={64} className="mx-auto" />
-                  }
-                  subtitle="Athletic Facilities"
-                />
-              </Link>
-
-              <Link href="/sectors" className="inline-block">
-                <Icon
-                  icon={
-                    <Image src={senior.src} alt="Senior Living" width={64} height={64} className="mx-auto" />
+                    <Image src={seniorIcon.src} alt="Senior Living" width={64} height={64} className="mx-auto" />
                   }
                   subtitle="Senior Living"
                 />
@@ -350,39 +347,41 @@ Whether it's a hospital wing, a school district, or a corporate campus, InteliEQ
 
             <div className="md:hidden mt-2">
               <div className="flex gap-4 overflow-x-auto px-4 py-2 snap-x snap-mandatory touch-pan-x">
-                <Link href="/sectors/education" className="snap-center flex-shrink-0 w-40">
-                  <Icon
-                    icon={<Image src={educationIcon.src} alt="Education" width={64} height={64} className="mx-auto" />}
-                    subtitle="Education"
-                  />
-                </Link>
-                <Link href="/sectors/healthcare" className="snap-center flex-shrink-0 w-40">
-                  <Icon
-                    icon={<Image src={healthcareIcon.src} alt="Healthcare" width={64} height={64} className="mx-auto" />}
-                    subtitle="Healthcare"
-                  />
-                </Link>
-                <Link href="/sectors/hospitality" className="snap-center flex-shrink-0 w-40">
-                  <Icon
-                    icon={<Image src={hospitalityIcon.src} alt="Hospitality" width={64} height={64} className="mx-auto" />}
-                    subtitle="Hospitality"
-                  />
-                </Link>
-                <Link href="/sectors/estate" className="snap-center flex-shrink-0 w-40">
-                  <Icon
-                    icon={<Image src={estate.src} alt="Real Estate" width={64} height={64} className="mx-auto" />}
-                    subtitle="Real Estate"
-                  />
-                </Link>
-                <Link href="/sectors/government" className="snap-center flex-shrink-0 w-40">
+                <Link href="/sectors" className="snap-center flex-shrink-0 w-40">
                   <Icon
                     icon={<Image src={athleticIcon.src} alt="Government" width={64} height={64} className="mx-auto" />}
                     subtitle="Athletic Facilities"
                   />
                 </Link>
-                <Link href="/sectors/senior-living" className="snap-center flex-shrink-0 w-40">
+                <Link href="/sectors" className="snap-center flex-shrink-0 w-40">
                   <Icon
-                    icon={<Image src={senior.src} alt="Senior Living" width={64} height={64} className="mx-auto" />}
+                    icon={<Image src={hospitalityIcon.src} alt="Hospitality" width={64} height={64} className="mx-auto" />}
+                    subtitle="Hospitality"
+                  />
+                </Link>
+                
+                <Link href="/sectors" className="snap-center flex-shrink-0 w-40">
+                  <Icon
+                    icon={<Image src={educationIcon.src} alt="Education" width={64} height={64} className="mx-auto" />}
+                    subtitle="Education"
+                  />
+                </Link>
+                <Link href="/sectors" className="snap-center flex-shrink-0 w-40">
+                  <Icon
+                    icon={<Image src={healthcareIcon.src} alt="Healthcare" width={64} height={64} className="mx-auto" />}
+                    subtitle="Healthcare"
+                  />
+                </Link>
+                <Link href="/sectors" className="snap-center flex-shrink-0 w-40">
+                  <Icon
+                    icon={<Image src={estateIcon.src} alt="Real Estate" width={64} height={64} className="mx-auto" />}
+                    subtitle="Real Estate"
+                  />
+                </Link>
+
+                <Link href="/sectors" className="snap-center flex-shrink-0 w-40">
+                  <Icon
+                    icon={<Image src={seniorIcon.src} alt="Senior Living" width={64} height={64} className="mx-auto" />}
                     subtitle="Senior Living"
                   />
                 </Link>
