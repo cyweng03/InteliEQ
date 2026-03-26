@@ -12,6 +12,8 @@ import carousel3 from "../assets/carousel3.jpeg";
 import carousel4 from "../assets/carousel4.jpg";
 import carousel5 from "../assets/carousel5.png";
 import carousel6 from "../assets/carousel6.jpeg";
+import carousel7 from "../assets/carousel7.jpg";
+import carousel8 from "../assets/carousel8.png";
 
 import athleticIcon from "@/app/assets/athletic.png";
 import educationIcon from "@/app/assets/education.png";
@@ -124,11 +126,13 @@ export default function SectorsPage() {
     { id: 4, image: carousel4, alt: "Hero slide 4" },
     { id: 5, image: carousel5, alt: "Hero slide 5" },
     { id: 6, image: carousel6, alt: "Hero slide 6" },
+    { id: 7, image: carousel7, alt: "Hero slide 7" },
+    { id: 8, image: carousel8, alt: "Hero slide 8" },
   ];
 
-  function SectorBlock({ content }: { content: SectorProps }) {
+  function SectorBlock({ content, id }: { content: SectorProps; id: string }) {
     return (
-      <div className="relative group min-h-[20rem] rounded-2xl">
+      <div id={id} className="relative group min-h-[20rem] rounded-2xl scroll-mt-24">
         <GlowingEffect
           spread={100}
           glow={true}
@@ -167,10 +171,9 @@ export default function SectorsPage() {
             <Link
               target="_blank"
               href={content.learnMoreLink}
-              className="flex items-center gap-2 text-brand-black underline hover:text-brand-orange"
+              className="flex items-center gap-1 text-brand-black hover:text-brand-orange"
             >
-              {content.learnMoreText}
-              <span>↗</span>
+              <span className="underline">{content.learnMoreText} ↗</span>
             </Link>
           </div>
         </div>
@@ -202,12 +205,12 @@ export default function SectorsPage() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-16">
-          <SectorBlock content={Government} />
-          <SectorBlock content={Hospitality} />
-          <SectorBlock content={Education} />
-          <SectorBlock content={Healthcare} />
-          <SectorBlock content={CommercialRealEstate} />
-          <SectorBlock content={SeniorLiving} />
+          <SectorBlock content={Government} id="athletic" />
+          <SectorBlock content={Hospitality} id="hospitality" />
+          <SectorBlock content={Education} id="education" />
+          <SectorBlock content={Healthcare} id="healthcare" />
+          <SectorBlock content={CommercialRealEstate} id="real-estate" />
+          <SectorBlock content={SeniorLiving} id="senior-living" />
         </div>
       </div>
     </div>

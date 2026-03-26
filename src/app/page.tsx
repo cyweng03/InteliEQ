@@ -64,7 +64,7 @@ export default function Home() {
         ref={heroRef}
         className="overflow-hidden relative w-full flex items-center bg-[url(./assets/city-background3.png)] bg-cover bg-center bg-no-repeat h-screen"
       >
-        <div className="relative z-10 container px-8 lg:px-20">
+        <div className="relative z-10 px-8 lg:px-20">
           <h1 className="type-hero-title text-white w-full text-left m-2">
             Redefining how buildings
             <span className="ml-4">
@@ -106,9 +106,9 @@ export default function Home() {
       </section>
 
       {/* MAIN CONTENT */}
-      <div className="px-[10vw] mx-auto py-8 bg-white" ref={aboutRef}>
+      <div className="px-[10vw] py-8 bg-white" ref={aboutRef}>
 
-        <section id='section2' className="p-5 py-8 px-16">
+        <section id='section2' className="p-5 py-8">
           <div className="font-bold mb-10">
             <h3 className="type-section-title mb-4 md:w-full md:text-5xl mr-3 text-4xl"> Environmental Intelligence for the Spaces We Rely On</h3>
             <div className="flex flex-col items-center justify-center m-8">
@@ -132,7 +132,7 @@ export default function Home() {
 
 
         {/* OFFER */}
-        <section id="offer" className="px-16">
+        <section id="offer" className="">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -173,11 +173,11 @@ export default function Home() {
             </div>
           </motion.div>
 
-          <Link href="/system" className=" mt-4">
+          <Link href="/engine/productsm" className=" mt-4">
             <Button image="" content="See the Engine &#8599;" />
           </Link>
         </section>
-        <section id="matters" className="px-16 mb-15 flex items-center justify-center">
+        <section id="matters" className="mb-15 flex items-center justify-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -214,7 +214,7 @@ export default function Home() {
             </div>
           </motion.div>
         </section>
-        <section id="difference" className="bg-brand-black relative left-1/2 right-1/2 w-screen -translate-x-1/2 text-white py-6 px-16">
+        <section id="difference" className="bg-brand-black relative left-1/2 right-1/2 w-screen -translate-x-1/2 text-white py-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -276,7 +276,7 @@ export default function Home() {
         </section>
 
         {/* SERVE */}
-        <section id="serve" className="px-16">
+        <section id="serve" className="">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -292,7 +292,7 @@ export default function Home() {
 
             <div className="hidden md:grid md:grid-cols-6 md:gap-8 md:justify-center md:items-center mt-7">
 
-              <Link href="/sectors" className="inline-block">
+              <Link href="/sectors#athletic" className="inline-block">
                 <Icon
                   icon={
                     <Image src={athleticIcon.src} alt="Government" width={64} height={64} className="mx-auto" />
@@ -300,7 +300,7 @@ export default function Home() {
                   subtitle="Athletic Facilities"
                 />
               </Link>
-              <Link href="/sectors" className="inline-block">
+              <Link href="/sectors#hospitality" className="inline-block">
                 <Icon
                   icon={
                     <Image src={hospitalityIcon.src} alt="Hospitality" width={64} height={64} className="mx-auto" />
@@ -308,7 +308,7 @@ export default function Home() {
                   subtitle="Hospitality"
                 />
               </Link>
-              <Link href="/sectors" className="inline-block">
+              <Link href="/sectors#education" className="inline-block">
                 <Icon
                   icon={
                     <Image src={educationIcon.src} alt="Education" width={64} height={64} className="mx-auto" />
@@ -317,7 +317,7 @@ export default function Home() {
                 />
               </Link>
 
-              <Link href="/sectors" className="inline-block">
+              <Link href="/sectors#healthcare" className="inline-block">
                 <Icon
                   icon={
                     <Image src={healthcareIcon.src} alt="Healthcare" width={64} height={64} className="mx-auto" />
@@ -326,7 +326,7 @@ export default function Home() {
                 />
               </Link>
 
-              <Link href="/sectors" className="inline-block">
+              <Link href="/sectors#real-estate" className="inline-block">
                 <Icon
                   icon={
                     <Image src={estateIcon.src} alt="Real Estate" width={64} height={64} className="mx-auto" />
@@ -335,7 +335,7 @@ export default function Home() {
                 />
               </Link>
 
-              <Link href="/sectors" className="inline-block">
+              <Link href="/sectors#senior-living" className="inline-block">
                 <Icon
                   icon={
                     <Image src={seniorIcon.src} alt="Senior Living" width={64} height={64} className="mx-auto" />
@@ -347,39 +347,39 @@ export default function Home() {
 
             <div className="md:hidden mt-2">
               <div className="flex gap-4 overflow-x-auto px-4 py-2 snap-x snap-mandatory touch-pan-x">
-                <Link href="/sectors" className="snap-center flex-shrink-0 w-40">
+                <Link href="/sectors#athletic" className="snap-center flex-shrink-0 w-40">
                   <Icon
                     icon={<Image src={athleticIcon.src} alt="Government" width={64} height={64} className="mx-auto" />}
                     subtitle="Athletic Facilities"
                   />
                 </Link>
-                <Link href="/sectors" className="snap-center flex-shrink-0 w-40">
+                <Link href="/sectors#hospitality" className="snap-center flex-shrink-0 w-40">
                   <Icon
                     icon={<Image src={hospitalityIcon.src} alt="Hospitality" width={64} height={64} className="mx-auto" />}
                     subtitle="Hospitality"
                   />
                 </Link>
 
-                <Link href="/sectors" className="snap-center flex-shrink-0 w-40">
+                <Link href="/sectors#education" className="snap-center flex-shrink-0 w-40">
                   <Icon
                     icon={<Image src={educationIcon.src} alt="Education" width={64} height={64} className="mx-auto" />}
                     subtitle="Education"
                   />
                 </Link>
-                <Link href="/sectors" className="snap-center flex-shrink-0 w-40">
+                <Link href="/sectors#healthcare" className="snap-center flex-shrink-0 w-40">
                   <Icon
                     icon={<Image src={healthcareIcon.src} alt="Healthcare" width={64} height={64} className="mx-auto" />}
                     subtitle="Healthcare"
                   />
                 </Link>
-                <Link href="/sectors" className="snap-center flex-shrink-0 w-40">
+                <Link href="/sectors#real-estate" className="snap-center flex-shrink-0 w-40">
                   <Icon
                     icon={<Image src={estateIcon.src} alt="Real Estate" width={64} height={64} className="mx-auto" />}
                     subtitle="Real Estate"
                   />
                 </Link>
 
-                <Link href="/sectors" className="snap-center flex-shrink-0 w-40">
+                <Link href="/sectors#senior-living" className="snap-center flex-shrink-0 w-40">
                   <Icon
                     icon={<Image src={seniorIcon.src} alt="Senior Living" width={64} height={64} className="mx-auto" />}
                     subtitle="Senior Living"
@@ -389,7 +389,7 @@ export default function Home() {
             </div>
           </motion.div>
         </section>
-        <section id="capabilities" className="mt-20 px-16">
+        <section id="capabilities" className="mt-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -429,7 +429,7 @@ export default function Home() {
         </section>
 
         {/* CONTACT */}
-        <section id="contact" className="px-16">
+        <section id="contact" className="">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

@@ -22,23 +22,39 @@ export default function Contact() {
   });
 
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string>('');
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log('Form submitted!', formData);
-    setIsSubmitted(true);
+    setIsLoading(true);
+    setError('');
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (!res.ok) throw new Error('Failed to send message');
+
+      setIsSubmitted(true);
+    } catch (err) {
+      setError('Something went wrong. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleSubmitAnother = () => {
     setIsSubmitted(false);
+    setError('');
     setFormData({
       firstName: '',
       middleInitial: '',
@@ -71,23 +87,26 @@ export default function Contact() {
               </button>
               <button
                 onClick={() => (window.location.href = '/')}
-                className="bg-white hover:bg-gray-50  px-6 py-3 rounded-md font-medium border transition-colors"
+                className="bg-white hover:bg-gray-50 px-6 py-3 rounded-md font-medium border transition-colors"
               >
                 Return to Home
               </button>
             </div>
           </div>
         ) : (
-          <form
-            onSubmit={handleSubmit}
-            className="rounded-lg shadow-sm p-12"
-          >
+          <form onSubmit={handleSubmit} className="rounded-lg shadow-sm p-12">
             <p className="type-body mb-8 max-w-2xl">
               Tell us what challenges your building is facing.
             </p>
             <p className='type-body mb-8'>
-              Whether it’s air quality, infection risk, energy inefficiencies, or occupant complaints, we’ll help you identify where environmental intelligence can create healthier, smarter and more resilient spaces.
+              Whether it's air quality, infection risk, energy inefficiencies, or occupant complaints, we'll help you identify where environmental intelligence can create healthier, smarter and more resilient spaces.
             </p>
+
+            {error && (
+              <div className="mb-6 p-4 bg-red-50 border border-red-200 text-red-700 rounded-md">
+                {error}
+              </div>
+            )}
 
             <div className="grid grid-cols-1 md:grid-cols-12 gap-4 mb-6">
               <div className="md:col-span-5">
@@ -137,7 +156,7 @@ export default function Contact() {
             </div>
 
             <div className="mb-6">
-              <label htmlFor="email" className="block text-sm font-medium  mb-2">
+              <label htmlFor="email" className="block text-sm font-medium mb-2">
                 Email<span className="text-orange-500">*</span>
               </label>
               <input
@@ -168,9 +187,10 @@ export default function Contact() {
 
             <button
               type="submit"
-              className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-md font-medium transition-colors"
+              disabled={isLoading}
+              className="bg-orange-500 hover:bg-orange-600 disabled:bg-orange-300 text-white px-8 py-3 rounded-md font-medium transition-colors"
             >
-              Submit
+              {isLoading ? 'Sending...' : 'Submit'}
             </button>
           </form>
         )}

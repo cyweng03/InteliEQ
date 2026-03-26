@@ -20,30 +20,30 @@ import Profile from "../components/Profile";
 export default function ResourcesPage() {
   return (
     <div className="pt-16">
-    <div className="relative w-full h-[50vh]">
-      <Image
-        src={aboutus}
-        alt="About Us banner"
-        fill
-        className="object-cover object-[70%_50%]"
-        priority
-      />
+      <div className="relative w-full h-[50vh]">
+        <Image
+          src={aboutus}
+          alt="About Us banner"
+          fill
+          className="object-cover object-[70%_50%]"
+          priority
+        />
 
-      <div className="absolute inset-0 bg-black/35 z-0" />
+        <div className="absolute inset-0 bg-black/35 z-0" />
 
-      <div className="absolute inset-0 z-10 flex items-center">
-        <div className="px-[6vw] max-w-[700px]">
-          <h1 className="text-white font-bold text-4xl md:text-5xl leading-tight">
-            Purpose Driven.
-            <br />
-            Intelligence Enabled.
-          </h1>
-          <p className="mt-4 text-brand-orange font-semibold text-xl md:text-2xl">
-            For the spaces where life happens
-          </p>
+        <div className="absolute inset-0 z-10 flex items-center">
+          <div className="px-[6vw] max-w-[700px]">
+            <h1 className="text-white font-bold text-4xl md:text-5xl leading-tight">
+              Purpose Driven.
+              <br />
+              Intelligence Enabled.
+            </h1>
+            <p className="mt-4 text-brand-orange font-semibold text-xl md:text-2xl">
+              For the spaces where life happens
+            </p>
+          </div>
         </div>
       </div>
-    </div>
 
       <div className="px-[10vw] my-6 space-y-12">
         <motion.div
@@ -82,52 +82,52 @@ export default function ResourcesPage() {
               <div className="type-body">We design technology that protects what matters most, human health, comfort, and performance. Every environment we touch is made measurably safer, cleaner, and more supportive of the people who live, work, and heal within it.</div>
             </div>
             <div className="flex flex-1 flex-col space-y-2 hover:shadow-lg transition duration-300 rounded-2xl border bg-white p-10 m-4">
-              <div className="flex justify-center"> <Image src={planet} alt="planet illustration" width={100} height={100}/></div>
+              <div className="flex justify-center"> <Image src={planet} alt="planet illustration" width={100} height={100} /></div>
               <div className="type-card-title-sm text-center text-black">Planet</div>
               <div className="type-body">Sustainability isn’t a feature; it’s a responsibility. Our systems actively reduce energy waste, lower carbon impact, and extend the life of building infrastructure, proving that healthy indoor environments and a healthier planet go hand in hand.</div>
             </div>
             <div className="flex flex-1 flex-col space-y-2 hover:shadow-lg transition duration-300 rounded-2xl border bg-white p-10 m-4">
-              <div className="flex justify-center"> <Image src={passion} alt="passion illustration" width={100} height={100}/></div>
+              <div className="flex justify-center"> <Image src={passion} alt="passion illustration" width={100} height={100} /></div>
               <div className="type-card-title-sm text-center text-black">Passion</div>
               <div className="type-body">We challenge outdated thinking. We innovate with urgency. And we build with purpose. Our passion is transforming buildings into intelligent, self-optimizing ecosystems that elevate health, efficiency, and trust in the spaces we depend on every day.</div>
             </div>
           </div>
         </motion.div>
 
-      <div className="bg-brand-black w-screen relative left-1/2 right-1/2 -mx-[50vw] mt-12">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="px-[2vw] py-12 space-y-6"
-        >
-          <h3 className="type-section-title-sm text-white">Core Values</h3>
+        <div className="bg-brand-black w-screen relative left-1/2 right-1/2 -mx-[50vw] mt-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="px-[10vw] py-12 space-y-6"
+          >
+            <h3 className="type-section-title-sm text-white">Core Values</h3>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-            <div className="flex flex-1 flex-col">
-              <div className="type-kicker text-brand-orange">Serve with Purpose</div>
-              <div className="type-body text-white">We design solutions that improve lives, protect health, and create long-term value for every community we touch.</div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+              <div className="flex flex-1 flex-col">
+                <div className="type-kicker text-brand-orange">Serve with Purpose</div>
+                <div className="type-body text-white">We design solutions that improve lives, protect health, and create long-term value for every community we touch.</div>
+              </div>
+              <div className="flex flex-1 flex-col">
+                <div className="type-kicker text-brand-orange">Act with Integrity</div>
+                <div className="type-body text-white">We operate with transparency, trust, and accountability—in our technology, our partnerships, and our impact.</div>
+              </div>
+              <div className="flex flex-1 flex-col">
+                <div className="type-kicker text-brand-orange">Innovate with Intention</div>
+                <div className="type-body text-white">We challenge assumptions, reject the status quo, and build solutions that solve real problems, not just symptoms.</div>
+              </div>
+              <div className="flex flex-1 flex-col">
+                <div className="type-kicker text-brand-orange">Measure What Matters</div>
+                <div className="type-body text-white">If we can’t measure it, we can’t improve it. Data guides every decision, proving performance and earning confidence.</div>
+              </div>
+              <div className="flex flex-1 flex-col">
+                <div className="type-kicker text-brand-orange">Elevate the Standard</div>
+                <div className="type-body text-white">We believe indoor spaces can—and must—do more. So we build systems that set the bar higher, then continue to raise it.</div>
+              </div>
             </div>
-            <div className="flex flex-1 flex-col">
-              <div className="type-kicker text-brand-orange">Act with Integrity</div>
-              <div className="type-body text-white">We operate with transparency, trust, and accountability—in our technology, our partnerships, and our impact.</div>
-            </div>
-            <div className="flex flex-1 flex-col">
-              <div className="type-kicker text-brand-orange">Innovate with Intention</div>
-              <div className="type-body text-white">We challenge assumptions, reject the status quo, and build solutions that solve real problems, not just symptoms.</div>
-            </div>
-            <div className="flex flex-1 flex-col">
-              <div className="type-kicker text-brand-orange">Measure What Matters</div>
-              <div className="type-body text-white">If we can’t measure it, we can’t improve it. Data guides every decision, proving performance and earning confidence.</div>
-            </div>
-            <div className="flex flex-1 flex-col">
-              <div className="type-kicker text-brand-orange">Elevate the Standard</div>
-              <div className="type-body text-white">We believe indoor spaces can—and must—do more. So we build systems that set the bar higher, then continue to raise it.</div>
-            </div>
-          </div>
-        </motion.div>
-      </div>
+          </motion.div>
+        </div>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
