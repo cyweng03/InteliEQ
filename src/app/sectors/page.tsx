@@ -14,6 +14,8 @@ import carousel5 from "../assets/carousel5.png";
 import carousel6 from "../assets/carousel6.jpeg";
 import carousel7 from "../assets/carousel7.jpg";
 import carousel8 from "../assets/carousel8.png";
+import carousel9 from "../assets/carousel9.jpg";
+
 
 import athleticIcon from "@/app/assets/athletic.png";
 import educationIcon from "@/app/assets/education.png";
@@ -128,6 +130,7 @@ export default function SectorsPage() {
     { id: 6, image: carousel6, alt: "Hero slide 6" },
     { id: 7, image: carousel7, alt: "Hero slide 7" },
     { id: 8, image: carousel8, alt: "Hero slide 8" },
+    { id: 9, image: carousel9, alt: "Hero slide 9" },
   ];
 
   function SectorBlock({ content, id }: { content: SectorProps; id: string }) {
