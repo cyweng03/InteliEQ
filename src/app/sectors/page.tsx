@@ -127,7 +127,7 @@ export default function SectorsPage() {
     { id: 3, image: carousel3, alt: "Hero slide 3" },
     { id: 4, image: carousel4, alt: "Hero slide 4" },
     { id: 5, image: carousel5, alt: "Hero slide 5" },
-    { id: 6, image: carousel6, alt: "Hero slide 6" },
+    // { id: 6, image: carousel6, alt: "Hero slide 6" },
     { id: 7, image: carousel7, alt: "Hero slide 7" },
     { id: 8, image: carousel8, alt: "Hero slide 8" },
     { id: 9, image: carousel9, alt: "Hero slide 9" },
