@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 import background from "@/app/assets/products.png";
 import symphonyImage from "@/app/assets/Symphony-iQ3d.png";
@@ -21,24 +24,37 @@ export default function EngineProductsPage() {
         />
       </div>
 
-      <h3 className="px-[10vw] mt-12 text-3xl font-bold text-gray-900">
+      <motion.h3
+        className="px-[10vw] mt-12 text-3xl font-bold text-gray-900"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         High-performance facilities{" "}
         <span className="text-brand-orange">cannot afford</span>{" "}
         reactive environments.
-      </h3>
+      </motion.h3>
 
       <div className="px-[10vw] mt-12 space-y-6">
-        <section className="space-y-6">
+
+        <motion.section
+          className="space-y-6"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           <h2 className="text-5xl font-extrabold text-gray-900">
             Symphony-iQ
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-stretch">
-
             <div className="space-y-2">
               <p className="text-lg text-gray-700 leading-relaxed">
                 is an integrated modular environmental intelligence system designed for high-density, high-performance environments.
               </p>
+
               <div className="space-y-4">
                 <div>
                   <div className="font-extrabold text-gray-900">SENSE</div>
@@ -63,22 +79,6 @@ export default function EngineProductsPage() {
                   </p>
                 </div>
               </div>
-
-              {/* <p className="text-lg text-gray-700 leading-relaxed"> */}
-              {/* Symphony-iQ is a modular environmental intelligence system
-                designed for high-density, high-performance environments. */}
-              {/* Explore the Intelligence Layer */}
-
-              {/* </p> */}
-
-              {/* <div className="text-lg text-gray-700">
-                <div className="mt-3 mb-2">It combines:</div>
-                <ul className="list-disc pl-6 leading-relaxed">
-                  <li>Real-time environmental sensing</li>
-                  <li>Active air and surface intervention</li>
-                  <li>Adaptive HVAC optimization</li>
-                </ul>
-              </div> */}
             </div>
 
             <div className="flex items-stretch">
@@ -91,11 +91,15 @@ export default function EngineProductsPage() {
                 />
               </div>
             </div>
-
-
           </div>
 
-          <div className="space-y-6">
+          <motion.div
+            className="space-y-6"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <h3 className="text-xl font-bold text-gray-900">
               Designed for Performance Environments:
             </h3>
@@ -115,11 +119,16 @@ export default function EngineProductsPage() {
                 </div>
               ))}
             </div>
-          </div>
+          </motion.div>
+        </motion.section>
 
-        </section>
-
-        <section className="space-y-6">
+        <motion.section
+          className="space-y-6"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           <div className="mt-12">
             <Image
               src={i365logo}
@@ -160,52 +169,51 @@ export default function EngineProductsPage() {
             </div>
           </div>
 
-          <div className="gap-16">
-            <div className="space-y-4">
-              <h3 className="text-3xl font-bold text-gray-900 mt-6">Features</h3>
+          <motion.div
+            className="space-y-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            <h3 className="text-3xl font-bold text-gray-900 mt-6">Features</h3>
 
-              {/* Timeline */}
-              <div className="relative mt-8">
-                {/* Mobile: vertical layout */}
-                <div className="flex flex-col gap-6 md:hidden">
-                  {/* Vertical line */}
-                  <div className="absolute left-[7px] top-0 bottom-0 w-[3px] bg-orange-500" />
+            <div className="relative mt-8">
+              <div className="flex flex-col gap-6 md:hidden">
+                <div className="absolute left-[7px] top-0 bottom-0 w-[3px] bg-orange-500" />
 
+                {[
+                  "Environmental trend visualization",
+                  "Exposure stabilization tracking",
+                  "Energy optimization modeling",
+                  "Deployment analytics",
+                ].map((label) => (
+                  <div key={label} className="flex items-center gap-4 relative">
+                    <div className="w-[15px] h-[15px] rounded-full bg-gray-600 z-10 flex-shrink-0" />
+                    <span className="text-sm text-gray-700 leading-tight">{label}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="hidden md:block relative px-4">
+                <div className="absolute top-[7px] left-4 right-4 h-[3px] bg-orange-500" />
+                <div className="relative flex justify-between">
                   {[
                     "Environmental trend visualization",
                     "Exposure stabilization tracking",
                     "Energy optimization modeling",
                     "Deployment analytics",
                   ].map((label) => (
-                    <div key={label} className="flex items-center gap-4 relative">
+                    <div key={label} className="flex flex-col items-center gap-3 w-24">
                       <div className="w-[15px] h-[15px] rounded-full bg-gray-600 z-10 flex-shrink-0" />
-                      <span className="text-sm text-gray-700 leading-tight">{label}</span>
+                      <span className="text-sm text-center text-gray-700 leading-tight">{label}</span>
                     </div>
                   ))}
                 </div>
-
-                {/* Desktop: horizontal layout */}
-                <div className="hidden md:block relative px-4">
-                  <div className="absolute top-[7px] left-4 right-4 h-[3px] bg-orange-500" />
-                  <div className="relative flex justify-between">
-                    {[
-                      "Environmental trend visualization",
-                      "Exposure stabilization tracking",
-                      "Energy optimization modeling",
-                      "Deployment analytics",
-                    ].map((label) => (
-                      <div key={label} className="flex flex-col items-center gap-3 w-24">
-                        <div className="w-[15px] h-[15px] rounded-full bg-gray-600 z-10 flex-shrink-0" />
-                        <span className="text-sm text-center text-gray-700 leading-tight">{label}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
               </div>
             </div>
-          </div>
-
-        </section>
+          </motion.div>
+        </motion.section>
 
       </div>
     </div>
