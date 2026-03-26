@@ -62,7 +62,7 @@ export default function SectorsPage() {
     description2:
       "The result: fewer HAIs, improved patient outcomes and safer spaces for healthcare professionals.",
     learnMoreText: "Learn more",
-    learnMoreLink: "/sectors/education/learn-more.pdf",
+    learnMoreLink: "/sectors/education.pdf",
   };
 
   const Hospitality: SectorProps = {
@@ -118,7 +118,7 @@ export default function SectorsPage() {
       "Optimized energy use",
     ],
     learnMoreText: "Learn more",
-    learnMoreLink: "/sectors/senior/learn-more.pdf",
+    learnMoreLink: "/sectors/senior.pdf",
   };
 
   const slides = [
