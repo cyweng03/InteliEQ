@@ -64,7 +64,7 @@ export default function Home() {
         ref={heroRef}
         className="overflow-hidden relative w-full flex items-center bg-[url(./assets/city-background3.png)] bg-cover bg-center bg-no-repeat h-screen"
       >
-        <div className="relative z-10 px-8 lg:px-20">
+        <div className="relative z-10 px-8 lg:px-20 w-3/4">
           <h1 className="type-hero-title text-white w-full text-left m-2">
             Redefining how buildings
             <span className="ml-4">
@@ -110,7 +110,7 @@ export default function Home() {
 
         <section id='section2' className="p-5 py-8">
           <div className="font-bold mb-10">
-            <h3 className="type-section-title mb-4 md:w-full md:text-5xl mr-3 text-4xl"> Environmental Intelligence for the Spaces We Rely On</h3>
+            <h3 className="type-section-title mb-4 md:w-full md:text-5xl mr-3 text-4xl"> Environmental Intelligence for Spaces We Rely On</h3>
             <div className="flex flex-col items-center justify-center m-8">
               <Statistic
                 header="Buildings shouldn't guess."
