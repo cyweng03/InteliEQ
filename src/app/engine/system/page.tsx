@@ -132,7 +132,7 @@ export default function FullStackPage() {
               </div>
             </div>
 
-            <div className="hidden md:block w-px bg-[#1A1A1A] self-stretch"></div>
+            <div className="hidden md:block w-[0.5px] bg-[#1A1A1A] self-stretch"></div>
 
             <div className="flex flex-col items-center text-center max-w-[280px] w-full">
               <svg
@@ -156,7 +156,7 @@ export default function FullStackPage() {
               </div>
             </div>
 
-            <div className="hidden md:block w-px bg-[#1A1A1A] self-stretch"></div>
+            <div className="hidden md:block w-[0.5px] bg-[#1A1A1A] self-stretch"></div>
 
             <div className="flex flex-col items-center text-center max-w-[280px] w-full">
               <svg
