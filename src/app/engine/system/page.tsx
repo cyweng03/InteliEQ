@@ -40,7 +40,7 @@ export default function FullStackPage() {
           environments where people and performance thrive.
         </p>
 
-        <div className="bg-brand-black w-screen relative left-1/2 right-1/2 -mx-[50vw] mt-12">
+        <div className=" w-screen relative left-1/2 right-1/2 -mx-[50vw] mt-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

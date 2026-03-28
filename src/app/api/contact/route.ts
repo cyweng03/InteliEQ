@@ -14,15 +14,11 @@ export async function POST(req: Request) {
     }
 
     const transporter = nodemailer.createTransport({
-      host: 'smtp.office365.com',  // Microsoft 365 SMTP host
-      port: 587,                    // always 587 for Office 365
-      secure: false,                // false because it uses STARTTLS on 587
+      service: 'gmail',
+      secure: false,
       auth: {
-        user: process.env.EMAIL_USER,  // info@intelieq.life
-        pass: process.env.EMAIL_PASS,  // your password
-      },
-      tls: {
-        ciphers: 'SSLv3'            // required for Office 365
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
       }
     });
 
