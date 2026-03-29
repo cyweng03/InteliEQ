@@ -1,6 +1,7 @@
 "use client";
 
 import background from "@/app/assets/plant-keyboard.png";
+import background2 from "@/app/assets/system_header.png";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import SpotlightCard from "@/app/components/SpotlightCard";
@@ -10,10 +11,10 @@ export default function FullStackPage() {
     <div className="pt-16">
       <div className="w-full relative h-[35vh] md:h-[45vh] lg:h-[50vh] overflow-hidden">
         <Image
-          src={background}
-          alt="Plant Keyboard Background"
+          src={background2}
+          alt="System Header Background"
           fill
-          className="object-cover object-center"
+          className="object-cover object-[50%_65%]"
         />
       </div>
 
