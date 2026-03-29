@@ -147,13 +147,13 @@ export default function ResourcesPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             <Profile
-              image={<Image src={christianne} alt="Christianne" width={300} height={300} className="mx-auto rounded-full object-cover h-[300px] w-[300px] shrink-0" />}
+              image={<Image src={christianne} alt="Christianne" width={300} height={300} className="mx-auto rounded-full object-cover h-[300px] w-[300px] shrink-0 border border-gray-300" />}
               name="Christianne Radziewicz"
               title="CEO"
               hoverText="Christianne Radziewicz leads InteliEQ’s mission to transform buildings into intelligent, health-optimized, and energy-efficient environments that actively protect the people inside them. With more than two decades of experience across the built-environment ecosystem, she has driven business growth, advanced sustainability strategies, and aligned architects, engineers, and technical teams around high-performance outcomes. At InteliEQ, Christianne bridges environmental science, product innovation, and strategic execution to deliver solutions that move beyond reactive building systems toward measurable, real-time performance. Her leadership is focused on redefining how indoor environments are understood, managed, and optimized at scale, positioning Environmental Intelligence as a new layer of critical building infrastructure. A former Division I collegiate athlete, Christianne, brings a performance-driven mindset to leadership, grounded in teamwork, discipline, and the belief that environments play a critical role in human potential."
             />
             <Profile
-              image={<Image src={karl} alt="Karl" width={300} height={300} className="mx-auto rounded-full object-cover h-[300px] w-[300px] shrink-0" />}
+              image={<Image src={karl} alt="Karl" width={300} height={300} className="mx-auto rounded-full object-cover object-[0%_0%] h-[300px] w-[300px] shrink-0 border border-gray-300" />}
               name="Karl Selander"
               title="CTO"
               hoverText="Karl Selander is the architect of the intelligence system behind the company’s environmental systems. A systems thinker grounded in engineering rigor, he designs technologies that allow buildings to sense, interpret and respond in real time.
@@ -162,7 +162,7 @@ Outside the lab, Karl can be found exploring the outdoors with his family, deep-
 "
             />
             <Profile
-              image={<Image src={terry} alt="Terry" width={300} height={300} className="mx-auto rounded-full object-cover h-[300px] w-[300px] shrink-0" />}
+              image={<Image src={terry} alt="Terry" width={300} height={300} className="mx-auto rounded-full object-cover h-[300px] w-[300px] shrink-0 border border-gray-300" />}
               name="Terry Zarnowski"
               title="Executive Leader | Hardware Automation & IoT Systems"
               hoverText="Terry Zarnowski brings entrepreneurial leadership and operational scale to InteliEQ. Over three decades, he has built and led technology-driven companies from startup innovation to multimillion-dollar global operations, delivering advanced automation and sensing systems to Fortune 500 clients.
@@ -171,7 +171,7 @@ At InteliEQ, he ensures environmental intelligence is not only visionary, but ma
 "
             />
             <Profile
-              image={<Image src={jeff} alt="Jeff Miller" width={300} height={300} className="mx-auto rounded-full object-cover object-[50%_30%] h-[300px] w-[300px] shrink-0" />}
+              image={<Image src={jeff} alt="Jeff Miller" width={300} height={300} className="mx-auto rounded-full object-cover object-[50%_20%] h-[300px] w-[300px] shrink-0 border border-gray-300" />}
               name="Jeff Miller"
               title="Head of Building Systems & Deployment"
               hoverText="Jeff Miller brings decades of hands-on experience in commercial and residential HVAC systems, building performance, and mechanical operations. As Head of Building Systems & Deployment at InteliEQ, he leads the practical integration of Symphony-iQ into complex real-world environments, ensuring seamless deployment, system compatibility, and operational reliability across diverse building types. Prior to joining InteliEQ, Jeff founded and successfully operated a full-service HVAC company serving clients throughout the greater New York City region. His work spanned system design, installation, troubleshooting, retrofit strategy, and long-term facility support, giving him deep insight into how buildings perform beyond design intent. At InteliEQ, Jeff plays a critical role in bridging advanced environmental intelligence technology with the realities of mechanical infrastructure. He works closely with facilities teams, engineers, and deployment partners to optimize performance outcomes, accelerate pilot implementation, and support scalable portfolio rollouts. His leadership ensures that InteliEQ’s solutions not only innovate but deliver dependable results where they matter most."
@@ -184,7 +184,7 @@ At InteliEQ, he ensures environmental intelligence is not only visionary, but ma
                   alt="Joseph McLaughlin"
                   width={300}
                   height={300}
-                  className="mx-auto rounded-full object-cover object-[30%_0%] h-[300px] w-[300px] shrink-0"
+                  className="mx-auto rounded-full object-cover object-[0%_-100%] h-[300px] w-[300px] shrink-0 border border-gray-300"
                 />
               }
               name="Joseph McLaughlin"
@@ -193,7 +193,7 @@ At InteliEQ, he ensures environmental intelligence is not only visionary, but ma
             />
 
             <Profile
-              image={<Image src={william} alt="William Hatch" width={300} height={300} className="mx-auto rounded-full object-cover h-[300px] w-[300px] shrink-0" />}
+              image={<Image src={william} alt="William Hatch" width={300} height={300} className="mx-auto rounded-full object-cover h-[300px] w-[300px] shrink-0 border border-gray-300" />}
               name="William Hatch"
               title="Director of Software Engineering"
               hoverText="William Hatch brings more than 20 years of experience in software development spanning AI-driven applications, web and mobile platforms, DevOps infrastructure, big data systems, and Internet of Things (IoT) technologies. As Director of Software Engineering at InteliEQ, he leads the design and development of the digital intelligence layer that enables real-time environmental monitoring, predictive insights, and scalable deployment across diverse building portfolios. Throughout his career, William has built and delivered complex software solutions that connect physical systems with actionable data, transforming how organizations understand performance and make operational decisions. At InteliEQ, he is responsible for advancing the company’s unified intelligence platform, ensuring reliability, adaptability, and meaningful user insight across evolving environmental conditions. Beyond his technical leadership, William is a dedicated musician and an advocate for environmental stewardship. He is deeply motivated by the opportunity to apply technology in ways that create positive, measurable changes, helping organizations operate more sustainably while improving the health and performance of the spaces people depend on every day."
