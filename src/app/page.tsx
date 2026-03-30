@@ -5,7 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-
 import Button from "./components/Button";
 import Statistic from "./components/Statistic";
 import Icon from "./components/Icon";
@@ -34,7 +33,6 @@ export default function Home() {
 
   const { setHideNav } = useContext(NavContext);
 
-
   const scrollToAbout = () => {
     const element = aboutRef.current;
     if (element) {
@@ -58,16 +56,15 @@ export default function Home() {
 
   return (
     <>
-      {/* HERO */}
       <section
         id="landing-page"
         ref={heroRef}
         className="overflow-hidden relative w-full flex items-center bg-[url(./assets/city-background3.png)] bg-cover bg-center bg-no-repeat h-screen"
       >
-        <div className="relative z-10 px-8 lg:px-20 w-3/4">
+        <div className="relative z-10 px-8 lg:px-20 w-3/5 md:w-3/4">
           <h1 className="type-hero-title text-white w-full text-left m-2">
             Redefining how buildings
-            <span className="ml-4">
+            <span className="ml-2 md:ml-4 w-1/2">
               <span className="cycle-wrapper">
                 <span className="cycle-word cycle-1 type-hero-title shadow-xl text-brand-orange">
                   think.
@@ -102,15 +99,13 @@ export default function Home() {
             content=""
           />
         </div>
-
       </section>
 
-      {/* MAIN CONTENT */}
       <div className="px-[10vw] py-8 bg-white" ref={aboutRef}>
 
         <section id='section2' className="p-5 py-8">
           <div className="font-bold mb-10">
-            <h3 className="type-section-title mb-4 md:w-full md:text-5xl mr-3 text-4xl"> Environmental Intelligence for Spaces We Rely On</h3>
+            <h3 className="type-section-title mb-4 md:w-full md:text-5xl mr-3 text-4xl">Environmental Intelligence for Spaces We Rely On</h3>
             <div className="flex flex-col items-center justify-center m-8">
               <Statistic
                 header="Buildings shouldn't guess."
@@ -119,19 +114,16 @@ export default function Home() {
                 header="They shouldn't react."
                 info="They should anticipate." />
             </div>
-
           </div>
           <div>
             <p className="type-lead font-bold rounded-2xl border bg-white p-8">
-              <span className="type-subtitle text-black">Indoor spaces should empower human well-being, not endanger it. </span><br></br><br></br>
-              We fuse research-grade sensing, proactive purification, and real-time data intelligence into a single platform, turning invisible risks into measurable improvements and giving building operators a new level of clarity and control.<br></br><br></br>
+              <span className="type-subtitle text-black">Indoor spaces should empower human well-being, not endanger it. </span><br /><br />
+              We fuse research-grade sensing, proactive purification, and real-time data intelligence into a single platform, turning invisible risks into measurable improvements and giving building operators a new level of clarity and control.<br /><br />
               Our purpose is to create environments where every breath, every room, and every moment is supported by intelligent systems working quietly in the background.
             </p>
           </div>
         </section>
 
-
-        {/* OFFER */}
         <section id="offer" className="">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -144,7 +136,6 @@ export default function Home() {
             <p className="type-lead">InteliEQ provides intelligent technologies that improve indoor environments:</p>
 
             <div className="grid grid-col-1 md:grid-cols-4 gap-8 mt-5 mx-4 text-center">
-
               <StatProfile
                 image={<Image src={ai.src} alt="AI" width={120} height={120} className="mx-auto" />}
                 name="Real-Time Monitoring"
@@ -157,7 +148,6 @@ export default function Home() {
                 title=""
                 hoverText="Proactive, scientifically validated purification that neutralizes threats before they spread."
               />
-
               <StatProfile
                 image={<Image src={data.src} alt="data" width={125} height={125} className="mx-auto" />}
                 name="Data Intelligence"
@@ -173,10 +163,11 @@ export default function Home() {
             </div>
           </motion.div>
 
-          <Link href="/engine/productsm" className=" mt-4">
+          <Link href="/engine/productsm" className="mt-4">
             <Button image="" content="See the Engine &#8599;" />
           </Link>
         </section>
+
         <section id="matters" className="mb-15 flex items-center justify-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -186,20 +177,16 @@ export default function Home() {
             className="flex flex-col mt-20"
           >
             <div className="flex flex-col md:flex-row md:items-center md:gap-8 justify-center">
-
               <div className="md:flex-1">
                 <h1 className="md:w-3/4 type-section-title text-black mb-7">Why It Matters</h1>
                 <h2 className="type-subtitle text-brand-orange font-bold mb-4">Health, Productivity, Energy, Trust</h2>
-
                 <p className="type-body mb-4">Great indoor environments don't happen by accident. They're engineered continuously, intelligently, and transparently.</p>
-
                 <ul className="type-body list-disc pl-6 space-y-2 mb-4">
                   <li>Cleaner air = better health and fewer disruptions</li>
                   <li>Verified spaces = peace of mind for building owners and occupants</li>
                   <li>Smart optimization = lower energy costs</li>
                   <li>Unified intelligence = simpler operations</li>
                 </ul>
-
                 <p className="type-body">InteliEQ brings clarity to what's been invisible for too long.</p>
               </div>
               <div className="md:w-1/2 mt-6 md:mt-0 flex-shrink-0 items-center justify-center flex">
@@ -214,6 +201,7 @@ export default function Home() {
             </div>
           </motion.div>
         </section>
+
         <section id="difference" className="bg-brand-black relative left-1/2 right-1/2 w-screen -translate-x-1/2 text-white py-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -275,8 +263,7 @@ export default function Home() {
           </motion.div>
         </section>
 
-        {/* SERVE */}
-        <section id="serve" className="">
+        <section id="serve">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -286,149 +273,42 @@ export default function Home() {
           >
             <h1 className="md:w-1/3 type-section-title text-black mb-7">Who We Serve</h1>
             <p className="type-lead font-bold text-brand-orange mb-2">Designed for the Places Where Performance Matters Most</p>
-            <p>Any indoor space where health, trust, and efficiency are mission-critical.
-              Whether it's a hospital wing, a school district, or a corporate campus, InteliEQ scales seamlessly.
-            </p>
+            <p>Any indoor space where health, trust, and efficiency are mission-critical. Whether it's a hospital wing, a school district, or a corporate campus, InteliEQ scales seamlessly.</p>
 
-            <div className="hidden md:grid md:grid-cols-6 md:gap-8 md:justify-center md:items-center mt-7">
-
-              <Link href="/sectors#athletic" className="inline-block">
-                <Icon
-                  icon={
-                    <Image src={athleticIcon.src} alt="Government" width={64} height={64} className="mx-auto" />
-                  }
-                  subtitle="Athletic Facilities"
-                />
-              </Link>
-              <Link href="/sectors#hospitality" className="inline-block">
-                <Icon
-                  icon={
-                    <Image src={hospitalityIcon.src} alt="Hospitality" width={64} height={64} className="mx-auto" />
-                  }
-                  subtitle="Hospitality"
-                />
-              </Link>
-              <Link href="/sectors#education" className="inline-block">
-                <Icon
-                  icon={
-                    <Image src={educationIcon.src} alt="Education" width={64} height={64} className="mx-auto" />
-                  }
-                  subtitle="Education"
-                />
-              </Link>
-
-              <Link href="/sectors#healthcare" className="inline-block">
-                <Icon
-                  icon={
-                    <Image src={healthcareIcon.src} alt="Healthcare" width={64} height={64} className="mx-auto" />
-                  }
-                  subtitle="Healthcare"
-                />
-              </Link>
-
-              <Link href="/sectors#real-estate" className="inline-block">
-                <Icon
-                  icon={
-                    <Image src={estateIcon.src} alt="Real Estate" width={64} height={64} className="mx-auto" />
-                  }
-                  subtitle="Real Estate"
-                />
-              </Link>
-
-              <Link href="/sectors#senior-living" className="inline-block">
-                <Icon
-                  icon={
-                    <Image src={seniorIcon.src} alt="Senior Living" width={64} height={64} className="mx-auto" />
-                  }
-                  subtitle="Senior Living"
-                />
-              </Link>
+            <div className="hidden md:grid md:grid-cols-6 md:gap-8 mt-7">
+              <Link href="/sectors#athletic"><Icon icon={<Image src={athleticIcon.src} alt="" width={64} height={64} />} subtitle="Athletic Facilities" /></Link>
+              <Link href="/sectors#hospitality"><Icon icon={<Image src={hospitalityIcon.src} alt="" width={64} height={64} />} subtitle="Hospitality" /></Link>
+              <Link href="/sectors#education"><Icon icon={<Image src={educationIcon.src} alt="" width={64} height={64} />} subtitle="Education" /></Link>
+              <Link href="/sectors#healthcare"><Icon icon={<Image src={healthcareIcon.src} alt="" width={64} height={64} />} subtitle="Healthcare" /></Link>
+              <Link href="/sectors#real-estate"><Icon icon={<Image src={estateIcon.src} alt="" width={64} height={64} />} subtitle="Real Estate" /></Link>
+              <Link href="/sectors#senior-living"><Icon icon={<Image src={seniorIcon.src} alt="" width={64} height={64} />} subtitle="Senior Living" /></Link>
             </div>
 
             <div className="md:hidden mt-2">
-              <div className="flex gap-4 overflow-x-auto px-4 py-2 snap-x snap-mandatory touch-pan-x">
-                <Link href="/sectors#athletic" className="snap-center flex-shrink-0 w-40">
-                  <Icon
-                    icon={<Image src={athleticIcon.src} alt="Government" width={64} height={64} className="mx-auto" />}
-                    subtitle="Athletic Facilities"
-                  />
+              <div className="flex gap-4 overflow-x-auto px-4 py-2 snap-x snap-mandatory">
+                <Link href="/sectors#athletic" className="snap-center flex-shrink-0 w-44">
+                  <Icon icon={<Image src={athleticIcon.src} alt="" width={64} height={64} />} subtitle="Athletic Facilities" />
                 </Link>
-                <Link href="/sectors#hospitality" className="snap-center flex-shrink-0 w-40">
-                  <Icon
-                    icon={<Image src={hospitalityIcon.src} alt="Hospitality" width={64} height={64} className="mx-auto" />}
-                    subtitle="Hospitality"
-                  />
+                <Link href="/sectors#hospitality" className="snap-center flex-shrink-0 w-44">
+                  <Icon icon={<Image src={hospitalityIcon.src} alt="" width={64} height={64} />} subtitle="Hospitality" />
                 </Link>
-
-                <Link href="/sectors#education" className="snap-center flex-shrink-0 w-40">
-                  <Icon
-                    icon={<Image src={educationIcon.src} alt="Education" width={64} height={64} className="mx-auto" />}
-                    subtitle="Education"
-                  />
+                <Link href="/sectors#education" className="snap-center flex-shrink-0 w-44">
+                  <Icon icon={<Image src={educationIcon.src} alt="" width={64} height={64} />} subtitle="Education" />
                 </Link>
-                <Link href="/sectors#healthcare" className="snap-center flex-shrink-0 w-40">
-                  <Icon
-                    icon={<Image src={healthcareIcon.src} alt="Healthcare" width={64} height={64} className="mx-auto" />}
-                    subtitle="Healthcare"
-                  />
+                <Link href="/sectors#healthcare" className="snap-center flex-shrink-0 w-44">
+                  <Icon icon={<Image src={healthcareIcon.src} alt="" width={64} height={64} />} subtitle="Healthcare" />
                 </Link>
-                <Link href="/sectors#real-estate" className="snap-center flex-shrink-0 w-40">
-                  <Icon
-                    icon={<Image src={estateIcon.src} alt="Real Estate" width={64} height={64} className="mx-auto" />}
-                    subtitle="Real Estate"
-                  />
+                <Link href="/sectors#real-estate" className="snap-center flex-shrink-0 w-44">
+                  <Icon icon={<Image src={estateIcon.src} alt="" width={64} height={64} />} subtitle="Real Estate" />
                 </Link>
-
-                <Link href="/sectors#senior-living" className="snap-center flex-shrink-0 w-40">
-                  <Icon
-                    icon={<Image src={seniorIcon.src} alt="Senior Living" width={64} height={64} className="mx-auto" />}
-                    subtitle="Senior Living"
-                  />
+                <Link href="/sectors#senior-living" className="snap-center flex-shrink-0 w-44">
+                  <Icon icon={<Image src={seniorIcon.src} alt="" width={64} height={64} />} subtitle="Senior Living" />
                 </Link>
               </div>
             </div>
           </motion.div>
         </section>
-        <section id="capabilities" className="mt-20">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
-            <h1 className="md:w-1/3 type-section-title text-black mb-7">Key Capabilities</h1>
 
-            <div className="flex flex-col md:flex-row md:items-center md:gap-12">
-
-              <div className="md:w-2/5 w-full flex items-center justify-center flex-shrink-0">
-                <Image src={capabilities_graphic.src} width={600} height={600} alt="graphic" />
-              </div>
-
-              <div className="flex-1 flex flex-col justify-center ml-auto pl-8">
-                <h2 className="type-subtitle text-brand-orange font-bold mb-4">
-                  Science-Driven. Field-Tested. Human-Centered.
-                </h2>
-
-                <h3 className="mb-3 text-lg">
-                  Our systems are developed by multidisciplinary experts in engineering, environmental science, building systems and data intelligence.
-                </h3>
-
-                <ul className="type-body list-disc pl-6 space-y-2 mb-4">
-                  <li>Pathogen & contaminant reduction in real-world environments</li>
-                  <li>Research-grade sensor accuracy</li>
-                  <li>Automated ventilation optimization</li>
-                  <li>Transparent, continuous performance verification</li>
-                  <li>Proven alignment with IAQ, WELL, LEED, and ASHRAE standards</li>
-                </ul>
-
-                <p className="type-body">InteliEQ doesn't ask for trust. We earn it with data.</p>
-              </div>
-
-            </div>
-          </motion.div>
-        </section>
-
-        {/* CONTACT */}
         <section id="contact" className="">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
