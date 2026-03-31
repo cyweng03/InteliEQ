@@ -23,7 +23,7 @@ function Icon({ icon, title, subtitle, content }: { icon: React.ReactNode, title
 
   return (
     <div
-      className='flex flex-col items-center justify-center mt-3 text-center rounded-2xl border bg-white p-5 group'
+      className='h-full flex flex-col items-center justify-center mt-3 text-center rounded-2xl border bg-white p-5 group'
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >

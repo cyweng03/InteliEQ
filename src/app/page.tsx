@@ -275,7 +275,7 @@ export default function Home() {
             <p className="type-lead font-bold text-brand-orange mb-2">Designed for the Places Where Performance Matters Most</p>
             <p>Any indoor space where health, trust, and efficiency are mission-critical. Whether it's a hospital wing, a school district, or a corporate campus, InteliEQ scales seamlessly.</p>
 
-            <div className="hidden md:grid md:grid-cols-6 md:gap-8 mt-7">
+            <div className="hidden md:grid md:grid-cols-6 md:gap-8 mt-7 items-stretch">
               <Link href="/sectors#athletic"><Icon icon={<Image src={athleticIcon.src} alt="" width={64} height={64} />} subtitle="Athletic Facilities" /></Link>
               <Link href="/sectors#hospitality"><Icon icon={<Image src={hospitalityIcon.src} alt="" width={64} height={64} />} subtitle="Hospitality" /></Link>
               <Link href="/sectors#education"><Icon icon={<Image src={educationIcon.src} alt="" width={64} height={64} />} subtitle="Education" /></Link>
@@ -322,12 +322,15 @@ export default function Home() {
             </h1>
             <h2 className='type-kicker mt-5'>Let's transform your spaces into ecosystems that support human health, operational clarity and sustainable performance.</h2>
 
-            <Link href="/contact" className="inline-block mt-4">
-              <Button image="" content="Request a Demo &#8599;" />
-            </Link>
-            <Link href="/engine/products" className="inline-block mt-4">
-              <Button image="" content="Learn about the Engine &#8599;" />
-            </Link>
+            <div className="flex sm:flex-row flex-col gap-4">
+              <Link href="/contact">
+                <Button image="" content="Request a Demo →" />
+              </Link>
+              <Link href="/engine/products">
+                <Button image="" content="Learn about the Engine →" />
+              </Link>
+            </div>
+
           </motion.div>
         </section>
       </div>
