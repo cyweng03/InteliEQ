@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
+import { GlowingEffect } from './ui/glowing-effect';
 
 function Profile({
   image,
@@ -23,11 +24,19 @@ function Profile({
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className={cn(
-        "relative rounded-2xl border bg-white p-6 text-center transition-all duration-300",
+        "relative rounded-2xl border-2 bg-white p-6 text-center transition-all duration-300",
         hovered && "shadow-2xl -translate-y-1",
         className
       )}
     >
+      <GlowingEffect
+          spread={100}
+          glow={true}
+          disabled={false}
+          proximity={64}
+          inactiveZone={0.01}
+        />
+        
       <div className="space-y-3">
         {image}
         <div className="font-semibold text-lg text-black mt-3">{name}</div>

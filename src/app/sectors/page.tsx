@@ -6,15 +6,14 @@ import Image, { StaticImageData } from "next/image";
 import { GlowingEffect } from "@/app/components/ui/glowing-effect";
 import HeroCarousel from "../components/Carousel";
 
-import carousel1 from "../assets/carousel1.png";
-import carousel2 from "../assets/carousel2.png";
-import carousel3 from "../assets/carousel3.jpeg";
-import carousel4 from "../assets/carousel4.jpg";
-import carousel5 from "../assets/carousel5.png";
-import carousel6 from "../assets/carousel6.jpeg";
-import carousel7 from "../assets/carousel7.jpg";
-import carousel8 from "../assets/carousel8.png";
-import carousel9 from "../assets/carousel9.jpg";
+import carousel1 from "../assets/carousel1.png"; // training
+import carousel2 from "../assets/carousel2.png"; // large 
+import carousel3 from "../assets/carousel3.jpeg"; // lobby
+import carousel4 from "../assets/carousel4.jpg"; //auditorium
+import carousel5 from "../assets/carousel5.png"; //locker room
+import carousel7 from "../assets/carousel7.jpg"; //gym
+import carousel8 from "../assets/carousel8.png"; //education
+import carousel9 from "../assets/carousel9.jpg"; //medical
 
 
 import athleticIcon from "@/app/assets/athletic.png";
@@ -122,15 +121,14 @@ export default function SectorsPage() {
   };
 
   const slides = [
-    { id: 1, image: carousel1, alt: "Hero slide 1" },
-    { id: 2, image: carousel2, alt: "Hero slide 2" },
+    { id: 1, image: carousel8, alt: "Hero slide 1" },
+    { id: 2, image: carousel1, alt: "Hero slide 2" },
     { id: 3, image: carousel3, alt: "Hero slide 3" },
-    { id: 4, image: carousel4, alt: "Hero slide 4" },
-    { id: 5, image: carousel5, alt: "Hero slide 5" },
-    // { id: 6, image: carousel6, alt: "Hero slide 6" },
-    { id: 7, image: carousel7, alt: "Hero slide 7" },
-    { id: 8, image: carousel8, alt: "Hero slide 8" },
-    { id: 9, image: carousel9, alt: "Hero slide 9" },
+    { id: 4, image: carousel9, alt: "Hero slide 4" },
+    { id: 5, image: carousel7, alt: "Hero slide 5" },
+    { id: 7, image: carousel2, alt: "Hero slide 7" },
+    { id: 8, image: carousel4, alt: "Hero slide 8" },
+    { id: 9, image: carousel5, alt: "Hero slide 9" },
   ];
 
   function SectorBlock({ content, id }: { content: SectorProps; id: string }) {
