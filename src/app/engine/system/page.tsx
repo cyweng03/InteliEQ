@@ -1,10 +1,12 @@
 "use client";
 
+import Link from "next/link";
 import background from "@/app/assets/plant-keyboard.png";
 import background2 from "@/app/assets/system_header.png";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import SpotlightCard from "@/app/components/SpotlightCard";
+import Button from "@/app/components/Button";
 
 export default function FullStackPage() {
   return (
@@ -203,6 +205,9 @@ export default function FullStackPage() {
             <p className="type-body mt-6 mb-8">
               With the ability to reduce up to 165 million metric tons of CO₂ annually across large-scale deployment, InteliEQ is accelerating the built environment’s path to net zero. By linking health outcomes to energy intelligence, we’re helping organizations transform environmental performance into a competitive advantage, one intelligent building at a time.
             </p>
+            <Link href="/contact">
+              <Button image="" content="Let's Talk About Your Environment" />
+            </Link>
           </div>
         </motion.div>
       </div>

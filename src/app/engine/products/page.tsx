@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from "next/link";
+import Button from "@/app/components/Button";
 
 import background from "@/app/assets/products.png";
 import symphonyImage from "@/app/assets/Symphony-iQ3d.png";
@@ -214,6 +216,18 @@ export default function EngineProductsPage() {
             </div>
           </motion.div>
         </motion.section>
+        <motion.div
+          className="space-y-4"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <Link href="/contact">
+            <Button image="" content="Connect With Our Team" />
+          </Link>
+        </motion.div>
+
 
       </div>
     </div>

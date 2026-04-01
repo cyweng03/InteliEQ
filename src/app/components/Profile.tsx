@@ -19,10 +19,15 @@ function Profile({
 }) {
   const [hovered, setHovered] = useState(false);
 
+  const handleClick = () => {
+    setHovered(prev => !prev); // toggle visibility on click
+  };
+
   return (
     <motion.div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
+      onClick={handleClick}
       className={cn(
         "relative rounded-2xl border-2 bg-white p-6 text-center transition-all duration-300",
         hovered && "shadow-2xl -translate-y-1",
@@ -36,7 +41,7 @@ function Profile({
           proximity={64}
           inactiveZone={0.01}
         />
-        
+
       <div className="space-y-3">
         {image}
         <div className="font-semibold text-lg text-black mt-3">{name}</div>

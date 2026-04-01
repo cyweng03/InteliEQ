@@ -324,10 +324,10 @@ export default function Home() {
 
             <div className="flex sm:flex-row flex-col gap-4">
               <Link href="/contact">
-                <Button image="" content="Request a Demo →" />
+                <Button image="" content="Request a Demo" />
               </Link>
               <Link href="/engine/products">
-                <Button image="" content="Learn about the Engine →" />
+                <Button image="" content="Learn about the Engine" />
               </Link>
             </div>
 
